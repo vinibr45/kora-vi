@@ -32,6 +32,7 @@ In v0.4, these are structured skill contracts, not executable automations.
 - `create-experiment.md`: create or propose a structured KORA experiment.
 - `review-experiment.md`: review an experiment for clarity, scope, usefulness, risk, and learning potential.
 - `record-learning.md`: record a structured learning recommendation from a task, eval, experiment, or feedback.
+- `review-learning.md`: review learning before promotion into memory, knowledge, decisions, context, or capability changes.
 
 ## Template
 
@@ -44,6 +45,4 @@ skills/templates/skill-template.md
 ```text
 docs/skills/kora-skills-spec-v0.4.md
 ```
-
-
 
