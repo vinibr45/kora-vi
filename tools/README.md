@@ -1,8 +1,19 @@
 # Tools
 
-This directory is reserved for future tool contracts and integrations.
+This directory stores KORA Core tool definitions and templates.
 
-Tools are executable or external capabilities such as scripts, APIs, filesystem access, browsers, databases, Git, or GitHub.
+Tools execute capabilities. They do not decide intent or grant permission by themselves.
 
-No real tools are implemented in v0.1.
+In v0.9, tools are definitions, not implemented connectors or scripts.
 
+## Specification
+
+```text
+docs/tools/kora-tools-integrations-automations-spec-v0.9.md
+```
+
+## Template
+
+```text
+tools/templates/tool-template.md
+```

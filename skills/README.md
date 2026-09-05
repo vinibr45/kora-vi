@@ -33,6 +33,12 @@ In v0.4, these are structured skill contracts, not executable automations.
 - `review-experiment.md`: review an experiment for clarity, scope, usefulness, risk, and learning potential.
 - `record-learning.md`: record a structured learning recommendation from a task, eval, experiment, or feedback.
 - `review-learning.md`: review learning before promotion into memory, knowledge, decisions, context, or capability changes.
+- `create-tool.md`: create or propose a KORA tool definition.
+- `review-tool.md`: review a tool definition for clarity, scope, permissions, and safety.
+- `create-integration.md`: create or propose an external integration definition.
+- `review-integration.md`: review an integration definition for need, access, permissions, privacy, and fallback strategy.
+- `create-automation.md`: create or propose a repeatable workflow automation definition.
+- `review-automation.md`: review an automation definition for recurrence, value, permissions, safety, and stop conditions.
 
 ## Template
 

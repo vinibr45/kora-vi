@@ -13,10 +13,10 @@ KORA is private and proprietary by default. It is being designed first for the c
 The current stage is:
 
 ```text
-KORA Experiments and Learning Specification v0.8
+KORA Tools, Integrations, and Automations Specification v0.9
 ```
 
-This stage extends KORA with the v0.8 experiments and learning model. It defines how KORA tests hypotheses, interprets results, and promotes learning with scope, evidence, and approval controls.
+This stage extends KORA with the v0.9 tools, integrations, and automations model. It defines executable capabilities, external connections, repeatable workflows, permissions, approval points, and safety boundaries.
 
 ## Repository Map
 
@@ -30,7 +30,9 @@ context/             Context selection and assembly rules
 orchestration/       Coordination model for tasks, agents, skills, and tools
 agents/              KORA Core agent definitions
 skills/              KORA Core skill definitions
-tools/               Future external tool contracts and integrations
+tools/               KORA Core tool definitions
+integrations/        KORA Core external integration definitions
+automations/         KORA Core automation definitions
 evals/               Future evaluation criteria and mechanisms
 experiments/         Future experiment and learning records
 config/              Future implementation configuration
@@ -101,4 +103,10 @@ Current experiments and learning specification:
 
 ```text
 docs/learning/kora-experiments-learning-spec-v0.8.md
+```
+
+Current tools, integrations, and automations specification:
+
+```text
+docs/tools/kora-tools-integrations-automations-spec-v0.9.md
 ```
