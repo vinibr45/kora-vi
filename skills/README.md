@@ -29,6 +29,9 @@ In v0.4, these are structured skill contracts, not executable automations.
 - `create-eval.md`: create or propose a KORA eval definition.
 - `review-eval.md`: review an eval for clarity, scope, usefulness, risk coverage, and specification fit.
 - `run-manual-eval.md`: run or simulate a manual eval and produce a structured result.
+- `create-experiment.md`: create or propose a structured KORA experiment.
+- `review-experiment.md`: review an experiment for clarity, scope, usefulness, risk, and learning potential.
+- `record-learning.md`: record a structured learning recommendation from a task, eval, experiment, or feedback.
 
 ## Template
 
@@ -41,5 +44,6 @@ skills/templates/skill-template.md
 ```text
 docs/skills/kora-skills-spec-v0.4.md
 ```
+
 
 

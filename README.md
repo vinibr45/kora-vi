@@ -13,10 +13,10 @@ KORA is private and proprietary by default. It is being designed first for the c
 The current stage is:
 
 ```text
-KORA Evals Specification v0.7
+KORA Experiments and Learning Specification v0.8
 ```
 
-This stage extends KORA with the v0.7 evals model. It defines how KORA evaluates quality, correctness, usefulness, safety, boundaries, and architectural fit.
+This stage extends KORA with the v0.8 experiments and learning model. It defines how KORA tests hypotheses, interprets results, and promotes learning with scope, evidence, and approval controls.
 
 ## Repository Map
 
@@ -95,4 +95,10 @@ Current evals specification:
 
 ```text
 docs/evals/kora-evals-spec-v0.7.md
+```
+
+Current experiments and learning specification:
+
+```text
+docs/learning/kora-experiments-learning-spec-v0.8.md
 ```

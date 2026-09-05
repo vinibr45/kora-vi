@@ -17,6 +17,7 @@ These scenarios test whether KORA's initial agents and skills make good architec
 - `EV-0009-agent-creation-and-scope.md`: validate global, local, and hybrid agent placement decisions.
 - `EV-0010-orchestration-flow.md`: validate end-to-end orchestration and capability planning before execution.
 - `EV-0011-eval-creation-and-result-handling.md`: validate eval creation, execution, result storage, and learning boundaries.
+- `EV-0012-experiment-learning-promotion.md`: validate experiment design, result interpretation, learning records, and controlled promotion.
 
 ## Manual Pass Criteria
 
@@ -30,6 +31,7 @@ A scenario passes when KORA correctly identifies:
 - execution mode;
 - approval points;
 - eval or learning needs.
+
 
 
 
