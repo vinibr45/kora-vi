@@ -40,6 +40,7 @@ In v0.4, these are structured skill contracts, not executable automations.
 - `create-automation.md`: create or propose a repeatable workflow automation definition.
 - `review-automation.md`: review an automation definition for recurrence, value, permissions, safety, and stop conditions.
 - `assess-integration-need.md`: assess whether a task truly needs an external integration or can use a simpler mode.
+- `use-kora.md`: guide a user through the practical use of KORA for a task or project.
 
 ## Template
 

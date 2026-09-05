@@ -13,6 +13,7 @@ In v0.5, these are structured agent contracts, not autonomous runtime workers.
 - `project-binder.md`: connects project repositories to KORA through local `.kora/` bindings.
 - `context-curator.md`: selects and assembles relevant context for a task.
 - `knowledge-steward.md`: organizes reusable knowledge and protects knowledge boundaries.
+- `kora-guide.md`: explains how to use KORA and routes users to the right workflow.
 
 ## Template
 
@@ -25,3 +26,4 @@ agents/templates/agent-template.md
 ```text
 docs/agents/kora-agents-spec-v0.5.md
 ```
+
