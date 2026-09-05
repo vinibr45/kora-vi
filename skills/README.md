@@ -41,6 +41,7 @@ In v0.4, these are structured skill contracts, not executable automations.
 - `review-automation.md`: review an automation definition for recurrence, value, permissions, safety, and stop conditions.
 - `assess-integration-need.md`: assess whether a task truly needs an external integration or can use a simpler mode.
 - `use-kora.md`: guide a user through the practical use of KORA for a task or project.
+- `generate-image-asset.md`: generate or propose image assets using an approved image generation tool.
 
 ## Template
 

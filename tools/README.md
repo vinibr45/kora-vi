@@ -17,3 +17,10 @@ docs/tools/kora-tools-integrations-automations-spec-v0.9.md
 ```text
 tools/templates/tool-template.md
 ```
+
+## Core Tool Definitions
+
+```text
+tools/image-generation.md
+```
+
