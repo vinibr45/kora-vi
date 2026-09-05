@@ -1,44 +1,79 @@
 # Marcos Dev
 
-Marcos Dev e o primeiro contexto de projeto/negocio previsto na KORA.
+Marcos Dev is the first project/business context registered in KORA Core.
 
-Ele representa o perfil e negocio usado para oferecer servicos como:
+## Project
 
-- criacao de sites;
-- criacao de sistemas;
-- presenca digital;
-- paginas de campanha;
-- diagnostico de presenca digital;
-- conteudo para Instagram;
-- projetos digitais para clientes.
+Name: Marcos Dev
+Type: business / digital services / operational website
+Status: registered
+Operational Repository: C:\marcbmrs.github.io
+Local KORA Binding: C:\marcbmrs.github.io\.kora\
+Context Completeness: level-0 registered
 
-## Repositorio Operacional Atual
+## Summary
+
+Marcos Dev is the creator's business/profile for offering services such as website creation, system creation, digital presence, campaign pages, presence diagnostics, Instagram content support, and digital projects for clients.
+
+## Primary Domains
+
+- marketing;
+- software engineering;
+- UX;
+- web presence;
+- content;
+- sales;
+- operations.
+
+## KORA Relationship
+
+Marcos Dev is the first real project context planned for KORA.
+
+KORA Core should provide reusable architecture, knowledge, agents, skills, tools, evals, and templates.
+
+Marcos Dev should own its local context, decisions, memory, project-specific agents, project-specific skills, tools, evals, and automations through its local `.kora/` binding.
+
+## Core Boundary
+
+KORA Core may store only lightweight registry information about Marcos Dev.
+
+KORA Core should not store full Marcos Dev strategy, content history, client details, or local project capabilities.
+
+## Local Boundary
+
+Detailed Marcos Dev context should eventually live in:
 
 ```text
-C:\marcbmrs.github.io
+C:\marcbmrs.github.io\.kora\
 ```
 
-Esse caminho e uma referencia externa da KORA. Ele nao deve ser copiado integralmente para dentro deste projeto.
-
-## Limite
-
-Este diretorio deve guardar o contexto de negocio do Marcos Dev.
-
-Conhecimento geral de marketing, desenvolvimento web, vendas ou produto deve ficar em `knowledge/`.
-
-## Possivel Estrutura Futura
+Possible future local files:
 
 ```text
-vision.md
-identity.md
-audience.md
-positioning.md
-offers.md
-services.md
-content-strategy.md
-operations.md
-decisions/
-history.md
+.kora/binding.md
+.kora/context/overview.md
+.kora/context/identity.md
+.kora/context/audience.md
+.kora/context/positioning.md
+.kora/context/offers.md
+.kora/context/services.md
+.kora/context/content-strategy.md
+.kora/context/operations.md
+.kora/decisions/
+.kora/memory/
+.kora/agents/
+.kora/skills/
+.kora/tools/
+.kora/evals/
+.kora/automations/
 ```
 
-Nenhuma implementacao operacional detalhada e definida na KORA v0.1.
+## Missing Context
+
+- Confirm the preferred public brand spelling.
+- Define current services and offers.
+- Define target audience.
+- Define positioning.
+- Define tone of voice.
+- Define content strategy.
+- Create local `.kora/` binding in the operational repository when approved.

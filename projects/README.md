@@ -1,15 +1,32 @@
 # Projects
 
-This directory is reserved for project-specific, business-specific, or implementation-specific context.
+This directory stores lightweight project registry entries for KORA Core.
 
-Example future structure:
+Project-specific, business-specific, and implementation-specific details should primarily live in the project's local `.kora/` binding when an operational repository exists.
+
+## Specification
+
+```text
+docs/projects/kora-project-context-spec-v0.3.md
+```
+
+## Core Rule
+
+```text
+KORA Core defines the architecture.
+Project Context defines the local reality.
+```
+
+## Current Project
 
 ```text
 projects/marcos-dev/
 ```
 
-Each project may define its own identity, audience, positioning, strategy, products, services, operations, decisions, and history.
+## Templates
 
-Do not place general reusable theory here.
-
-
+```text
+projects/templates/project-binding-template.md
+projects/templates/project-context-template.md
+projects/templates/project-registry-entry-template.md
+```

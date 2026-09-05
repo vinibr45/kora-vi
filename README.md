@@ -13,10 +13,10 @@ KORA is private and proprietary by default. It is being designed first for the c
 The current stage is:
 
 ```text
-KORA Knowledge Specification v0.2
+KORA Project Context Specification v0.3
 ```
 
-This stage extends the initial architecture with the v0.2 knowledge model. It defines how reusable knowledge should be stored without implementing retrieval automation yet.
+This stage extends KORA with the v0.3 project context model. It defines how projects connect to KORA through lightweight Core registry entries and local `.kora/` bindings.
 
 ## Repository Map
 
@@ -66,3 +66,9 @@ Current knowledge specification:
 docs/knowledge/kora-knowledge-spec-v0.2.md
 ```
 
+
+Current project context specification:
+
+```text
+docs/projects/kora-project-context-spec-v0.3.md
+```
