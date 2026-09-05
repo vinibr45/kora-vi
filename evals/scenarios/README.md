@@ -11,6 +11,7 @@ These scenarios test whether KORA's initial agents and skills make good architec
 - `EV-0003-project-binding.md`: connect a repository to KORA through a local `.kora/` binding.
 - `EV-0004-software-build.md`: plan capabilities for building an application with technical risk.
 - `EV-0005-learning-promotion.md`: decide whether feedback or an outcome should become memory, knowledge, decision, or capability improvement.
+- `EV-0006-knowledge-placement.md`: decide whether marketing information belongs in KORA Core knowledge or local project context.
 
 ## Manual Pass Criteria
 
@@ -24,3 +25,4 @@ A scenario passes when KORA correctly identifies:
 - execution mode;
 - approval points;
 - eval or learning needs.
+

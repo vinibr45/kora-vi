@@ -13,10 +13,10 @@ KORA is private and proprietary by default. It is being designed first for the c
 The current stage is:
 
 ```text
-KORA Architecture Specification v0.1
+KORA Knowledge Specification v0.2
 ```
 
-This version focuses on architectural clarity. It does not implement real agents, skills, automations, integrations, or runtime orchestration.
+This stage extends the initial architecture with the v0.2 knowledge model. It defines how reusable knowledge should be stored without implementing retrieval automation yet.
 
 ## Repository Map
 
@@ -28,8 +28,8 @@ projects/            Project-specific, business-specific, and implementation-spe
 memory/              Operational memory and learning records
 context/             Context selection and assembly rules
 orchestration/       Coordination model for tasks, agents, skills, and tools
-agents/              Future agent definitions
-skills/              Future reusable procedures
+agents/              KORA Core agent definitions
+skills/              KORA Core skill definitions
 tools/               Future external tool contracts and integrations
 evals/               Future evaluation criteria and mechanisms
 experiments/         Future experiment and learning records
@@ -59,3 +59,10 @@ projects/marcos-dev/
 ```
 
 MarcosOS is treated as a prior personal brain/operating concept. KORA is the cleaner and more modular architecture that may absorb lessons from MarcosOS without becoming a copy of it.
+
+Current knowledge specification:
+
+```text
+docs/knowledge/kora-knowledge-spec-v0.2.md
+```
+

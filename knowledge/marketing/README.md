@@ -1,10 +1,12 @@
 # Marketing
 
-Marketing e o primeiro dominio de conhecimento priorizado pela KORA.
+Marketing is the first domain of reusable knowledge prioritized by KORA.
 
-Este diretorio deve armazenar conhecimento geral reutilizavel sobre marketing, nao contexto especifico do Marcos Dev.
+This directory should store general marketing knowledge, not Marcos Dev-specific strategy.
 
-Possiveis subdominios futuros:
+Marcos Dev-specific marketing context should live in the Marcos Dev local `.kora/` binding.
+
+## Initial Taxonomy
 
 ```text
 positioning/
@@ -19,4 +21,32 @@ research/
 frameworks/
 ```
 
-Nao criar documentos em massa antes de necessidade real.
+These subdomains should be created only when there is useful content to add.
+
+## Boundary Examples
+
+Belongs in KORA Core:
+
+```text
+A reusable framework for structuring offers.
+A checklist for reviewing Instagram bio clarity.
+A playbook for creating weekly content calendars.
+A concept explaining positioning.
+```
+
+Belongs in a project binding:
+
+```text
+Marcos Dev's current offer.
+Marcos Dev's tone of voice.
+Marcos Dev's approved content pillars.
+Marcos Dev's post performance history.
+```
+
+## Specification
+
+See:
+
+```text
+docs/knowledge/kora-knowledge-spec-v0.2.md
+```
