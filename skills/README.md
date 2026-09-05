@@ -24,6 +24,8 @@ In v0.4, these are structured skill contracts, not executable automations.
 - `review-skill.md`: review a skill for clarity, scope, usefulness, boundaries, and specification fit.
 - `create-agent.md`: create or propose a global, local, or hybrid KORA agent.
 - `review-agent.md`: review an agent for clarity, scope, permissions, boundaries, and specification fit.
+- `create-capability.md`: create or propose the right capability by delegating to specialized creation skills.
+- `review-capability-plan.md`: review a capability plan before execution or capability creation.
 
 ## Template
 
@@ -36,6 +38,4 @@ skills/templates/skill-template.md
 ```text
 docs/skills/kora-skills-spec-v0.4.md
 ```
-
-
 
