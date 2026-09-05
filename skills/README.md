@@ -17,4 +17,7 @@ In v0.1, these are architectural definitions, not executable automations.
 - `promote-learning.md`: decide whether an outcome should become memory, knowledge, a decision, or a capability improvement.
 - `create-knowledge-entry.md`: create or propose a reusable knowledge entry from an idea, source, or learning.
 - `review-knowledge-entry.md`: review a knowledge entry for clarity, reuse, evidence, structure, and boundaries.
+- `create-project-context.md`: create or propose local project context files for a KORA-bound project.
+- `review-project-context.md`: review project context for clarity, completeness, freshness, boundaries, and usefulness.
+
 
