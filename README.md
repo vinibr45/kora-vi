@@ -13,10 +13,10 @@ KORA is private and proprietary by default. It is being designed first for the c
 The current stage is:
 
 ```text
-KORA Skills Specification v0.4
+KORA Agents Specification v0.5
 ```
 
-This stage extends KORA with the v0.4 skills model. It defines how reusable procedures are written, scoped, reviewed, and connected to agents, knowledge, tools, evals, and project bindings.
+This stage extends KORA with the v0.5 agents model. It defines how goal-oriented roles are written, scoped, permissioned, reviewed, and connected to skills, knowledge, tools, evals, orchestration, and project bindings.
 
 ## Repository Map
 
@@ -77,4 +77,10 @@ Current skills specification:
 
 ```text
 docs/skills/kora-skills-spec-v0.4.md
+```
+
+Current agents specification:
+
+```text
+docs/agents/kora-agents-spec-v0.5.md
 ```

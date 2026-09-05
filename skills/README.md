@@ -22,6 +22,8 @@ In v0.4, these are structured skill contracts, not executable automations.
 - `setup-kora-project.md`: assisted setup workflow for connecting a project repository to KORA.
 - `create-skill.md`: create or propose a global, local, or hybrid KORA skill.
 - `review-skill.md`: review a skill for clarity, scope, usefulness, boundaries, and specification fit.
+- `create-agent.md`: create or propose a global, local, or hybrid KORA agent.
+- `review-agent.md`: review an agent for clarity, scope, permissions, boundaries, and specification fit.
 
 ## Template
 
@@ -34,5 +36,6 @@ skills/templates/skill-template.md
 ```text
 docs/skills/kora-skills-spec-v0.4.md
 ```
+
 
 
