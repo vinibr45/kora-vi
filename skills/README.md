@@ -15,3 +15,6 @@ In v0.1, these are architectural definitions, not executable automations.
 - `select-context.md`: select relevant context without loading everything.
 - `record-decision.md`: record important architecture or project decisions in a reusable format.
 - `promote-learning.md`: decide whether an outcome should become memory, knowledge, a decision, or a capability improvement.
+- `create-knowledge-entry.md`: create or propose a reusable knowledge entry from an idea, source, or learning.
+- `review-knowledge-entry.md`: review a knowledge entry for clarity, reuse, evidence, structure, and boundaries.
+
