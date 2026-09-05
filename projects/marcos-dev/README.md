@@ -6,10 +6,10 @@ Marcos Dev is the first project/business context registered in KORA Core.
 
 Name: Marcos Dev
 Type: business / digital services / operational website
-Status: registered
+Status: bound
 Operational Repository: C:\marcbmrs.github.io
 Local KORA Binding: C:\marcbmrs.github.io\.kora\
-Context Completeness: level-0 registered
+Context Completeness: level-1 bound
 
 ## Summary
 
@@ -77,3 +77,17 @@ Possible future local files:
 - Define tone of voice.
 - Define content strategy.
 - Create local `.kora/` binding in the operational repository when approved.
+
+## Bootstrap
+
+The local KORA binding was created in the operational repository:
+
+```text
+C:\marcbmrs.github.io\.kora\
+```
+
+See:
+
+```text
+docs/implementation/kora-reference-implementation-bootstrap-v1.0.md
+```

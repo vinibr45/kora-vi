@@ -13,10 +13,10 @@ KORA is private and proprietary by default. It is being designed first for the c
 The current stage is:
 
 ```text
-KORA Tools, Integrations, and Automations Specification v0.9
+KORA Reference Implementation Bootstrap v1.0
 ```
 
-This stage extends KORA with the v0.9 tools, integrations, and automations model. It defines executable capabilities, external connections, repeatable workflows, permissions, approval points, and safety boundaries.
+This stage connects the first real project, Marcos Dev, to KORA through a local `.kora/` binding while keeping KORA Core clean and reusable.
 
 ## Repository Map
 
@@ -109,4 +109,10 @@ Current tools, integrations, and automations specification:
 
 ```text
 docs/tools/kora-tools-integrations-automations-spec-v0.9.md
+```
+
+Current reference implementation bootstrap:
+
+```text
+docs/implementation/kora-reference-implementation-bootstrap-v1.0.md
 ```
