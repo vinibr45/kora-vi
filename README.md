@@ -13,10 +13,10 @@ KORA is private and proprietary by default. It is being designed first for the c
 The current stage is:
 
 ```text
-KORA Orchestration Specification v0.6
+KORA Evals Specification v0.7
 ```
 
-This stage extends KORA with the v0.6 orchestration model. It defines how KORA coordinates tasks, context, agents, skills, tools, evals, approvals, execution modes, and learning.
+This stage extends KORA with the v0.7 evals model. It defines how KORA evaluates quality, correctness, usefulness, safety, boundaries, and architectural fit.
 
 ## Repository Map
 
@@ -89,4 +89,10 @@ Current orchestration specification:
 
 ```text
 docs/orchestration/kora-orchestration-spec-v0.6.md
+```
+
+Current evals specification:
+
+```text
+docs/evals/kora-evals-spec-v0.7.md
 ```

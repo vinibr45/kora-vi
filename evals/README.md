@@ -1,8 +1,34 @@
 # Evals
 
-This directory is reserved for future evaluation criteria and mechanisms.
+This directory contains KORA Core evaluation definitions and manual evaluation scenarios.
 
-Evals may include rubrics, tests, checklists, examples, human review criteria, or automated evaluation workflows.
+Evals assess quality, correctness, usefulness, safety, boundaries, and architectural fit.
 
-No automated evals are implemented in v0.1.
+In v0.7, evals are structured definitions and manual scenarios, not automated runners.
 
+## Specification
+
+```text
+docs/evals/kora-evals-spec-v0.7.md
+```
+
+## Templates
+
+```text
+evals/templates/eval-template.md
+evals/templates/eval-result-template.md
+```
+
+## Scenarios
+
+```text
+evals/scenarios/
+```
+
+## Results
+
+```text
+evals/results/
+```
+
+Store eval results only when they affect future decisions, learning, or quality baselines.
