@@ -39,6 +39,7 @@ In v0.4, these are structured skill contracts, not executable automations.
 - `review-integration.md`: review an integration definition for need, access, permissions, privacy, and fallback strategy.
 - `create-automation.md`: create or propose a repeatable workflow automation definition.
 - `review-automation.md`: review an automation definition for recurrence, value, permissions, safety, and stop conditions.
+- `assess-integration-need.md`: assess whether a task truly needs an external integration or can use a simpler mode.
 
 ## Template
 
