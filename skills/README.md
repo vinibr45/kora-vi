@@ -20,8 +20,8 @@ In v0.4, these are structured skill contracts, not executable automations.
 - `create-project-context.md`: create or propose local project context files for a KORA-bound project.
 - `review-project-context.md`: review project context for clarity, completeness, freshness, boundaries, and usefulness.
 - `setup-kora-project.md`: assisted setup workflow for connecting a project repository to KORA.
-
-
+- `create-skill.md`: create or propose a global, local, or hybrid KORA skill.
+- `review-skill.md`: review a skill for clarity, scope, usefulness, boundaries, and specification fit.
 
 ## Template
 
@@ -34,3 +34,5 @@ skills/templates/skill-template.md
 ```text
 docs/skills/kora-skills-spec-v0.4.md
 ```
+
+
