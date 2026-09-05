@@ -213,3 +213,13 @@ Hybrid: local adaptation of a global template or pattern
 ```
 
 Hybrid capabilities may reference KORA Core but should store project-specific details locally.
+
+## Capability Plan Template
+
+For complex, recurring, risky, ambiguous, or capability-changing tasks, use:
+
+```text
+orchestration/templates/capability-plan-template.md
+```
+
+A capability plan should be created before adding new agents, skills, tools, integrations, automations, evals, memory, or decisions unless the user explicitly requests the change and the scope is already clear.
