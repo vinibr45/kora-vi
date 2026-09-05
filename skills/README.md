@@ -4,7 +4,7 @@ This directory contains KORA Core skill definitions.
 
 A skill is a reusable procedure for performing a task or making a structured decision.
 
-In v0.1, these are architectural definitions, not executable automations.
+In v0.4, these are structured skill contracts, not executable automations.
 
 ## Initial Core Skills
 
@@ -19,5 +19,18 @@ In v0.1, these are architectural definitions, not executable automations.
 - `review-knowledge-entry.md`: review a knowledge entry for clarity, reuse, evidence, structure, and boundaries.
 - `create-project-context.md`: create or propose local project context files for a KORA-bound project.
 - `review-project-context.md`: review project context for clarity, completeness, freshness, boundaries, and usefulness.
+- `setup-kora-project.md`: assisted setup workflow for connecting a project repository to KORA.
 
 
+
+## Template
+
+```text
+skills/templates/skill-template.md
+```
+
+## Specification
+
+```text
+docs/skills/kora-skills-spec-v0.4.md
+```

@@ -13,6 +13,7 @@ These scenarios test whether KORA's initial agents and skills make good architec
 - `EV-0005-learning-promotion.md`: decide whether feedback or an outcome should become memory, knowledge, decision, or capability improvement.
 - `EV-0006-knowledge-placement.md`: decide whether marketing information belongs in KORA Core knowledge or local project context.
 - `EV-0007-project-context-binding.md`: validate lightweight Core registry versus local `.kora/` project binding placement.
+- `EV-0008-skill-creation-and-scope.md`: validate global, local, and hybrid skill placement decisions.
 
 ## Manual Pass Criteria
 
@@ -26,5 +27,6 @@ A scenario passes when KORA correctly identifies:
 - execution mode;
 - approval points;
 - eval or learning needs.
+
 
 
