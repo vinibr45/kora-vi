@@ -40,6 +40,10 @@ Level 3: Initial local context files
 Level 4: AGENTS.md connection instructions
 Level 5: Capability diagnosis
 Level 6: Approved local capabilities
+Level 7: Operational loop for eval results, experiments, memory, decisions, and capability gaps
+Level 8: Tool-supported execution
+Level 9: Integrated execution
+Level 10: Safe automation
 ```
 
 ## Process
@@ -54,6 +58,8 @@ Level 6: Approved local capabilities
 8. Update or propose `AGENTS.md` instructions so Codex knows to consult KORA Core and local `.kora/` context.
 9. Run a capability diagnosis using `create-capability-plan`.
 10. Ask for approval before creating integrations, automations, or project-specific agents/skills.
+11. For Level 7, create the local operational loop structure, templates, and result-recording instructions.
+12. Treat Levels 8 to 10 as advanced phases that require stable workflows, evals, approvals, and explicit user consent.
 
 ## Outputs
 
@@ -64,6 +70,7 @@ Level 6: Approved local capabilities
 - Optional `AGENTS.md` integration instructions.
 - Capability diagnosis.
 - Missing context checklist.
+- Optional operational loop structure for eval results, experiments, memory, decisions, and capability gaps.
 
 ## Required Skills
 

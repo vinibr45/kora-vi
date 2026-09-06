@@ -17,3 +17,8 @@ docs/tools/kora-tools-integrations-automations-spec-v0.9.md
 ```text
 integrations/templates/integration-template.md
 ```
+
+## Core Integration Definitions
+
+- `meta-instagram-platform.md`
+- `google-ads-api.md`

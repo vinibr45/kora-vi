@@ -9,7 +9,7 @@ Type: business / digital services / operational website
 Status: bound
 Operational Repository: C:\marcbmrs.github.io
 Local KORA Binding: C:\marcbmrs.github.io\.kora\
-Context Completeness: level-1 bound
+Context Completeness: level-7 operational persistence active
 
 ## Summary
 
@@ -71,13 +71,27 @@ Possible future local files:
 ## Missing Context
 
 - Confirm the preferred public brand spelling.
-- Define current services and offers.
-- Define target audience.
-- Define positioning.
-- Define tone of voice.
-- Define content strategy.
-- Create local `.kora/` binding in the operational repository when approved.
+- Define current services and offers in more detail.
+- Define target audience with segments and qualification signals.
+- Define positioning and proof points.
+- Define tone of voice with examples.
+- Define content strategy by channel.
+- Continue migrating Marcos Dev-specific operating context from MarcosOS into local KORA records before MarcosOS is discontinued.
 
+
+## Current KORA Status
+
+As of 2026-09-05, Marcos Dev uses KORA local through level 7.
+
+MarcosOS is treated as a legacy/transitional source. Marcos Dev-specific operating context, decisions, social media workflows, and tool references should live primarily in `C:\marcbmrs.github.io\.kora\`.
+
+The Instagram read connector has a KORA-owned private runtime at:
+
+```text
+C:\KORA\runtime\tools\instagram-connector\
+```
+
+Secrets are stored outside public repositories in `C:\KORA\.env`, ignored by Git.
 ## Bootstrap
 
 The local KORA binding was created in the operational repository:
@@ -91,3 +105,4 @@ See:
 ```text
 docs/implementation/kora-reference-implementation-bootstrap-v1.0.md
 ```
+

@@ -23,4 +23,5 @@ tools/templates/tool-template.md
 ```text
 tools/image-generation.md
 ```
-
+- `instagram-read-connector.md`
+- `google-ads-read-connector.md`

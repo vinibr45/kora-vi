@@ -50,3 +50,4 @@ See:
 ```text
 docs/knowledge/kora-knowledge-spec-v0.2.md
 ```
+- `metrics/paid-media-api-read-only-analysis.md`: separates paid media API read-only intelligence from write execution, with Google Ads as a reference implementation.
