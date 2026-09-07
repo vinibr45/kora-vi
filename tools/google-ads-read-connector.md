@@ -4,6 +4,8 @@
 
 Read authorized Google Ads account data and generate local diagnostics/proposals for Marcos Dev review.
 
+This tool may also support future project-local marketing performance analysis through KORA's read-only marketing channel layer.
+
 ## Runtime
 
 ```text
@@ -44,3 +46,12 @@ C:\KORA\integrations\google-ads-api.md
 ## Approval Boundary
 
 This tool may be used for read-only analysis when Marcos has authorized account access. Any execution tool that changes Google Ads must be a separate capability with explicit approval, dry-run evidence, execution log, and rollback plan.
+
+## Related
+
+- `integrations/google-ads-api.md`
+- `agents/marketing-performance-analyst.md`
+- `skills/analyze-marketing-performance.md`
+- `automations/marketing-channel-health-snapshot.md`
+- `evals/scenarios/EV-0016-marketing-channel-integrations.md`
+- `architecture/decisions/DR-0028-marketing-channel-integration-layer.md`

@@ -77,6 +77,7 @@ Media read output should be sanitized and limited to operational fields such as:
 - Marcos Dev local skill: `collect-instagram-post-intelligence`.
 - Marcos Dev local agent: `instagram-content-analyst`, through the collection skill.
 - Future KORA workflows explicitly approved for read-only Instagram analysis.
+- Future KORA marketing performance workflows through `skills/analyze-marketing-performance.md`.
 
 ## Required Permissions
 
@@ -123,3 +124,6 @@ Explicit human approval is required before:
 - Local Marcos Dev tool reference: `C:\marcbmrs.github.io\.kora\tools\instagram-connector.md`
 - Local Marcos Dev skill: `C:\marcbmrs.github.io\.kora\skills\collect-instagram-post-intelligence.md`
 - Local Marcos Dev agent: `C:\marcbmrs.github.io\.kora\agents\instagram-content-analyst.md`
+- KORA marketing analyst: `agents/marketing-performance-analyst.md`
+- KORA marketing analysis skill: `skills/analyze-marketing-performance.md`
+- KORA marketing channel eval: `evals/scenarios/EV-0016-marketing-channel-integrations.md`

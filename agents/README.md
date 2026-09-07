@@ -14,6 +14,9 @@ In v0.5, these are structured agent contracts, not autonomous runtime workers.
 - `context-curator.md`: selects and assembles relevant context for a task.
 - `knowledge-steward.md`: organizes reusable knowledge and protects knowledge boundaries.
 - `kora-guide.md`: explains how to use KORA and routes users to the right workflow.
+- `browser-ux-auditor.md`: reviews web applications page by page through Chrome MCP, with mobile/tablet/desktop evidence and safe browser boundaries.
+- `image-asset-reviewer.md`: evaluates generated image candidates, decides approval/rejection, writes revision briefs, and recommends final asset organization.
+- `marketing-performance-analyst.md`: analyzes authorized marketing channel data across Analytics, Ads, Instagram, and future read-only connectors.
 
 ## Template
 

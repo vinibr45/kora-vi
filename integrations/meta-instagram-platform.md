@@ -24,6 +24,8 @@ Connect KORA-managed workflows to authorized Instagram professional account data
 
 The integration exists to support evidence-based content review, post intelligence, and future Insights import/analysis without giving KORA blanket permission to publish, message, scrape, or modify Instagram.
 
+It is also part of the broader KORA marketing channel integration layer.
+
 ## External System
 
 Meta Instagram Platform API.
@@ -106,5 +108,9 @@ Explicit approval is required before:
 ## Related
 
 - Tool: `tools/instagram-read-connector.md`
+- KORA marketing analyst: `agents/marketing-performance-analyst.md`
+- KORA marketing analysis skill: `skills/analyze-marketing-performance.md`
+- KORA marketing channel automation: `automations/marketing-channel-health-snapshot.md`
+- KORA marketing channel eval: `evals/scenarios/EV-0016-marketing-channel-integrations.md`
 - Marcos Dev local decision: `C:\marcbmrs.github.io\.kora\decisions\DR-0005-kora-independence-from-marcosos.md`
 - Marcos Dev local tool reference: `C:\marcbmrs.github.io\.kora\tools\instagram-connector.md`

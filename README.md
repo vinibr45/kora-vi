@@ -10,13 +10,24 @@ KORA is private and proprietary by default. It is being designed first for the c
 
 ## Current Version
 
+The current version is:
+
+```text
+1.7.0
+```
+
 The current stage is:
 
 ```text
-KORA Reference Implementation Bootstrap v1.0
+Marketing Channel Integration Layer
 ```
 
-This stage connects the first real project, Marcos Dev, to KORA through a local `.kora/` binding while keeping KORA Core clean and reusable.
+Version details are maintained in:
+
+```text
+VERSION.md
+CHANGELOG.md
+```
 
 ## Repository Map
 
@@ -33,12 +44,97 @@ skills/              KORA Core skill definitions
 tools/               KORA Core tool definitions
 integrations/        KORA Core external integration definitions
 automations/         KORA Core automation definitions
-evals/               Future evaluation criteria and mechanisms
+evals/               Evaluation definitions, scenarios, and results
 experiments/         Future experiment and learning records
 config/              Future implementation configuration
 ```
 
 ## Start Here
+
+For practical day-to-day use, start with:
+
+```text
+COMECE-AQUI.md
+```
+
+For a capability index, see:
+
+```text
+CAPACIDADES.md
+```
+
+For keeping indexes and entry points current, see:
+
+```text
+skills/maintain-kora-indexes.md
+automations/kora-index-maintenance.md
+```
+
+For a KORA health check, use:
+
+```text
+skills/check-kora-health.md
+evals/scenarios/EV-0014-kora-health-check.md
+```
+
+For version impact and releases, use:
+
+```text
+skills/assess-kora-version-impact.md
+skills/release-kora-version.md
+VERSION.md
+CHANGELOG.md
+```
+
+For maturity and governance, see:
+
+```text
+MATURIDADE.md
+GOVERNANCA.md
+```
+
+For using KORA inside connected project repositories, see:
+
+```text
+projects/INSTALLED-KORA.md
+skills/use-installed-kora.md
+skills/check-installed-kora.md
+skills/register-installed-kora-project.md
+projects/PROJECT-FLOW.md
+projects/templates/local-agents-template.md
+projects/templates/local-kora-readme-template.md
+```
+
+For realistic usage examples, see:
+
+```text
+examples/
+```
+
+For reviewed image generation workflows, see:
+
+```text
+skills/generate-reviewed-image-asset.md
+agents/image-asset-reviewer.md
+integrations/image-generation-provider.md
+automations/reviewed-image-generation-loop.md
+```
+
+For marketing channel integrations, see:
+
+```text
+skills/analyze-marketing-performance.md
+agents/marketing-performance-analyst.md
+integrations/google-analytics-data-api.md
+tools/google-analytics-read-connector.md
+automations/marketing-channel-health-snapshot.md
+```
+
+For agent-facing repository instructions, see:
+
+```text
+AGENTS.md
+```
 
 Read the initial specification:
 

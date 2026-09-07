@@ -15,6 +15,8 @@ Type:
 Status:
 Repository Path:
 KORA Core Path: C:\KORA
+Local KORA README:
+Local AGENTS.md:
 Context Completeness: level-0 | level-1 | level-2 | level-3 | level-4
 
 ## Purpose
@@ -55,6 +57,20 @@ Examples:
 ## Uses From KORA Core
 
 Reusable architecture, knowledge, agents, skills, tools, evals, or templates used from KORA Core.
+
+## Installed KORA Behavior
+
+How the agent should use KORA when this project repository is open.
+
+Expected defaults:
+
+```text
+read .kora/binding.md first
+use local context for project reality
+use KORA Core for reusable methods
+keep project details local
+ask before external actions or Core changes
+```
 
 ## Local Context Files
 

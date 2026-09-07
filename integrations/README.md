@@ -22,3 +22,6 @@ integrations/templates/integration-template.md
 
 - `meta-instagram-platform.md`
 - `google-ads-api.md`
+- `chrome-mcp-browser-control.md`
+- `image-generation-provider.md`
+- `google-analytics-data-api.md`

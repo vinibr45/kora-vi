@@ -83,6 +83,8 @@ Possible future local files:
 
 As of 2026-09-05, Marcos Dev uses KORA local through level 7.
 
+As of 2026-09-07, Marcos Dev is registered in `projects/INSTALLED-KORA.md` and aligned with KORA Core 1.4.0 installed-project usage.
+
 MarcosOS is treated as a legacy/transitional source. Marcos Dev-specific operating context, decisions, social media workflows, and tool references should live primarily in `C:\marcbmrs.github.io\.kora\`.
 
 The Instagram read connector has a KORA-owned private runtime at:

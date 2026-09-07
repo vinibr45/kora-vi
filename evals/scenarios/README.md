@@ -1,6 +1,6 @@
 # Manual Evaluation Scenarios
 
-This directory contains manual evaluation scenarios for KORA v0.1.
+This directory contains manual evaluation scenarios for KORA Core.
 
 These scenarios test whether KORA's initial agents and skills make good architectural decisions before executable automation exists.
 
@@ -19,6 +19,9 @@ These scenarios test whether KORA's initial agents and skills make good architec
 - `EV-0011-eval-creation-and-result-handling.md`: validate eval creation, execution, result storage, and learning boundaries.
 - `EV-0012-experiment-learning-promotion.md`: validate experiment design, result interpretation, learning records, and controlled promotion.
 - `EV-0013-tool-integration-automation-decision.md`: validate separation of tools, integrations, automations, approvals, and fallbacks.
+- `EV-0014-kora-health-check.md`: validate that "checar a saude" audits KORA Core entry points, indexes, examples, boundaries, and maintenance behavior.
+- `EV-0015-reviewed-image-generation-loop.md`: validate reviewed image generation with provider approval checks, revision loop, and organized outputs.
+- `EV-0016-marketing-channel-integrations.md`: validate read-only marketing channel analysis across Analytics, Ads, Instagram, and future connectors.
 
 ## Manual Pass Criteria
 

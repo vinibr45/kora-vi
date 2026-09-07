@@ -40,8 +40,10 @@ Retail Data Platform owns its local architecture details, data contracts, Firebi
 
 ```text
 status: initialized
-context_completeness: level-1
+context_completeness: level-7
+installed_kora_version: 1.4.0
 created_at: 2026-09-05
+updated_at: 2026-09-07
 ```
 
 ## Useful Starting Context

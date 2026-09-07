@@ -10,9 +10,11 @@ allowed_callers:
 related_agents: []
 related_skills:
   - generate-image-asset
-related_evals: []
+  - generate-reviewed-image-asset
+related_evals:
+  - EV-0015-reviewed-image-generation-loop
 created_at: 2026-09-05
-updated_at: 2026-09-05
+updated_at: 2026-09-07
 ---
 
 # image-generation
@@ -47,6 +49,7 @@ Project-specific prompts, brand rules, assets, and outputs should live in the lo
 ## Allowed Callers
 
 - `skills/generate-image-asset.md`
+- `skills/generate-reviewed-image-asset.md`
 - Future approved design, marketing, content, or web asset skills.
 
 ## Required Permissions
@@ -77,6 +80,7 @@ Fallbacks:
 
 ```text
 revise prompt
+run reviewed generation loop
 create image brief only
 use existing project assets
 use design tool manually
@@ -97,5 +101,10 @@ Ask before:
 ## Related
 
 - `skills/generate-image-asset.md`
+- `skills/generate-reviewed-image-asset.md`
+- `agents/image-asset-reviewer.md`
+- `integrations/image-generation-provider.md`
+- `automations/reviewed-image-generation-loop.md`
+- `evals/scenarios/EV-0015-reviewed-image-generation-loop.md`
 - `docs/tools/kora-tools-integrations-automations-spec-v0.9.md`
 - `tools/templates/tool-template.md`

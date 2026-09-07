@@ -25,3 +25,6 @@ tools/image-generation.md
 ```
 - `instagram-read-connector.md`
 - `google-ads-read-connector.md`
+- `google-analytics-read-connector.md`
+
+`tools/image-generation.md` supports both one-shot image generation and the reviewed image generation loop through `skills/generate-reviewed-image-asset.md`.

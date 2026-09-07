@@ -55,19 +55,22 @@ Level 10: Safe automation
 5. Create or propose local `.kora/binding.md` using the project binding template.
 6. Create only useful local folders or files for the requested setup level.
 7. Create or propose a local decision record for the KORA binding.
-8. Update or propose `AGENTS.md` instructions so Codex knows to consult KORA Core and local `.kora/` context.
-9. Run a capability diagnosis using `create-capability-plan`.
-10. Ask for approval before creating integrations, automations, or project-specific agents/skills.
-11. For Level 7, create the local operational loop structure, templates, and result-recording instructions.
-12. Treat Levels 8 to 10 as advanced phases that require stable workflows, evals, approvals, and explicit user consent.
+8. Create or update local `AGENTS.md` instructions using `projects/templates/local-agents-template.md` so Codex knows to consult KORA Core and local `.kora/` context.
+9. Register or update the installation in `projects/INSTALLED-KORA.md` using `register-installed-kora-project`.
+10. Run a capability diagnosis using `create-capability-plan`.
+11. Ask for approval before creating integrations, automations, or project-specific agents/skills.
+12. For Level 7, create the local operational loop structure, templates, and result-recording instructions.
+13. Treat Levels 8 to 10 as advanced phases that require stable workflows, evals, approvals, and explicit user consent.
 
 ## Outputs
 
 - KORA Core project registry entry.
+- Installed project registry entry in `projects/INSTALLED-KORA.md`.
 - Local `.kora/binding.md`.
 - Optional local context files.
 - Optional local decision record.
 - Optional `AGENTS.md` integration instructions.
+- Optional local `.kora/README.md`.
 - Capability diagnosis.
 - Missing context checklist.
 - Optional operational loop structure for eval results, experiments, memory, decisions, and capability gaps.
@@ -81,6 +84,9 @@ Level 10: Safe automation
 - `review-project-context`
 - `create-capability-plan`
 - `record-decision`
+- `register-installed-kora-project`
+- `use-installed-kora`
+- `check-installed-kora`
 
 ## Required Knowledge
 

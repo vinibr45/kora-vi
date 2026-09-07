@@ -17,3 +17,10 @@ docs/tools/kora-tools-integrations-automations-spec-v0.9.md
 ```text
 automations/templates/automation-template.md
 ```
+
+## Core Automation Definitions
+
+- `claude-design-file-generation.md`: generate design files with Claude after approved visual workflow setup.
+- `kora-index-maintenance.md`: keep KORA indexes, entry points, examples, and project flow documentation aligned with repository changes.
+- `reviewed-image-generation-loop.md`: generate, review, revise, and organize image assets through an approved provider workflow.
+- `marketing-channel-health-snapshot.md`: read authorized marketing channels and summarize health, opportunities, risks, and data quality.

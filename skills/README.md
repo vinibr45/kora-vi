@@ -8,6 +8,18 @@ In v0.4, these are structured skill contracts, not executable automations.
 
 ## Initial Core Skills
 
+- `route-user-request.md`: route natural-language user requests to the smallest useful KORA workflow.
+- `check-kora-health.md`: audit KORA Core entry points, indexes, examples, project boundaries, and maintenance behavior.
+- `maintain-kora-indexes.md`: keep KORA entry points, indexes, examples, and project guides aligned with repository changes.
+- `assess-kora-version-impact.md`: decide whether durable KORA changes deserve no version, patch, minor, or major versioning.
+- `release-kora-version.md`: update `VERSION.md` and `CHANGELOG.md` after a version-worthy KORA change.
+- `run-daily-operating-loop.md`: run a simple daily operating loop with KORA.
+- `capture-loose-idea.md`: capture an informal idea and decide what it should become in KORA.
+- `detect-capability-gap.md`: detect missing KORA capabilities when work feels repetitive, unclear, risky, or improvised.
+- `check-approval-needed.md`: decide whether an action needs explicit human approval before proceeding.
+- `use-installed-kora.md`: use KORA from inside an operational repository that already has a local `.kora/` binding.
+- `check-installed-kora.md`: check whether an operational repository is correctly connected to KORA.
+- `register-installed-kora-project.md`: register or update a project repository in KORA Core's installed-project registry.
 - `classify-task.md`: classify task domain, project, risk, recurrence, and needed capability types.
 - `classify-scope.md`: decide whether something belongs in KORA Core, a local `.kora` binding, or the operational project repository.
 - `create-capability-plan.md`: produce a structured plan before using or creating agents, skills, tools, evals, integrations, or automations.
@@ -45,6 +57,8 @@ In v0.4, these are structured skill contracts, not executable automations.
 - `assess-integration-need.md`: assess whether a task truly needs an external integration or can use a simpler mode.
 - `use-kora.md`: guide a user through the practical use of KORA for a task or project.
 - `generate-image-asset.md`: generate or propose image assets using an approved image generation tool.
+- `generate-reviewed-image-asset.md`: generate image candidates, review them, request revisions when needed, and organize approved outputs.
+- `analyze-marketing-performance.md`: analyze authorized marketing channel data from Google Analytics, Google Ads, Instagram, and future connectors.
 - `create-commercial-proposal.md`: create a buyer-friendly commercial proposal from sales, offer, scope, timeline, and next-step context.
 - `diagnose-business-workflow.md`: diagnose recurring business workflows and identify bottlenecks, ownership gaps, and automation readiness.
 - `select-ai-use-case.md`: decide whether a business task is a good candidate for AI assistance, skill creation, tooling, automation, or agent support.
@@ -52,6 +66,7 @@ In v0.4, these are structured skill contracts, not executable automations.
 - `review-service-response.md`: review or draft customer service responses for empathy, clarity, ownership, and next action.
 - `create-product-discovery-brief.md`: create a product discovery brief before building features, products, dashboards, workflows, or AI assistants.
 - `create-cash-flow-snapshot.md`: create a simple business cash flow snapshot for management decision support.
+- `audit-ux-with-chrome-mcp.md`: inspect web app pages and flows through Chrome MCP with screenshots, DOM evidence and responsive viewport checks.
 
 ## Template
 

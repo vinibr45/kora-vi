@@ -4,6 +4,8 @@
 
 Connect KORA-approved tools to Google Ads account data for campaign performance analysis and optimization proposals.
 
+This integration is part of the broader KORA marketing channel integration layer.
+
 ## Official Documentation Checked
 
 - Google Ads API onboarding: https://developers.google.com/google-ads/api/docs/get-started/onboarding
@@ -33,3 +35,12 @@ External changes use `:mutate` endpoints with create, update, or remove operatio
 - Never call `:mutate` from a reader/proposal tool.
 - Do not store developer tokens, customer IDs, private keys, refresh tokens, exported reports, or raw account data in public project repositories.
 - Treat API version, authentication requirements, permissions, policy rules, and platform limits as current-information topics that must be checked against official documentation before changing integration behavior.
+
+## Related
+
+- `tools/google-ads-read-connector.md`
+- `agents/marketing-performance-analyst.md`
+- `skills/analyze-marketing-performance.md`
+- `automations/marketing-channel-health-snapshot.md`
+- `evals/scenarios/EV-0016-marketing-channel-integrations.md`
+- `architecture/decisions/DR-0028-marketing-channel-integration-layer.md`

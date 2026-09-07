@@ -32,3 +32,12 @@ evals/results/
 ```
 
 Store eval results only when they affect future decisions, learning, or quality baselines.
+
+## Core Evaluation Definitions
+
+- `browser-page-ux-readiness.md`: rubric for page and flow readiness after browser-based UX inspection across mobile, tablet and desktop.
+
+## Manual Scenarios
+
+- `scenarios/EV-0015-reviewed-image-generation-loop.md`: validates reviewed image generation, revision loops, approval checks, and organized project outputs.
+- `scenarios/EV-0016-marketing-channel-integrations.md`: validates read-only marketing channel analysis, account boundaries, approval checks, and project-local storage.
