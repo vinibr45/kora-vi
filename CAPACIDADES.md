@@ -20,6 +20,8 @@ Checar instalacao KORA -> skills/check-installed-kora.md
 Registrar instalacao KORA -> skills/register-installed-kora-project.md
 Gerar imagem revisada -> skills/generate-reviewed-image-asset.md
 Analisar canais de marketing -> skills/analyze-marketing-performance.md
+Criar pacote de wiki e videos -> skills/create-client-onboarding-wiki-package.md
+Criar wiki de mudancas de versao -> skills/create-version-change-wiki.md
 Duvida sobre uso -> skills/use-kora.md
 Tarefa complexa -> skills/classify-task.md
 Duvida de local correto -> skills/classify-scope.md
@@ -170,6 +172,8 @@ Use quando a qualidade, risco ou aprendizado de uma capacidade precisa ser testa
 
 ```text
 skills/create-commercial-proposal.md
+skills/create-client-onboarding-wiki-package.md
+skills/create-version-change-wiki.md
 skills/create-sales-follow-up.md
 skills/review-service-response.md
 skills/diagnose-business-workflow.md
@@ -178,7 +182,7 @@ skills/create-product-discovery-brief.md
 skills/create-cash-flow-snapshot.md
 ```
 
-Use para trabalho pratico de vendas, atendimento, operacoes, produto, IA aplicada e gestao.
+Use para trabalho pratico de vendas, atendimento, operacoes, produto, documentacao de onboarding, wikis de mudancas de versao, IA aplicada e gestao.
 
 ## Skills De Criacao Visual
 
@@ -290,4 +294,6 @@ Se a instalacao local parece incerta -> check-installed-kora.
 Se instalou KORA em um repo -> register-installed-kora-project.
 Se quer gerar imagem e so aceitar quando passar na avaliacao -> generate-reviewed-image-asset.
 Se quer analisar Analytics, Ads, Instagram ou canais de marketing -> analyze-marketing-performance.
+Se quer criar wiki, tutorial ou videos por tela para onboarding de clientes -> create-client-onboarding-wiki-package.
+Se quer criar wiki de principais mudancas de versao para cliente ou tecnico -> create-version-change-wiki.
 ```

@@ -1,0 +1,179 @@
+$('#searchBoxText').on('keyup', function(){
+
+  var text = $(this).val().toUpperCase().trim();
+  if(text){
+    // Select all divs with class appDivContent
+    $('.appDivContent').show();
+    $('.appDivContent').each(function(){
+      // Check if the title-app attribute doesn't contain "appTest"
+      if (!$(this).attr('title-app') || $(this).attr('title-app').toUpperCase().trim().indexOf(text) === -1) {
+        // Hide the div if condition is met
+        $(this).hide();
+      }
+    });
+  } else {
+    $('.appDivContent').show();
+  }
+
+});
+
+$('.checkDownloadApp').on('change', function(){
+  var qtdCheck = 0;
+  var strCheckdItens = [];
+  $(".checkDownloadApp").each(function() {
+    if ($(this).prop("checked")) {
+      qtdCheck++;
+      strCheckdItens.push($(this).attr('title-app'));
+    }
+
+  });
+  if(qtdCheck > 0){
+    $('#downloadFileList').html('Selecionados para download: '  + strCheckdItens.join(','))
+  } else {
+    $('#downloadFileList').html('');
+  }
+});
+
+$('#uncheckAllApps').click(function(){
+  $(".checkDownloadApp").each(function() {
+    $(this).attr("checked", false);
+  });
+    $('#downloadFileList').html('');
+});
+
+
+$('#processandoDownload').html(setaLoadingModal() + '<hr><h3 class="text-center">Processando seu download.. Aguarde.</h3><div class="p-4 text-center h5" id="progressDownload"></div>');
+$('#processandoDownload').hide();
+
+// Extract filename from URL
+function getFilenameFromUrl(url) {
+
+    url = decodeURIComponent(url);
+    const match = url.match(/filename=([^&]+)/i);
+    if (match && match[1]) {
+        return decodeURIComponent(match[1].replace(/\+/g, ' ')).replaceAll('"','');
+    }
+    return null;
+}
+
+// Extract folder from URL
+function getFileFolderFromUrl(url) {
+
+    url = decodeURIComponent(url);
+    const match = url.match(/folder=([^&]+)/i);
+    if (match && match[1]) {
+        return decodeURIComponent(match[1].replace(/\+/g, ' ')).replaceAll('"','');
+    }
+    return null;
+}
+
+async function fetchAndAddFileToZip(zip, url) {
+  try {
+
+
+
+    const response = await axios.get(url, { responseType: 'arraybuffer' });
+    const fileName = getFilenameFromUrl(url).split(";")[0];
+    const fileFolder = getFileFolderFromUrl(url);
+
+    zip.file(fileFolder + "/" + fileName, response.data);
+  } catch (error) {
+    aviso(`Error fetching file from ${url}:` + error, 3);
+    throw new Error(`Error fetching file from ${url}:`, error);
+  }
+
+}
+
+function selectFilesAtualizacaoBeta(){
+
+  $('#uncheckAllApps').click();
+  $(".checkDownloadApp").each(function() {
+    var baixaAtualizacaoBeta = $(this).attr("object-baixa-atualizacao-beta");
+    if(baixaAtualizacaoBeta == '1'){
+          $(this).prop("checked", true);
+          $(this).change();
+    }
+  });
+
+}
+
+async function createAndDownloadZip(s3Urls) {
+
+  try {
+
+    var qtdUrls = s3Urls.length;
+    var x = 1;
+
+    const zip = new JSZip();
+
+    for (const url of s3Urls) {
+
+      $('#progressDownload').html('Processando ' + x + ' de ' + qtdUrls + ' arquivos..');
+
+      const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error signedUrl! status: ${response.status}`);
+                }
+                const signedUrl = await response.text(); // or response.text() or response.blob() depending on the content type
+
+      await fetchAndAddFileToZip(zip, signedUrl);
+      x++;
+
+    }
+
+    const zipBlob = await zip.generateAsync({ type: 'blob' });
+
+    const zipFileName = 'downloaded_files.zip';
+    const link = document.createElement('a');
+    link.href = window.URL.createObjectURL(zipBlob);
+    link.download = zipFileName;
+    link.click();
+
+  } catch (e) {
+    aviso("Houve um erro na sua solicitação: \n\n" + e, 3);
+    throw new Error(e);
+  } finally {
+
+  }
+
+}
+
+// Event listener for the download button
+$("#downloadCheckedApps").click(async function() {
+  var objectsDownload = [];
+  // Iterate over each checkbox with class checkDownloadApp
+  $(".checkDownloadApp").each(function() {
+    // Check if the checkbox is checked
+    if ($(this).prop("checked")) {
+      // Retrieve the object-key attribute value
+      var objectKey = $(this).attr("object-key");
+      var objectFolder = $(this).attr("object-folder");
+      if(objectKey){
+        objectsDownload.push('appsWeberBetaDownloadVersao.php?printSignedUrlOnly=1&app=' + objectKey + "&folder=" + objectFolder);
+      }
+    }
+  });
+  if(objectsDownload.length > 0){
+
+    try {
+
+      $('#divUltimasVersoesListagem').hide();
+      $('#processandoDownload').show();
+      $('#progressDownload').html('');
+
+      await createAndDownloadZip(objectsDownload);
+
+      $('#uncheckAllApps').click();
+
+    } catch (e) {
+      aviso("Houve um erro na sua solicitação: \n\n" + e, 3);
+    } finally {
+      $('#divUltimasVersoesListagem').show();
+      $('#processandoDownload').hide();
+
+    }
+
+  } else {
+    aviso("Nenhum aplicativo selecionado para download", 3);
+  }
+});

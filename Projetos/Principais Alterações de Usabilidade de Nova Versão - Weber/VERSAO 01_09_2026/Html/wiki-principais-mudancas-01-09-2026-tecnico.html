@@ -1,0 +1,222 @@
+<h2><span style="color:hsl(210, 75%, 60%);">Principais Mudanças - Versão 01.09.2026</span></h2>
+
+<p>Material de apoio para o técnico conduzir a explicação em linha com o cliente. O objetivo é ajudar no atendimento, mantendo uma linguagem simples, mas com os cuidados necessários para orientar corretamente.</p>
+
+<h2>ÍNDICE</h2>
+
+<ol>
+  <li>
+    <strong>Alterações no Cadastro de Produtos - Weber Tributário</strong><br>
+    1.1 O que mudou<br>
+    1.2 Como liberar a edição dos campos<br>
+    1.3 Cuidados após alterações manuais<br>
+    1.4 Descrição do produto e análise fiscal<br>
+    1.5 Roteiro de atendimento
+  </li>
+  <li>
+    <strong>Nova Opção para Entrada de Notas</strong><br>
+    2.1 O que mudou<br>
+    2.2 O que o Recebe Fácil ajuda a fazer<br>
+    2.3 Requisito para utilização<br>
+    2.4 Roteiro de atendimento
+  </li>
+  <li>
+    <strong>Novas Notificações no Retaguarda</strong><br>
+    3.1 O que mudou<br>
+    3.2 Produtos sem Ajuste Tributário<br>
+    3.3 Produtos Rejeitados pelo Ajuste Weber Tributário<br>
+    3.4 Carga PDV Desatualizada<br>
+    3.5 Configuração e leitura das notificações<br>
+    3.6 Roteiro de atendimento
+  </li>
+</ol>
+
+<h2>1. Alterações no Cadastro de Produtos - Weber Tributário</h2>
+
+<h3>1.1 O que mudou</h3>
+
+<p>Nesta versão, houve uma alteração no comportamento dos campos tributários e de descrição no <strong>Cadastro de Produtos</strong>.</p>
+
+<p>Quando o produto estiver com a flag <strong>"Habilita Weber Tributário"</strong> ativada, alguns campos permanecerão bloqueados para edição manual e serão destacados em verde.</p>
+
+<p>Os campos afetados são:</p>
+
+<ul>
+  <li><strong>Descrição do produto</strong>;</li>
+  <li><strong>NCM</strong>;</li>
+  <li><strong>CEST</strong>;</li>
+  <li><strong>Aba ICMS</strong>;</li>
+  <li><strong>Aba PIS/COFINS</strong>.</li>
+</ul>
+
+<p>O objetivo é manter os dados fiscais do produto vinculados ao processo de saneamento fiscal.</p>
+
+<p><img src="../Imagens/weber tributario 1.png" alt="Campos protegidos com Weber Tributário habilitado"></p>
+
+<h3>1.2 Como liberar a edição dos campos</h3>
+
+<p>Caso seja necessário alterar a descrição do produto ou alguma informação fiscal, é preciso desabilitar a sincronização do produto com o Weber Tributário.</p>
+
+<p>O caminho deve ser conduzido no <strong>Cadastro de Produtos</strong>, localizando a flag <strong>"Habilita Weber Tributário"</strong> e desmarcando a opção.</p>
+
+<p><img src="../Imagens/weber tributario 2.png" alt="Flag Habilita Weber Tributário no Cadastro de Produtos"></p>
+
+<p>Ao desmarcar, o sistema apresentará uma mensagem de confirmação informando que o produto deixará de receber sincronização dos ajustes fiscais.</p>
+
+<p><img src="../Imagens/weber tributario 3.png" alt="Mensagem de confirmação ao desabilitar Weber Tributário"></p>
+
+<p>Depois da confirmação, os campos anteriormente bloqueados ficarão disponíveis para edição.</p>
+
+<p><img src="../Imagens/weber tributario 4.png" alt="Campos liberados para edição manual"></p>
+
+<h3>1.3 ⚠️ Cuidados após alterações manuais</h3>
+
+<p>Se o cliente desabilitar o Weber Tributário e realizar alterações manuais, não deve habilitar novamente a flag se a intenção for manter essas alterações.</p>
+
+<p>Ao habilitar novamente:</p>
+
+<ul>
+  <li>os campos voltarão a ficar bloqueados para edição;</li>
+  <li>o produto voltará a participar da sincronização dos ajustes fiscais;</li>
+  <li>em um próximo ciclo, o sistema poderá atualizar as informações tributárias conforme os dados disponibilizados pela iMendes.</li>
+</ul>
+
+<h3>1.4 Descrição do produto e análise fiscal</h3>
+
+<p>O produto não é analisado novamente pela iMendes depois que já foi sincronizado.</p>
+
+<p>Por isso, é importante que o cadastro tenha informações completas e corretas desde o início, principalmente <strong>código de barras</strong> e <strong>descrição adequada do produto</strong>.</p>
+
+<p>A descrição ajuda a identificar qual é o item cadastrado e influencia diretamente no tratamento fiscal aplicado ao produto.</p>
+
+<p>Exemplo de descrição fraca:</p>
+
+<blockquote>
+  <p><strong>Bolinha</strong></p>
+</blockquote>
+
+<p>Descrição mais adequada:</p>
+
+<blockquote>
+  <p><strong>Carne bovina moída - formato bolinha</strong></p>
+</blockquote>
+
+<p>Também é importante evitar abreviações, apelidos internos e descrições genéricas como "Mistura" ou "Produto diversos".</p>
+
+<h3>1.5 Roteiro de atendimento</h3>
+
+<p>Explique ao cliente que o bloqueio dos campos não é erro do sistema. Ele existe para proteger informações vinculadas ao saneamento fiscal.</p>
+
+<p>Se o cliente precisar alterar manualmente descrição, NCM, CEST, ICMS ou PIS/COFINS, oriente que primeiro será necessário desabilitar a flag <strong>"Habilita Weber Tributário"</strong>.</p>
+
+<p>⚠️ Reforce que, ao desabilitar essa flag, o produto deixa de receber o saneamento fiscal automático. Essa ação deve ser feita somente quando o cliente tiver certeza de que deseja manter as alterações manuais e assumir a conferência fiscal dessas informações.</p>
+
+<p>Explique de forma simples que uma das maiores razões para proteger a descrição é evitar a reutilização de códigos internos.</p>
+
+<p>Use este exemplo em linha: se a loja cadastrou um produto sem GTIN com o código interno <strong>179</strong> e a descrição <strong>Maçã Argentina</strong>, essa combinação é enviada para análise fiscal. Depois disso, o código 179 passa a ser reconhecido como aquele produto.</p>
+
+<p>Se alguém alterar a descrição do mesmo cadastro para <strong>Milho Verde</strong>, o sistema pode continuar tratando o código 179 como o produto anterior, porque a associação fiscal já foi feita com a descrição original.</p>
+
+<p>Oriente que, quando for outro produto, o mais seguro é criar um novo cadastro em vez de reaproveitar um código já sincronizado.</p>
+
+<p>Finalize orientando que, antes de alterar manualmente um produto já sincronizado, o cliente avalie o impacto fiscal da mudança. Em caso de dúvida, o ideal é validar a informação com o suporte ou com o responsável fiscal da empresa.</p>
+
+<h2>2. Nova Opção para Entrada de Notas</h2>
+
+<h3>2.1 O que mudou</h3>
+
+<p>Depois da atualização, o menu <strong>Estoque</strong> recebeu uma nova opção para acessar a <strong>Entrada de Notas Recebe Fácil</strong>.</p>
+
+<p>A ferramenta tem como diferencial a possibilidade de realizar entradas de forma automática, além de possuir dashboards para acompanhamento de novas entradas e auditoria para produtos novos cadastrados.</p>
+
+<p>O objetivo é facilitar a conferência, reduzir digitação manual e organizar melhor as pendências relacionadas às notas recebidas.</p>
+
+<p><img src="../Gifs/Menu Entada de Notas Recebe Facil.gif" alt="Menu Estoque com a opção Entrada de Notas Recebe Fácil"></p>
+
+<h3>2.2 O que o Recebe Fácil ajuda a fazer</h3>
+
+<ul>
+  <li>acompanhar notas disponíveis para entrada;</li>
+  <li>criar notas manuais para controle interno;</li>
+  <li>realizar entradas automáticas ou assistidas, conforme a configuração da empresa;</li>
+  <li>auditar notas lançadas, produtos e fornecedores;</li>
+  <li>acompanhar indicadores e pendências pelo dashboard.</li>
+</ul>
+
+<p><img src="../Imagens/DashBoard Entrada de notas Recebe Facil.png" alt="Dashboard da Entrada de Notas Recebe Fácil"></p>
+
+<h3>2.3 ⚠️ Requisito para utilização</h3>
+
+<p>Antes de orientar o cliente a utilizar a Entrada de Notas Recebe Fácil, confirme se o ambiente atende ao requisito obrigatório:</p>
+
+<ul>
+  <li><strong>Financeiro Novo</strong>, também chamado de <strong>Gestão Financeira</strong>, ativo.</li>
+</ul>
+
+<p>O funcionamento adequado também depende de permissões, parametrizações, configurações financeiras e fiscais, além de produtos, fornecedores, associações e conversões corretamente preparados.</p>
+
+<h3>2.4 Roteiro de atendimento</h3>
+
+<p>Explique que a Entrada de Notas Recebe Fácil é uma nova opção no menu Estoque para acessar o processo de entrada de notas de forma mais centralizada.</p>
+
+<p>Mostre que a ferramenta reúne as notas recebidas em um único local e ajuda o usuário a conferir, tratar pendências e concluir a entrada com mais organização.</p>
+
+<p>Quando a loja já possui produtos, fornecedores, configurações financeiras e regras fiscais corretamente preparadas, o processo pode ser mais automático. Quando houver pendência, o fluxo auxilia o usuário a revisar e complementar as informações necessárias.</p>
+
+<p>Reforce que o módulo depende do <strong>Financeiro Novo/Gestão Financeira</strong>. Caso esse requisito não esteja ativo, o ambiente precisa ser ajustado antes da utilização.</p>
+
+<h2>3. Novas Notificações no Retaguarda</h2>
+
+<h3>3.1 O que mudou</h3>
+
+<p>Nesta versão, o Retaguarda recebeu novas notificações para avisar o usuário quando existirem informações que precisam de atenção.</p>
+
+<p>Quando uma dessas situações for identificada, a notificação será exibida no Retaguarda e o sistema também emitirá um som de aviso.</p>
+
+<p>(INSERIR AQUI PRINT OU GIF MOSTRANDO A NOTIFICAÇÃO APARECENDO NO RETAGUARDA)</p>
+
+<h3>3.2 Produtos sem Ajuste Tributário</h3>
+
+<p>Essa notificação indica que existem produtos que ainda não foram sincronizados com o Weber Tributário.</p>
+
+<p>O Weber Tributário auxilia na sincronização dos dados fiscais dos produtos, utilizando informações como NCM ou descrição do produto.</p>
+
+<p>Quando aparecer, oriente que existem produtos pendentes de sincronização fiscal.</p>
+
+<h3>3.3 Produtos Rejeitados pelo Ajuste Weber Tributário</h3>
+
+<p>Essa notificação indica que alguns produtos foram rejeitados durante o processo de ajuste tributário.</p>
+
+<p>Isso pode ocorrer quando a descrição do produto não está clara o suficiente para identificar corretamente o item e buscar os dados fiscais na iMendes.</p>
+
+<p>Nessa situação, conduza a revisão dos produtos indicados, principalmente em relação à descrição cadastrada.</p>
+
+<h3>3.4 Carga PDV Desatualizada</h3>
+
+<p>Essa notificação indica que foi realizada alguma alteração no Retaguarda, como em <strong>produto</strong>, <strong>promoção</strong> ou <strong>cliente</strong>, e que ainda não foi executado o <strong>Comunica PDV</strong> após essa alteração.</p>
+
+<p>Ela lembra que essas informações precisam ser enviadas para os caixas, para que os PDVs recebam as atualizações feitas no Retaguarda.</p>
+
+<h3>3.5 ⚙️ Configuração e leitura das notificações</h3>
+
+<p>As notificações podem ser conferidas e configuradas no Retaguarda, na área de notificações.</p>
+
+<p>Essa configuração define quais avisos serão apresentados ao usuário quando houver informações pendentes para exibição.</p>
+
+<p><img src="../Gifs/Configuração Notificação Retaguarda.gif" alt="Configuração das notificações no Retaguarda"></p>
+
+<p>⚠️ Antes de tratar a notificação como erro, verifique se a configuração está correta para apresentar esses dados.</p>
+
+<p>Executar a tarefa mencionada na notificação não faz a notificação desaparecer automaticamente. Para removê-la da tela, é preciso clicar na notificação e marcá-la como lida.</p>
+
+<h3>3.6 Roteiro de atendimento</h3>
+
+<p>Explique que as notificações são avisos automáticos do Retaguarda para chamar atenção sobre pontos que precisam de análise.</p>
+
+<p>Se aparecer <strong>Produtos sem Ajuste Tributário</strong>, existem produtos que ainda precisam passar pela sincronização fiscal.</p>
+
+<p>Se aparecer <strong>Produtos Rejeitados pelo Ajuste Weber Tributário</strong>, alguns produtos precisam de revisão, principalmente na descrição, para que possam ser identificados corretamente no processo de ajuste fiscal.</p>
+
+<p>Se aparecer <strong>Carga PDV Desatualizada</strong>, houve alteração em produto, promoção ou cliente, e ainda não foi executado o Comunica PDV depois dessa alteração.</p>
+
+<p>Reforce que a notificação não significa, necessariamente, erro no sistema. Ela indica uma situação pendente ou uma configuração que precisa ser conferida.</p>

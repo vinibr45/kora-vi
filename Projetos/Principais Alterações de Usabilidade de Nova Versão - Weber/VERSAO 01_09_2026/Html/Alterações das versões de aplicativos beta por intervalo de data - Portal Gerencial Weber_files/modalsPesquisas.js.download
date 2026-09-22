@@ -1,0 +1,488 @@
+const modalPesquisaClienteId = "modalPesquisaCliente";
+const modalPesquisaClienteIdConteudo = "modalPesquisaCliente_content";
+const modalPesquisaAtividadeGeral = "modalPesquisaAtividadeGeral";
+const modalPesquisaAtividadeGeralConteudo = "modalPesquisaAtividadeGeral_content";
+
+function abreModalPesquisaClientes(elementoPai, modoSelecao){
+
+   criaModal(modalPesquisaClienteId, "Pesquisar Cliente", "modal-lg");
+   $("#"+modalPesquisaClienteId).modal('show');
+   carregaConteudoFormPesquisaCliente("#"+modalPesquisaClienteIdConteudo, elementoPai, modoSelecao);
+   $(elementoPai).blur();//Removendo focus
+}
+
+function abreModalPesquisaAtividadeGeral(elementoPai){
+
+   criaModal(modalPesquisaAtividadeGeral, "Pesquisar histórico de atividades", "modal-lg");
+   $("#"+modalPesquisaAtividadeGeral).modal('show');
+   carregaConteudoFormPesquisaAtividadeGeral("#"+modalPesquisaAtividadeGeralConteudo, elementoPai);
+   $(modalPesquisaAtividadeGeral).blur();//Removendo focus
+}
+
+function carregaConteudoFormPesquisaAtividadeGeral(divId, elementoPai){
+
+  var htmlToPrint = '';
+
+  $.ajax({
+    url:"modalPesquisaAtividades.php",
+    async: true,
+    type:"post",
+    timeout: 20000,
+    data: {
+
+    },
+    beforeSend:function(data){
+      $(divId).html(setaLoadingModal());
+    },
+    success:function(data) {
+      htmlToPrint = data;
+    },
+    error:function(data){
+      aviso("Verifique sua conexão com internet.\n" + data.statusText, 3);
+    },
+    complete:function(data){
+      $(divId).html(htmlToPrint);
+    }
+  });
+
+}
+
+function carregaConteudoFormPesquisaCliente(divId, elementoPai, modoSelecao){
+
+  var htmlToPrint = '';
+
+  //Setando um UUID unico no elemento de origem
+  const uuidField = generateUUID();
+  $(elementoPai).attr('uuidField', uuidField);
+
+
+  $.ajax({
+    url:"modalPesquisaCliente.php",
+    async: true,
+    type:"post",
+    timeout: 20000,
+    data: {
+      modoSelecao : modoSelecao,
+      uuidFieldSelecao : uuidField
+    },
+    beforeSend:function(data){
+      $(divId).html(setaLoadingModal());
+    },
+    success:function(data) {
+      htmlToPrint = data;
+    },
+    error:function(data){
+      aviso("Verifique sua conexão com internet.\n" + data.statusText, 3);
+    },
+    complete:function(data){
+      $(divId).html(htmlToPrint);
+    }
+  });
+
+}
+
+function atualizaRegistrosExibidosPesquisaAtividadeGeralListaDivs(){
+  var count = $(".div-detalhes-atend-pesqGeral").filter(function() {
+    return $(this).css("display") !== "none";
+}).length;
+  $('#atividadesPesqGeralSearchStats').html( count + ' registros exibidos.' );
+}
+
+function realizaPesquisaAtividadeGeralListaDivs(){
+
+  var conteudoPesquisa = $('#atividadesPesqGeralSearchTerm').val().trim().toUpperCase();
+  var qtdRegsExibidos = 0;
+
+  //Nada a ser pesquisado
+  if(conteudoPesquisa == "" || conteudoPesquisa.length < 1){
+    $('.div-detalhes-atend-pesqGeral').show();
+    atualizaRegistrosExibidosPesquisaAtividadeGeralListaDivs();
+    return;
+  } else {
+
+    $('.div-detalhes-atend-pesqGeral').show();
+    $('.div-detalhes-atend-pesqGeral').each(function(){
+      if ($(this).html().toUpperCase().trim().indexOf(conteudoPesquisa) === -1) {
+        $(this).hide();
+      }
+    });
+    atualizaRegistrosExibidosPesquisaAtividadeGeralListaDivs();
+
+  }
+
+}
+
+var g_lastTermPesquisaAtividadeGeral = '';
+function realizaPesquisaAtividadeGeral(){
+
+  var htmlToSet = '';
+  const divToUpdate = $('#modalPesquisaAtividadeGeralResultado');
+
+
+  var conteudoPesquisa = $('#modalPesquisaAtividadeGeralFiltroConteudo').val().trim();
+  //Evitar buscas desnecessárias
+  if(conteudoPesquisa === g_lastTermPesquisaAtividadeGeral)
+    return;
+
+  //Salvando para evitar buscas desnecessárias
+  g_lastTermPesquisaAtividadeGeral = conteudoPesquisa;
+
+  $(divToUpdate).html('');
+
+  if(conteudoPesquisa.length < 1)
+    return;
+
+  if(conteudoPesquisa.length > 0 && conteudoPesquisa.length < 2){
+      $(divToUpdate).html('<hr><b>Descreva mais a busca a ser realizada, o minímo são 2 caracteres.</b>');
+      return;
+  }
+
+
+
+
+  $.ajax({
+    url:"ajax_atendimentoReg_searchAllAtividades.php",
+    async: true,
+    type:"post",
+    data: {
+      contendo : conteudoPesquisa,
+      autor : 0
+    },
+    dataType:"json",
+    beforeSend: function(data){
+      $(divToUpdate).html(setaLoadingModal());
+        $('#modalPesquisaAtividadeGeralFiltroConteudo').attr('readonly', true);
+    },
+    success:function(data) {
+      if(data.STATUS == 1){
+
+
+
+        if(data.DATA.length > 0){
+
+          var qtd_reg_limite = data.QTD_REGS_LIMIT;
+          var qtd_reg_obtidos = data.DATA.length;
+          if(qtd_reg_limite == qtd_reg_obtidos){
+            htmlToSet += '<h3 class="badge-warning badge">Esta busca foi limitada a ' + qtd_reg_limite + ' registros, especifique mais a busca para filtrar todos registros na base de dados.</h3>';
+          }
+
+
+          var position = 0;
+          htmlToSet += '<hr><b title="A busca irá ser realizada no conteúdo impresso em tela, logo o conteúdo obtido em detalhes não será pesquisado neste campo.">Pesquisar nos ' + data.DATA.length + ' registros localizados na base de dados (?):</b><br>';
+          htmlToSet += '<input type="text" class="form-control" id="atividadesPesqGeralSearchTerm" name="atividadesPesqGeralSearchTerm" placeholder="Termo a ser pesquisado" onkeyup="realizaPesquisaAtividadeGeralListaDivs()"><br><div id="atividadesPesqGeralSearchStats"></div>';
+
+
+          $.each(data.DATA, function(key,value){
+
+            htmlToSet += '<div class="border border-1 border-radius row m-0 mt-3 div-detalhes-atend-dia div-detalhes-atend-pesqGeral">' +
+            ' <div class="col-md-12 col-sm-12 p-0" style="background:#eee"> ' +
+            ' <div class="row m-0 pt-2 border-bottom"> ' +
+            ' <div class="col-md-6 col-sm-6 p-2"> ' +
+            ' <h6 class="font-weight-bold p-0 d-block m-0">' + value.DTHR_INICIO_REAL  + ( value.STATUS == 'A' ? '<badge class="badge-warning badge ml-2">Atividade aberta</badge>'  : ( ' até ' + value.DTHR_FINAL_REAL + ' <label class="small mt-2 d-block" style="color:#000">(' + getTempoAtividade(value.DTHR_INICIO_REAL, value.DTHR_FINAL_REAL)  + ')</label>' ) )  + ' </h6> ' +
+            ' <small class="mt-3">Atendimento ' + value.ID_ATEND + '</small> ' +
+            ' </div> <div class="col-md-6 col-sm-6 p-2 text-right"> ' +
+            ' <button class="btn btn-secondary btn-detalhes-atividade" data-tipolistagem="detalhes-atend-historico" data-position="' + position + '" onclick="atendRegGetDetalhes(this, '+value.ID_ATEND+',\''+value.UUID+'\')">Detalhes</button> ' +
+            ' </div> ' +
+            ' </div> ' +
+            ' </div> ' +
+            ' <div class="col-md-6 col-sm-12 p-2 div-atend-pesqGeral-setor"> ' +
+            ' <b>Setor:</b><br> ' + value.SETOR +
+            '</div> ' +
+            ' <div class="col-md-6 col-sm-12 p-2 div-atend-pesqGeral-cliente"> ' +
+            ' <b>Cliente:</b><br> ' + value.COD_CLIENTE  + ' - ' + value.CLIENTE +
+            '</div> ' +
+            ' <div class="col-md-6 col-sm-12 p-2 div-atend-pesqGeral-assunto"> ' +
+            ' <b>Assunto:</b><br>  ' + value.ASSUNTO  +
+            ' </div> ' +
+            ' <div class="col-md-6 col-sm-12 p-2 div-atend-pesqGeral-tecnico"> '  +
+            ' <b>Técnico:</b><br> ' + value.TECNICO  +
+            '</div>' +
+            ' </div>';
+            position++;
+          });
+
+        } else {
+          htmlToSet = "<h6>Nenhuma atividade localizada.</h6>";
+        }
+
+      } else {
+        htmlToSet = "Erro ao obter atividades: " + data.DATA;
+      }
+    },
+    complete:function(data){
+      $(divToUpdate).html(htmlToSet);
+      $('#modalPesquisaAtividadeGeralFiltroConteudo').attr('readonly', false);
+    },
+    error:function(data){
+      htmlToSet = data.responseText;
+    }
+  });
+}
+
+function realizaPesquisaCliente(uuidFieldSelecao){
+
+  var htmlToPrint = '';
+  var termo = $('#modalPesquisaClienteFiltroConteudo').val();
+  var filtro = $('#modalPesquisaClienteFiltroTipo').val();
+
+
+  if(!termo){
+      $("#modalPesquisaClienteResultado").html('');
+      return;
+  }
+
+  $.ajax({
+    url:"ajax_pesquisaCliente.php",
+    async: true,
+    type:"post",
+    timeout: 10000,
+    data: {
+      termo : termo,
+      filtro: filtro,
+     },
+    beforeSend:function(data){
+      $("#modalPesquisaClienteResultado").html(setaLoadingModal());
+    },
+    success:function(data) {
+      try {
+
+  $("#modalPesquisaClienteResultado").html('');
+        var resultados = JSON.parse(data);
+        if(resultados && resultados.length > 0){
+
+          $.each(resultados, function(key, resultado) {
+
+
+          if(resultado.NOME_RAZAO){
+            var clieNovo = false;
+            var desatualizado = false;
+            var clienteFirebird4 = false;
+            if(resultado.DATA_CADASTRO){
+
+              var data_cadastro_parts1 = resultado.DATA_CADASTRO.split("/");
+              var data_cadastro_str = data_cadastro_parts1[2]+'-'+data_cadastro_parts1[1]+'-'+data_cadastro_parts1[0];
+              var data_cadastro = new Date( data_cadastro_str );
+
+              //30 dias limite
+              var data_limite_clieNovo = new Date( Date.now() - (30 * 24 * 60 * 60 * 1000) );
+
+              if( data_cadastro >= data_limite_clieNovo ){
+                clieNovo = true;
+              } else {
+                clieNovo = false;
+              }
+
+
+              try {
+
+                if(resultado.ULT_BD_VERSAO.indexOf("FB4") === 0){
+                  clienteFirebird4 = true;
+                }
+
+              } catch (e) {
+                console.log(e);
+              }
+
+              try {
+
+                var data_release_parts1 = resultado.ULT_REG_RELEASE.split(".");
+                var data_release_str = data_release_parts1[2]+'-'+data_release_parts1[1]+'-'+data_release_parts1[0];
+                var data_release = new Date( data_release_str );
+
+                //30 dias limite
+                var data_limite_Versao = new Date( Date.now() - (45 * 24 * 60 * 60 * 1000) );
+
+                if(data_release <= data_limite_Versao ){
+                  desatualizado = true;
+                } else {
+                  desatualizado = false;
+                }
+
+              } catch(e){
+
+              }
+
+            }
+            var vend_repr_func, vend_repr_icon, linkNovaOS = '', linkNovoChamado = '';
+            if( ( resultado.TIPO_REPR == 'S' || resultado.TIPO_VEND == 'S' || resultado.CONTRATO_TIPO == 4 ) && resultado.TIPO_FUNC != 'S' && resultado.ID_CLIENTE != 237 )
+            {
+              vend_repr_func = ' onclick="atendConfirmaVend_Repr('+resultado.POS+')" ';
+              vend_repr_icon = " <i title='Re-locadora responsável pelo suporte' class='glyphicon glyphicon-user btn-warning' style='padding:5px;border-radius:15px;'></i>&nbsp;&nbsp;";
+              linkNovaOS = "onclick='javascript: if(confirm(&#39;Re-locadora responsável pelo suporte. Deseja continuar ?&#39;)){ window.open(&#39;atendimento_registrar.php?cli="+resultado.CLI+"&#39; , &#39;_self&#39;); }'";
+              linkNovoChamado = "onclick='javascript: if(confirm(&#39;Re-locadora responsável pelo suporte. Deseja continuar ?&#39;)){ window.open(&#39;chamados_listagem.php?autoAddChamadoClie="+resultado.ID_CLIENTE+"&#39; , &#39;_self&#39;); }'";
+            } else {
+              if(resultado.CANC_SN == 'S'){
+                vend_repr_func = " data-toggle='dropdown' ";
+                vend_repr_icon = " ";
+                linkNovaOS = "onclick='javascript: if(confirm(&#39;Cliente cancelado. Deseja continuar ?&#39;)){ window.open(&#39;atendimento_registrar.php?cli="+resultado.CLI+"&#39; , &#39;_self&#39;); }'";
+                linkNovoChamado = "onclick='javascript: if(confirm(&#39;Cliente cancelado. Deseja continuar ?&#39;)){ window.open(&#39;chamados_listagem.php?autoAddChamadoClie="+resultado.ID_CLIENTE+"&#39; , &#39;_self&#39;); }'";
+              } else if(resultado.SITUACAO == 'B'){
+                vend_repr_func = " data-toggle='dropdown' ";
+                vend_repr_icon = " ";
+                linkNovaOS = "onclick='javascript: if(confirm(&#39;Cliente bloqueado. Deseja continuar ?&#39;)){ window.open(&#39;atendimento_registrar.php?cli="+resultado.CLI+"&#39; , &#39;_self&#39;); }'";
+                linkNovoChamado = "onclick='javascript: if(confirm(&#39;Cliente bloqueado. Deseja continuar ?&#39;)){ window.open(&#39;chamados_listagem.php?autoAddChamadoClie="+resultado.ID_CLIENTE+"&#39; , &#39;_self&#39;); }'";
+              }  else {
+                vend_repr_func = " data-toggle='dropdown' ";
+                vend_repr_icon = '';
+                linkNovaOS = "onclick='window.open(&#39;atendimento_registrar.php?cli="+resultado.CLI+"&#39; , &#39;_self&#39;)'";
+                linkNovoChamado = "href='chamados_listagem.php?autoAddChamadoClie="+resultado.ID_CLIENTE+"' ";
+              }
+            }
+
+
+            var tipos_historicos = resultado.TIPOS_HISTORICOS.split(',');
+            var bgC, rOBS;
+
+            if(resultado.CANC_SN == 'S'){
+              bgC = ' style="color:#ccc" ';
+              rOBS = '<badge class="badge badge-danger p-2 my-2">CANCELADO</b>( Dt Hist:'+resultado.DATA_CANCELAMENTO_HISTORICO+', Dt Campo:'+resultado.DATA_CANCELAMENTO_CAMPO+', Anos:'+resultado.ANOS_DE_CANCELAMENTO+')';
+            } else if(resultado.SITUACAO == 'B'){
+              bgC = ' style="color:red" ';
+              rOBS = '<badge class="badge badge-danger p-2 my-2">BLOQUEADO</badge>';
+            } else if(tipos_historicos.includes('12') && ( resultado.ULT_TIPO_HISTORICO == "12" || resultado.ULT_TIPO_HISTORICO == "13" )){
+              bgC = ' ';
+              rOBS = '<badge class="badge badge-danger p-2 my-2">EM TRAMITE DE CANCELAMENTO</badge>';
+            } else {
+              bgC = '';
+              rOBS = '';
+            }
+
+            if(tipos_historicos.includes('10') && !tipos_historicos.includes('11')){
+              bgC += 'style="background-color:#DF7971;color:#FFF"';
+              rOBS += '&nbsp;&nbsp;<label title="Cliente em tramite de congelamento" class="btn btn-secondary" style="font-size:9px;;display:inline;">TRAMITE DE CONGELAMENTO</label>';
+            }
+
+            if(clieNovo && resultado.SITUACAO != 'B'){
+              bgC = '';
+              rOBS += '<badge class="badge badge-warning p-2 my-2" title="Cadastrado em '+resultado.DATA_CADASTRO+'" >NOVO</badge>';
+            }
+            if(desatualizado && resultado.SITUACAO != 'B'){
+              //rOBS += '&nbsp;&nbsp;<label title="Última versão '+resultado.ULT_REG_RELEASE+'" class="btn btn-danger blink" style="font-size:9px;;display:inline;"><i class="glyphicon glyphicon-time"></i>&nbsp;&nbsp;DESATUALIZADO</label>';
+            }
+
+
+            if(clienteFirebird4){
+              rOBS += '<badge class="badge badge-primary p-2 my-2" title="Cliente executando o sistema em Firebird 4." >EXECUTANDO FIREBIRD 4</badge>';
+            }
+
+
+            var htmlBlockCliente = '';
+            var divIdOptionsCliente = 'blockOptionsModalPesquisaClie'+resultado.ID_CLIENTE;
+
+            htmlBlockCliente = '<div class="border border-1 border-radius row m-0 mt-3 p-2 shadow shadow-sm" ' + bgC + '>' +
+            '<h5 title="Razão Social" class="mb-2"><badge title="Id do cliente" class="badge mr-2">' + resultado.ID_CLIENTE + '</badge><b>' + resultado.NOME_RAZAO + '| Loja ' + resultado.LOJA  + '</b></h5>' +
+            '<label class="d-block" title="Fantasia">Fantasia: ' + resultado.FANTASIA + '</label>' +
+            '<small class="d-block">CNPJ/CPF: ' + resultado.CNPJ_CPF + '</small>' +
+            '<small class="d-block">Classe: ' + resultado.NOME_CLASSE + '</small>' +
+            '<small class="d-block">Cidade: ' + resultado.CIDADE + '</small>';
+            //Avisos
+            htmlBlockCliente += ( rOBS ? '<div class="d-block">' + rOBS + '</div>' : '');
+            htmlBlockCliente += '<div id="'+divIdOptionsCliente+'"></div>';
+            htmlBlockCliente += '</div>';
+            $("#modalPesquisaClienteResultado").append(htmlBlockCliente);
+
+            var modoSelecao = $("#modalPesquisaClienteModoSelecao").val();
+
+            //Opções
+            var htmlBlockOptionsCliente = '';
+            switch(modoSelecao){
+
+              case '0': //Modelo padrão para a tela de atendimento
+              htmlBlockOptionsCliente = "<a class='btn mr-2' "+linkNovaOS+">Registrar atividade</a>";
+              htmlBlockOptionsCliente += "<a class='btn mr-2' "+linkNovoChamado+">Gerar chamado</a>";
+              htmlBlockOptionsCliente += "<a class='btn mr-2' value='Detalhes' onclick='atendDetalhesCli("+resultado.POS+")'>Detalhes</a>";
+              htmlBlockOptionsCliente += "<div class='btn-group mt-1'> <button type='button' class='btn'>+ Opções</button><button type='button' class='btn dropdown-toggle' "+vend_repr_func+" id='btnDpd_"+resultado.POS+"'><span class='caret'></span></button></button>" +
+              "<ul class='dropdown-menu pull-right' role='menu'>" +
+              "<li><a href='atendimento_maquinas_detalhes.php?cli="+resultado.CLI+"'>Máquinas Detalhes</a></li>" +
+              "<li><a href='atendimento_cadastro_suporte.php?cli="+resultado.CLI+"'>Cadastro de suporte</a></li>" +
+              (resultado.CARTEIRA_CLIENTES ? "<li><a href='atendimento_carteira_clientes.php?cli="+resultado.CLI+"'>Carteira de clientes</a></li>" : "" ) +
+              "<li><a href='atendimento_assinaturas_pdv_destaxa.php?cli="+resultado.CLI+"'>Assinaturas PDV Destaxa</a></li>" +
+              "<li><a href='atendimento_credenciais_backup_cloud.php?id_cliente="+resultado.ID_CLIENTE+"'>Credenciais Cloud Backup</a></li>" +
+              "</ul></div>";
+
+              $("#modalPesquisaClienteResultado #"+divIdOptionsCliente).append(htmlBlockOptionsCliente);
+              break;
+
+              case '1': //Ativa um botão de seleção e seta os valores nos campos definidos nos atributos do elemento que chamou a função
+              var buttonSelecionarCliente = document.createElement('button');
+              buttonSelecionarCliente.textContent = 'Selecionar'; // Set the button text
+              buttonSelecionarCliente.classList.add('btn');
+              // Step 2: Attach a click event to the button
+              buttonSelecionarCliente.addEventListener('click', function() {
+
+
+                if(!uuidFieldSelecao)
+                  alert("invalid uuidFieldSelecao");
+
+                    // Obtem o primeiro elemento pelo attribute value
+                    var elementoPai = document.querySelector('[uuidField="'+uuidFieldSelecao+'"]');
+
+                    var fieldIdCliente =  $(elementoPai).attr("field-idCliente");
+                    var fieldRazaoCliente = $(elementoPai).attr("field-razaoCliente");
+                    var fieldFantasiaCliente = $(elementoPai).attr("field-fantasiaCliente");
+                    var fieldLojaCliente = $(elementoPai).attr("field-lojaCliente");
+                    var fieldCnpjCliente = $(elementoPai).attr("field-cnpjCliente");
+                    var fieldFone1Cliente = $(elementoPai).attr("field-fone1Cliente");
+                    var fieldFone2Cliente = $(elementoPai).attr("field-fone2Cliente");
+                    var divIdListaChamadosAbertosParaClienteSelecionado = $(elementoPai).attr('div-listaChamadosAbertosParaCliente');
+
+                    $('#'+fieldIdCliente).val(resultado.ID_CLIENTE);
+                    $('#'+fieldRazaoCliente).val(resultado.NOME_RAZAO);
+                    $('#'+fieldFantasiaCliente).val(resultado.FANTASIA);
+                    $('#'+fieldLojaCliente).val(resultado.LOJA);
+                    $('#'+fieldCnpjCliente).val(resultado.CNPJ_CPF);
+                    $('#'+fieldFone1Cliente).val(resultado.FONE1);
+                    $('#'+fieldFone2Cliente).val(resultado.FONE2);
+
+                    $('#'+modalPesquisaClienteId).modal('hide');
+
+
+
+              });
+
+              $("#modalPesquisaClienteResultado #"+divIdOptionsCliente).append(buttonSelecionarCliente);
+              break;
+
+              case '2': //Abre um novo chamado
+              var buttonSelecionarCliente = document.createElement('button');
+              buttonSelecionarCliente.textContent = 'Selecionar'; // Set the button text
+              buttonSelecionarCliente.classList.add('btn');
+              // Step 2: Attach a click event to the button
+              buttonSelecionarCliente.addEventListener('click', function() {
+                                $('#'+modalPesquisaClienteId).modal('hide');
+                abreModalRegistroChamados(null, resultado.ID_CLIENTE, 'divListagemChamadosAtivos')
+              });
+
+              $("#modalPesquisaClienteResultado #"+divIdOptionsCliente).append(buttonSelecionarCliente);
+              break;
+
+            }
+
+
+            $("#modalPesquisaClienteResultado").append('</div>');
+            $("#modalPesquisaClienteResultado").append("<input type='hidden' id='dtl_"+resultado.POS+"' value='"+btoa(JSON.stringify(resultados[key]))+"'>");
+
+          }
+        });
+
+      } else {
+      $("#modalPesquisaClienteResultado").html("<h4 class='p-4'>Nenhum cliente localizado</h4>");
+      }
+
+
+      } catch (e) {
+        $("#modalPesquisaClienteResultado").html(e);
+      } finally {
+
+      }
+
+    },
+    error:function(data){
+      aviso("Verifique sua conexão com internet.\n" + data.statusText, 3);
+    },
+    complete:function(data){
+    }
+  });
+
+
+}

@@ -1,0 +1,605 @@
+function atualizaCategorias(){
+  //Salva em sessionstorage
+  sessionStorage.removeItem("tree_categories");
+  window.open('menu.php','_self');
+}
+
+function criaModal(id_modal, title, modal_largura){
+  try {
+    $("#"+id_modal).remove();
+  } catch(err){
+
+  }
+  var div_modal = '<div class="modal fade" data-backdrop="static" id="'+id_modal+'" role="dialog"> <div class="modal-dialog '+modal_largura+'"><div class="modal-content"> <div class="modal-header"> <h4 class="modal-title">'+title+'</h4></div><div id="'+id_modal+'_content" class="modal-body"></div></div></div></div>'
+  $('body').append(div_modal);
+}
+
+function setaLoadingModal(){
+  return '<div class="spinner-border m-5 p-3" role="status"><span class="visually-hidden"></span></div>';
+}
+
+function accessObjectVersion(objectKey, versionId){
+  carregando(1);
+  $.ajax({
+    url: "accessObjectVersion.php",
+    type: "post",
+    data: { objectKey : objectKey, versionId : versionId  },
+    success: function (result){
+      window.open(result,'_blank');
+    }, error: function(result) {
+      swal("Ops..", "Erro na solicitação \n"+result.statusText, "error");
+    }, complete:function(result){
+      carregando(2);
+    }
+  });
+}
+
+
+function continueAddNewArticle(){
+
+  var articleTitle = $('#tituloAddNewArticleModal').val();
+  if(!articleTitle || articleTitle.length < 4){
+    swal("Ops..", "Descreva mais o título do artigo", "error");
+  }
+
+  carregando(1);
+  $('#divButtonsAddNewArticle').html(setaLoadingModal());
+  $.ajax({
+    url:"ajax/ajax_Add.php",
+    type:"post",
+    dataType:"json",
+    data: {
+      categoria : null,
+      ordem_cat : 99,
+      data1 : null,
+      data2 : null,
+      titulo : articleTitle,
+      id_reg : null,
+      artigo_Publico : null,
+    },
+    success: function (result){
+
+      if(result.status == 1){
+        window.onbeforeunload = function (event) {
+          event.preventDefault();
+          event.returnValue = '';
+        };
+        // Depois: Removendo o evento
+        window.onbeforeunload = null;
+        window.open('add.php?artigo=' + result.id_artigo, '_self');
+      } else {
+        alert("ERRO: " + result.mensagem);
+      }
+    },
+    complete: function(result){
+      carregando(2);
+    },
+    error: function(result){
+      alert("ERRO: " + result.statusText);
+    }
+  });
+
+
+}
+
+function closeAddNewArticle(){
+
+  var idModal = "modalAddNewArticle";
+  $('#'+idModal).modal('hide');
+
+}
+
+function addNovoArtigo(){
+
+  var idModal = "modalAddNewArticle";
+
+  criaModal(idModal, 'Adicionar novo artigo');
+
+  $.ajax({
+    url:"add_new.php",
+    type:"post",
+    data: {  },
+    success: function (result){
+      $('#'+idModal+'_content').html(result);
+    },
+    error: function(result){
+      $('#tree_categories').html("Erro ao obter formulario:\n" + result.statusText);
+    },
+    complete:function(){
+      $('#'+idModal).modal('show');
+    }
+  });
+
+}
+
+function getObjectVersionsAutoSave(id_publico, title){
+  criaModal('modalVersoesArquivoAutoSave', title, 'modal-lg');
+  $("#modalVersoesArquivoAutoSave_content").html(setaLoadingModal());
+  $("#modalVersoesArquivoAutoSave").modal('show');
+  $.ajax({
+    url: "objectVersionsAutoSave.php",
+    type: "post",
+    data: { id_publico : id_publico  },
+    success: function (result){
+      html = result;
+    }, error: function(result) {
+      swal("Ops..", "Erro na solicitação \n"+result.statusText, "error");
+    }, complete:function(result){
+      $("#modalVersoesArquivoAutoSave_content").html(html);
+    }
+  });
+}
+
+function getObjectVersions(objectKey, title){
+  criaModal('modalVersoesArquivo', title, 'modal-lg');
+  $("#modalVersoesArquivo_content").html(setaLoadingModal());
+  $("#modalVersoesArquivo").modal('show');
+  $.ajax({
+    url: "objectVersions.php",
+    type: "post",
+    data: { objectKey : objectKey  },
+    success: function (result){
+      html = result;
+    }, error: function(result) {
+      swal("Ops..", "Erro na solicitação \n"+result.statusText, "error");
+    }, complete:function(result){
+      $("#modalVersoesArquivo_content").html(html);
+    }
+  });
+}
+
+function getCategories(){
+
+  $('#tree_categories').html(setaDivCarregando());
+
+  try {
+
+    if(sessionStorage.getItem("tree_categories")){
+      var result = JSON.parse(sessionStorage.getItem("tree_categories"));
+      setaTreeViewCategories(result);
+      return;
+    }
+
+  } catch(ex){
+
+  }
+
+  $.ajax({
+    url:"ajax/ajax_getCategories.php",
+    type:"post",
+    dataType:"json",
+    data: { current_category : getURLparameter('categoria') },
+    success: function (result){
+
+      setaTreeViewCategories(result);
+
+      //Salva em sessionstorage
+      sessionStorage.setItem("tree_categories", JSON.stringify(result));
+
+    },
+    error: function(result){
+      $('#tree_categories').html("Erro ao obter categorias:\n" + result.statusText);
+    }
+  });
+
+}
+
+function setaTreeViewCategories(result){
+
+  //Convertendo o objeto em array
+  var dataArray = [];
+  for (var key in result) {
+    if (result.hasOwnProperty(key)) {
+      dataArray.push(result[key]);
+    }
+  };
+
+  $('#tree_categories').treeview({
+    data: dataArray,
+    showBorder: false,
+    enableLinks: true,
+    expandIcon: 'fa fa-angle-right',
+    collapseIcon: 'fa fa-angle-down',
+    nodeIcon: 'fa fa-folder'
+  });
+
+  // /$('#tree_categories').treeview('selectNode', [ 'Yks1VTlRc2cvczhoMHVPeXpCL2Q4UT09', { silent: true } ]);
+
+  $('#tree_categories').treeview('revealNode', [ 'NlVPN1FqcnVPbTNXMmZBTTVDcld6QT09', { silent: true } ]);
+
+  $('#tree_categories').treeview('search', [ 'NlVPN1FqcnVPbTNXMmZBTTVDcld6QT09', {
+    ignoreCase: true,     // case insensitive
+    exactMatch: false,    // like or equals
+    revealResults: true,  // reveal matching nodes
+  }]);
+
+}
+
+function imprimirArtigo(){
+  var cabecalho = document.querySelector('.searchfield #cabecalho_artigo') || document.getElementById("cabecalho_artigo");
+  var conteudo = document.getElementById("conteudo_artigo");
+  var conteudoHtml = "";
+
+  if(conteudo){
+    conteudoHtml = conteudo.outerHTML;
+  } else {
+    var abaAtiva = document.querySelector('.tab-pane.active');
+    if(abaAtiva && abaAtiva.id === 'nav-conteudo1' && window.editor1Ro){
+      conteudoHtml = '<div id="conteudo_artigo">' + window.editor1Ro.getData() + '</div>';
+    } else if(abaAtiva && abaAtiva.id === 'nav-conteudo2' && window.editor2Ro){
+      conteudoHtml = '<div id="conteudo_artigo">' + window.editor2Ro.getData() + '</div>';
+    } else if(window.editor1Ro){
+      conteudoHtml = '<div id="conteudo_artigo">' + window.editor1Ro.getData() + '</div>';
+    } else if(abaAtiva){
+      conteudoHtml = '<div id="conteudo_artigo">' + abaAtiva.innerHTML + '</div>';
+    }
+  }
+
+  if(!cabecalho || !conteudoHtml){
+    swal("Ops..", "Não foi possível localizar o conteúdo do artigo para impressão.", "error");
+    return;
+  }
+
+  var divToPrint = cabecalho.outerHTML + conteudoHtml;
+
+  $('#overlay_impressao').height($(document).height());
+  document.body.style.overflowY = 'hidden';
+
+  var newWin = window.open("", "_blank");
+  if(!newWin){
+    $('#overlay_impressao').height(0);
+    document.body.style.overflowY = 'visible';
+    swal("Ops..", "O navegador bloqueou a janela de impressão. Permita pop-ups para este site.", "error");
+    return;
+  }
+
+  newWin.document.open();
+  newWin.document.write("<!doctype html><html><head><meta charset='utf-8'><title>Impressão de artigo</title><style>body{margin:0;padding:12px;}#conteudo_artigo{padding:0 !important;width:100% !important;margin:0 !important;word-break:break-word !important;}</style></head><body>" + divToPrint + "</body></html>");
+  newWin.document.close();
+
+  newWin.onload = function(){
+    newWin.focus();
+    newWin.print();
+  };
+
+  newWin.onafterprint = function(){
+    $('#overlay_impressao').height(0);
+    document.body.style.overflowY = 'visible';
+    newWin.close();
+  };
+
+}
+
+function getURLparameter( name, url ) {
+  if (!url) url = location.href;
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( url );
+  return results == null ? null : results[1];
+}
+
+function copia_referencia() {
+  var referencia = document.getElementById("link_referencia").value;
+  copyTextToClipboard(referencia);
+  alert("Link copiado para sua área de transferência");
+};
+
+function copyTextToClipboard(text) {
+  var textArea = document.createElement("textarea");
+
+  //
+  // *** This styling is an extra step which is likely not required. ***
+  //
+  // Why is it here? To ensure:
+  // 1. the element is able to have focus and selection.
+  // 2. if element was to flash render it has minimal visual impact.
+  // 3. less flakyness with selection and copying which **might** occur if
+  //    the textarea element is not visible.
+  //
+  // The likelihood is the element won't even render, not even a flash,
+  // so some of these are just precautions. However in IE the element
+  // is visible whilst the popup box asking the user for permission for
+  // the web page to copy to the clipboard.
+  //
+
+  // Place in top-left corner of screen regardless of scroll position.
+  textArea.style.position = 'fixed';
+  textArea.style.top = 0;
+  textArea.style.left = 0;
+
+  // Ensure it has a small width and height. Setting to 1px / 1em
+  // doesn't work as this gives a negative w/h on some browsers.
+  textArea.style.width = '2em';
+  textArea.style.height = '2em';
+
+  // We don't need padding, reducing the size if it does flash render.
+  textArea.style.padding = 0;
+
+  // Clean up any borders.
+  textArea.style.border = 'none';
+  textArea.style.outline = 'none';
+  textArea.style.boxShadow = 'none';
+
+  // Avoid flash of white box if rendered for any reason.
+  textArea.style.background = 'transparent';
+
+
+  textArea.value = text;
+
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+
+  try {
+    var successful = document.execCommand('copy');
+    var msg = successful ? 'successful' : 'unsuccessful';
+    console.log('Copying text command was ' + msg);
+  } catch (err) {
+    console.log('Oops, unable to copy');
+  }
+
+  document.body.removeChild(textArea);
+}
+
+function getEditorData(editorId){
+  ClassicEditor
+  .create(document.querySelector(editorId))
+  .then(function(editor){
+    editor1Data = editor.getData();
+    alert(editor1Data);
+    return editor1Data;
+  });
+}
+
+function autoSalvarPost(idEditor){
+
+  var data = null;
+  var tipoArtigo = null;
+  switch(idEditor){
+
+    case 'editor1':
+    tipoArtigo = 'public';
+    data = window.editor1.getData();
+    break;
+
+    case 'editor2':
+    tipoArtigo = 'private';getObjectVersions
+    data = window.editor2.getData();
+    break;
+
+  }
+
+  var id_publico = getURLparameter('artigo');
+  var qtd = data.length;
+
+  if(qtd == 0){
+    return;
+  }
+
+  if(!id_publico){
+    return;
+  }
+
+  $.ajax({
+    url:"ajax/ajax_autoSave.php",
+    type:"post",
+    dataType:"json",
+    data: {
+      id_publico : id_publico,
+      data : data,
+      tipoArtigo : tipoArtigo
+    },
+    success: function (result){
+      if(result.status == 1){
+        console.log('Artigo auto-salvo');
+      } else {
+        console.log("ERRO: " + result.mensagem);
+      }
+    },
+    complete: function(result){
+
+    },
+    error: function(result){
+      console.log("ERRO: " + result.statusText);
+    }
+  });
+
+
+}
+
+function salvarPost(){
+
+  var data1 = window.editor1.getData();
+  var data2 = window.editor2.getData();
+
+  var qtd1 = data1.length;
+
+  var categoria = document.getElementById("categoria").value;
+  var titulo = document.getElementById("titulo").value;
+  var id_reg = document.getElementById("id_reg").value;
+  var ordem_cat = document.getElementById("artigo_OrdemCat").value;
+  var artigo_Publico = document.getElementById("artigo_Publico").value;
+  var qtd2 = titulo.length;
+
+  if(qtd1 < 5){
+    alert('Você deve descrever mais a descrição do artigo público.');
+    return;
+  }
+
+  if(qtd2 < 3){
+    alert('Você deve preencher o título de maneira correta.');
+    document.getElementById("titulo").focus();
+    return;
+  }
+
+  if(!categoria){
+    alert('Você deve informar a categoria.');
+    document.getElementById("categoria").focus();
+    return;
+  }
+
+
+
+  swal({
+    title: "Ei, você informou a categoria correta ?",
+    text: "Informando a categoria correta do artigo você irá estar ajudando para melhores buscas.",
+    icon: "warning",
+    buttons: ["Irei revisar a categoria", "Informei corretamente"],
+    dangerMode: false,
+  }).then(function(podeEnviar) {
+    if (podeEnviar) {
+      carregando(1);
+      $.ajax({
+        url:"ajax/ajax_Add.php",
+        type:"post",
+        dataType:"json",
+        data: {
+          categoria : categoria,
+          ordem_cat : ordem_cat,
+          data1 : data1,
+          data2 : data2,
+          titulo : titulo,
+          id_reg : id_reg,
+          artigo_Publico : artigo_Publico,
+        },
+        success: function (result){
+          if(result.status == 1){
+            window.onbeforeunload = function (event) {
+              event.preventDefault();
+              event.returnValue = '';
+            };
+            // Depois: Removendo o evento
+            window.onbeforeunload = null;
+            window.open('artigo.php?artigo=' + result.id_artigo, '_self');
+          } else {
+            alert("ERRO: " + result.mensagem);
+          }
+        },
+        complete: function(result){
+          carregando(2);
+        },
+        error: function(result){
+          alert("ERRO: " + result.statusText);
+        }
+      });
+    }
+  });
+
+}
+
+function carregando(status){
+  if(status == 1){
+    $(':focus').blur();
+    $("#mask_carregando_down").show();
+    $("#carregando_down").show();
+    $("#img_carregando_down").css("display","inline");
+  } else {
+    $("#mask_carregando_down").hide();
+    $("#carregando_down").hide();
+    $("#img_carregando_down").css("display","none");
+  }
+}
+
+function removeDivCarregando(id_elm){
+  $(id_elm+' .divCarregando').remove();
+}
+
+function setaDivCarregando(){
+  return '<div style="width:100%;text-align:center;padding:35px;" class="divCarregando"><div class="spinner-border text-secondary" style="width: 3rem; height: 3rem;" role="status"> </div><br><br></div>';
+}
+
+function setaDivNotFound(msg){
+  return '<h6 style="opacity:0.5;" class="w-100 my-2 divNotFound mt-5 text-center text-muted opacity-05"><i class="far fa-folder-open fa-2x mb-4"></i><br>' + ( msg != null ? msg : 'Nenhum registro localizado' ) + '</h6>';
+}
+
+function urldecode(url) {
+  return decodeURIComponent(url.replace(/\+/g, ' '));
+}
+
+function voltarPagina(){
+  var prevUrl = getURLparameter('prevUrl');
+  prevUrl = prevUrl != null ? atob(urldecode(prevUrl)) :  'menu.php';
+  window.open(prevUrl, '_self');
+}
+
+function reprovarPost(){
+  if(confirm("Deseja realmente reprovar este artigo?")){
+    var id_reg = document.getElementById("id_reg").value;
+    if(id_reg != null){
+      $.ajax({
+        url:"ajax/ajax_Reprovar.php",
+        type:"post",
+        data: { id_reg : id_reg, },
+        beforeSend: function(result){
+          carregando(1);
+        },
+        success: function (result){
+          if(result == 'Sucesso'){
+            alert('Registro reprovado com sucesso !');
+            voltarPagina();
+          }else {
+            alert('Erro ao reprovar registro !\n\n' + result);
+          }
+        },
+        complete: function(){
+          carregando(2);
+        }
+      });
+    }
+  }
+}
+
+function aprovarPost(){
+  if(confirm("Deseja realmente aprovar este artigo?")){
+    var id_reg = document.getElementById("id_reg").value;
+    if(id_reg != null){
+      $.ajax({
+        url:"ajax/ajax_Aprovar.php",
+        type:"post",
+        data: { id_reg : id_reg, },
+        beforeSend: function(result){
+          carregando(1);
+        },
+        success: function (result){
+          if(result == 'Sucesso'){
+            alert('Registro aprovado com sucesso !');
+            voltarPagina();
+          }else {
+            alert('Erro ao aprovado registro !\n\n' + result);
+          }
+        },
+        complete: function(){
+          carregando(2);
+        }
+      });
+    }
+  }
+}
+
+function finalizarPost(){
+  if(confirm("Deseja realmente finalizar este artigo?")){
+    var id_reg = document.getElementById("id_reg").value;
+    if(id_reg != null){
+      $.ajax({
+        url:"ajax/ajax_Finalizar.php",
+        type:"post",
+        data: { id_reg : id_reg, },
+        beforeSend: function(result){
+          carregando(1);
+        },
+        success: function (result){
+          if(result == 'Sucesso'){
+            alert('Registro finalizado com sucesso !');
+            location.reload();
+          }else {
+            alert('Erro ao finalizar registro !\n\n' + result);
+          }
+        },
+        complete: function(){
+          carregando(2);
+        }
+      });
+    }
+  }
+}

@@ -1,0 +1,69 @@
+const refreshTimeSessionControl = 180000; // a cada 3 minuto
+//console.log("Tempo para controle : " + refreshTimeSessionControl);
+const urlPrefix = ( document.URL.includes("weberinfo.com.br") || document.URL.includes("localhost") ? 'https://www.weberinfo.com.br/2017/' : 'https://www.servicoweber.com.br/' );
+function _sessionControlJS(fromTimer){
+
+  if (document.visibilityState !== 'visible') {
+    // after 3 seconds (3000 milliseconds)
+    setTimeout(_sessionControlJS(false), 3000);
+    return;
+  }
+
+  try {
+    if(fromTimer){
+      const minutesToWait = 1;
+      if( localStorage.getItem('PG_sessionController_lastSinc') != null ){
+        const lastSinc = new Date(localStorage.getItem('PG_sessionController_lastSinc'));
+        const nextSinc = lastSinc.setTime(lastSinc.getTime() + ( minutesToWait * 60 * 1000));
+        const pNow = new Date().getTime();
+        if(pNow < nextSinc){
+          return false;
+        }
+      }
+    }
+  } catch (e) {
+    console.log(e);
+  }
+
+  //console.log("Verificando sessão..");
+  $.ajax({
+    cache: false,
+    type: "GET",
+    url: urlPrefix + "sessionControl/sessionControl.php?url=" + document.URL + "&user=" + codUsuarioLogado,
+    success: function(data) {
+      localStorage.setItem( 'PG_sessionController_lastSinc', new Date() );
+      if(data && data.startsWith('1') ){
+        window.open(urlPrefix + "cliente/index.php?me=Sessão finalizada pelo controle de sessões. <br><br>Verifique se mais alguém esta utilizando seu usuário.&response=" + data, "_self");
+      }
+    }
+  });
+}
+
+
+
+try {
+
+  $(document).ready(function(){
+    _sessionControlJS(false);
+    window.setInterval( function() {
+      _sessionControlJS(true);
+    }, refreshTimeSessionControl );
+  });
+
+} catch(err){
+  var head = document.getElementsByTagName('head')[0];
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = "https://code.jquery.com/jquery-2.2.1.min.js";
+  script.onreadystatechange = handler;
+  script.onload = handler;
+  head.appendChild(script);
+
+  $(document).ready(function(){
+    _sessionControlJS();
+    window.setInterval( function() {
+      _sessionControlJS();
+    }, refreshTimeSessionControl );
+  });
+
+}

@@ -2,6 +2,50 @@
 
 All meaningful KORA Core version changes are recorded here.
 
+## 1.9.0 - 2026-09-17
+
+Impact: minor
+
+## Added
+
+- `skills/create-version-change-wiki.md` for creating client-facing and technician-led wikis that explain version changes with a consistent index, HTML output, image placement, and support-oriented wording.
+
+## Changed
+
+- `COMECE-AQUI.md`, `CAPACIDADES.md`, `skills/README.md`, and `VERSION.md` now list the version-change wiki capability.
+
+## Why It Matters
+
+KORA can now preserve a repeatable documentation pattern for release/change wikis, including separate language for clients and technicians, while keeping internal implementation details out of client-facing articles.
+
+## Related Decisions
+
+```text
+None.
+```
+
+## 1.8.0 - 2026-09-10
+
+Impact: minor
+
+## Added
+
+- `skills/create-client-onboarding-wiki-package.md` for creating client-facing wiki and video packages, with one wiki article and one recording plan per screen or workflow.
+
+## Changed
+
+- `COMECE-AQUI.md`, `CAPACIDADES.md`, `skills/README.md`, and `VERSION.md` now list the client onboarding documentation package capability.
+
+## Why It Matters
+
+KORA can now help turn a loose product training request into a structured documentation backlog, recording checklist, script template, wiki template, review checklist, schedule, and blocker escalation flow while keeping product-specific content local.
+
+## Related Decisions
+
+```text
+None.
+```
+
 ## 1.7.0 - 2026-09-07
 
 Impact: minor

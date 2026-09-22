@@ -7,3 +7,6 @@
 secrets/
 private/
 tmp/
+*.mp4
+lo-profile*/
+lo-profile-docx*/

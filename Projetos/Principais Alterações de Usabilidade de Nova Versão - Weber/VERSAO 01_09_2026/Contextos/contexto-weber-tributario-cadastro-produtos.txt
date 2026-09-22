@@ -1,0 +1,144 @@
+Alterações no Cadastro de Produtos – Weber Tributário
+
+O que mudou?
+
+Nesta versão, houve uma alteração no comportamento dos campos tributários e de descrição no Cadastro de Produtos.
+
+Quando o produto estiver com a flag "Habilita Weber Tributário" ativada, alguns campos permanecerão bloqueados para edição manual e serão destacados em verde.
+
+Os campos afetados são:
+
+Descrição do produto
+
+NCM
+
+CEST
+
+Aba ICMS
+
+Aba PIS/COFINS
+
+Essa alteração tem como objetivo manter os dados fiscais do produto vinculados ao processo de saneamento fiscal do Weber Tributário.
+
+
+
+
+
+Como liberar a edição dos campos?
+
+Caso seja necessário alterar a descrição do produto ou alguma informação fiscal, é preciso desabilitar a sincronização do produto com o Weber Tributário.
+
+Passo a passo
+
+Acesse o Cadastro de Produtos.
+
+Localize o produto que precisa ser alterado.
+
+Localize a flag "Habilita Weber Tributário".
+
+Desmarque a flag.
+
+O sistema apresentará a mensagem de confirmação:
+
+"Você desativou o produto para sincronização dos ajustes fiscais.
+Esse produto não receberá mais saneamento fiscal.
+Deseja mesmo assim continuar?
+Dúvidas entre em contato com o Suporte da Weber Sistemas de Gestão.
+
+
+
+Clique em Sim para confirmar.
+
+Após a confirmação, a flag "Habilita Weber Tributário" será desmarcada.
+
+Os campos anteriormente bloqueados ficarão disponíveis para edição.
+
+
+
+⚠️ IMPORTANTE – Após realizar alterações manuais
+
+Se você desabilitar o Weber Tributário e realizar alterações manuais nos campos tributários, descrição ou demais informações que estavam bloqueadas, não habilite novamente a flag "Habilita Weber Tributário" se a intenção for manter essas alterações manuais.
+
+Ao habilitar novamente a flag:
+
+os campos voltarão a ficar bloqueados para edição;
+
+o produto voltará a participar da sincronização dos ajustes fiscais;
+
+no próximo ciclo de sincronização, o sistema atualizará as informações tributárias conforme os dados disponibilizados pela iMendes.
+
+
+
+Atenção sobre a análise da iMendes
+
+O produto não é analisado novamente pela iMendes depois que já foi sincronizado.
+
+Por isso, é fundamental que o cadastro do produto contenha informações completas e corretas, principalmente:
+
+Código de barras (EAN);
+
+Descrição completa e adequada do produto.
+
+Essas informações são importantes para que o produto seja corretamente identificado e para que os dados tributários disponibilizados pela iMendes sejam compatíveis com o item cadastrado.
+
+
+
+⚠️ Por que a descrição do produto é importante para o Weber Tributário?
+
+Embora a descrição do produto não seja, por si só, uma informação fiscal, ela é uma das principais informações utilizadas pela iMendes para identificar e realizar o saneamento fiscal do produto.
+
+A descrição ajuda a iMendes a entender qual é o produto que está sendo cadastrado e, a partir dessa identificação, determinar as informações tributárias correspondentes.
+
+Por isso, a descrição deve ser completa, clara e específica desde o primeiro cadastro, principalmente quando o produto não possui um código EAN que permita sua identificação precisa.
+
+🔎 O que pode acontecer com uma descrição inadequada?
+
+Imagine que o produto seja uma carne moída comercializada no formato de bolinha, mas no cadastro seja utilizada apenas a descrição:
+
+"Bolinha"
+
+Embora internamente a equipe saiba que se trata de carne moída, a descrição isolada pode levar a iMendes a interpretar o produto de outra forma, como uma bola de futebol, vôlei, brinquedo ou outro item.
+
+Nesse caso, o saneamento fiscal poderá ser realizado com base na interpretação incorreta do produto, resultando em informações tributárias inadequadas.
+
+Outro exemplo:
+
+"Molho de rabanete"
+
+Dependendo do contexto do cadastro, a palavra "molho" pode ser interpretada como o produto em si (um molho/condimento), quando, na realidade, pode estar sendo utilizada para indicar uma unidade de medida ou forma de acondicionamento.
+
+Por isso, é importante utilizar uma descrição que deixe claro o que o produto é, e não apenas como ele é vendido, acondicionado ou medido.
+
+✅ Como cadastrar corretamente?
+
+Sempre utilize uma descrição completa e específica, permitindo que qualquer pessoa — e também a ferramenta de saneamento fiscal — consiga identificar o produto sem depender de informações externas.
+
+Por exemplo, em vez de:
+
+❌ Bolinha
+
+Prefira:
+
+✅ Carne bovina moída – formato bolinha
+
+Em vez de utilizar uma descrição ambígua, procure informar o produto, sua característica principal e, quando necessário, sua apresentação.
+
+🚨 Importante
+
+A descrição cadastrada impacta diretamente a identificação do produto e, consequentemente, o tratamento das informações fiscais.
+
+Por esse motivo:
+
+A descrição deve ser completa e correta desde o primeiro cadastro;
+
+Evite utilizar descrições genéricas, abreviações ou apelidos conhecidos apenas internamente;
+
+Quando não houver EAN, a qualidade da descrição se torna ainda mais importante para a correta identificação do produto;
+
+Códigos de produtos não devem ser reaproveitados para outro item, pois o histórico e as informações já vinculadas ao código podem não corresponder ao novo produto;
+
+Após o saneamento fiscal, evite alterar a descrição sem avaliar o impacto dessa alteração;
+
+Se o produto já foi sincronizado, ele não será necessariamente analisado novamente pela iMendes apenas porque sua descrição foi alterada.
+
+Em resumo: a descrição não é um imposto ou uma informação tributária, mas é uma informação fundamental para identificar o produto e determinar quais informações fiscais devem ser aplicadas a ele. Por isso, quanto mais precisa for a descrição desde o cadastro inicial, menor o risco de o produto ser interpretado ou saneado fiscalmente de forma incorreta.

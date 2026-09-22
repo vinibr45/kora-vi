@@ -1,0 +1,86 @@
+function sendAppWeberProducion(id_app, hashsha256, hashmd5){
+
+  swal({
+    title: "Digite 'PUBLICAR' para confirmar que deseja realmente publicar o app " + id_app,
+    content: {
+                    element: "input",
+                    attributes: {
+                        placeholder: "Digite PUBLICAR",
+                        value: "",  // Valor padrão
+                        type: "text"
+                    },
+                },
+    buttons: ["Cancelar", "Continuar"],
+    dangerMode: false
+  }).then(function(publicar){
+    if (publicar.toUpperCase() == "PUBLICAR") {
+
+      criaModal("modalAppWeberPublicacao", "Publicação do app", "modal-lg");
+      $("#modalAppWeberPublicacao .close").remove(); //Evitando do usuário fechar, ela se fechará automaticamente
+      $("#modalAppWeberPublicacao").modal('show');
+      $("#modalAppWeberPublicacao_content").html(setaLoadingModal() + "<hr><h5 class='text-center p-3'>Aguarde, este processo pode demorar um pouco...<br>Não feche a tela<br></h5>");
+
+
+        $.ajax({
+          url:"appsWeberBetaSendProduction.php",
+          async: true,
+          type:"post",
+          timeout: 180 * 1000, //3 minutos
+          data: {
+            id_app : id_app,
+            hashsha256 : hashsha256,
+            hashmd5 : hashmd5
+          },
+          beforeSend:function(data){
+          },
+          success:function(data) {
+            htmlToPrint = data;
+          },
+          error:function(data){
+            aviso("ERRO: Verifique sua conexão com internet.\n" + data.statusText,3);
+            $('#modalAppWeberPublicacao').modal('hide');
+          },
+          complete:function(data){
+            $('#modalAppWeberPublicacao_content').html(htmlToPrint + "<br><br>");
+          }
+        });
+
+    } else {
+      aviso("Operação abortada!", 2);
+    }
+  });
+
+
+}
+
+function obtemDetalhesVersao(elementoPai, id_app, id_versao) {
+  var $badge = $(elementoPai);
+  $badge.html('<span class="spinner-border spinner-border-sm"></span> Carregando...');
+  $.ajax({
+    url: "ajax_appWeberObtemInsideFilesVersion.php",
+    async: true,
+    type: "post",
+    timeout: 60 * 1000,
+    data: {
+      id_app: id_app,
+      id_versao: id_versao
+    },
+    success: function (data) {
+      // Se retornar uma tabela, substitui o badge pela tabela
+      if (typeof data === "string" && data.trim().startsWith("<table")) {
+        $badge.replaceWith(data);
+      } else {
+        // Se retornar erro, tenta extrair a mensagem e alerta
+        var msg = "Erro ao obter detalhes.";
+        var divMatch = data.match(/<div[^>]*>(.*?)<\/div>/i);
+        if (divMatch && divMatch[1]) msg = divMatch[1];
+        alert(msg);
+        $badge.html('Mais detalhes da versão'); // volta ao texto original
+      }
+    },
+    error: function (xhr) {
+      alert("ERRO: Verifique sua conexão com internet.\n" + xhr.statusText);
+      $badge.html('Mais detalhes da versão');
+    }
+  });
+}

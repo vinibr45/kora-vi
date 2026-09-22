@@ -74,6 +74,8 @@ Registrar instalacao em outro repo -> skills/register-installed-kora-project.md
 Auditar UX com Chrome MCP -> skills/audit-ux-with-chrome-mcp.md
 Gerar imagem revisada -> skills/generate-reviewed-image-asset.md
 Analisar canais de marketing -> skills/analyze-marketing-performance.md
+Criar wiki e videos de onboarding -> skills/create-client-onboarding-wiki-package.md
+Criar wiki de mudancas de versao -> skills/create-version-change-wiki.md
 Entender como usar -> skills/use-kora.md
 Classificar uma tarefa -> skills/classify-task.md
 Decidir onde algo deve morar -> skills/classify-scope.md
@@ -220,6 +222,8 @@ Gera uma imagem revisada para esse post.
 Gera ate aprovar e separa o resultado.
 Analisa Analytics, Ads e Instagram desse projeto.
 Checa a saude do marketing desse projeto.
+Cria uma wiki com videos para esse modulo.
+Cria uma wiki das principais mudancas dessa versao.
 ```
 
 ## Usando A KORA Em Outros Repositorios

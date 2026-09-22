@@ -1,0 +1,27 @@
+//Permissao ao iniciar
+document.addEventListener('DOMContentLoaded', function () {
+  if (!Notification) {
+    alert('Desktop notifications not available in your browser. Try Chromium.');
+    return;
+  }
+
+  if (Notification.permission !== "granted")
+    Notification.requestPermission();
+});
+
+function notificacao(conteudo,url) {
+  if (Notification.permission !== "granted")
+    Notification.requestPermission();
+  else {
+    var notification = new Notification('Weber Sistemas de Gestao', {
+      icon: 'https://www.weberinfo.com.br/2017/cliente/imagens/logo_2.png',
+      body: conteudo,
+    });
+
+    notification.onclick = function () {
+      window.open(url);
+    };
+
+  }
+
+}

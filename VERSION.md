@@ -1,16 +1,16 @@
 # KORA Version
 
-Current Version: 1.7.0
+Current Version: 1.9.0
 
-Date: 2026-09-07
+Date: 2026-09-17
 
 Status: active
 
-Stage: Marketing Channel Integration Layer
+Stage: Version Change Wiki Documentation
 
 ## Summary
 
-KORA Core now includes a reusable marketing channel integration layer for read-only analysis of Google Analytics, Google Ads, Instagram, and future marketing connectors across connected projects.
+KORA Core now includes a reusable skill for creating client-facing and technician-led version-change wikis with consistent indexes, HTML outputs, image placement, prompts, and support-oriented language.
 
 ## Versioning Policy
 
@@ -79,6 +79,8 @@ skills/release-kora-version.md
 - Google Analytics read connector definition: `tools/google-analytics-read-connector.md`
 - Marketing channel health automation: `automations/marketing-channel-health-snapshot.md`
 - Marketing channel integration eval: `evals/scenarios/EV-0016-marketing-channel-integrations.md`
+- Client onboarding wiki package skill: `skills/create-client-onboarding-wiki-package.md`
+- Version change wiki skill: `skills/create-version-change-wiki.md`
 
 ## Related Decisions
 
