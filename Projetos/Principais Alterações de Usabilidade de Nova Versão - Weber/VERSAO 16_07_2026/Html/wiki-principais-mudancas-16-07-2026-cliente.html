@@ -1,6 +1,6 @@
 <h2><span style="color:hsl(210, 75%, 60%);">Principais Mudanças - Versão 16.07.2026</span></h2>
 
-<p>Esta página apresenta as principais mudanças desta versão em uma linguagem simples, para que o cliente consiga ler sozinho ou acompanhar a explicação com o técnico durante o atendimento.</p>
+<p>Esta página mostra as principais mudanças da versão em uma linguagem simples, para que o cliente consiga consultar sozinho ou acompanhar a explicação durante o atendimento.</p>
 
 <h2>ÍNDICE</h2>
 
@@ -8,30 +8,30 @@
   <li>
     <strong>Promoções com Data e Hora de Início e Fim</strong><br>
     1.1 Onde configurar a promoção<br>
-    1.2 Como a data e hora funcionam<br>
-    1.3 Envio de carga para os caixas
+    1.2 Como funciona o período da promoção<br>
+    1.3 Atenção ao envio de carga
   </li>
   <li>
     <strong>Integração Financeira na Emissão da DANFE</strong><br>
     2.1 Onde fica a opção Integra Financeiro<br>
     2.2 Quando a opção estiver marcada<br>
-    2.3 Quando a opção não estiver marcada
+    2.3 Quando a opção estiver desmarcada
   </li>
   <li>
     <strong>Venda a Domicílio no PDV</strong><br>
     3.1 Nova opção no formulário F8<br>
-    3.2 Como identificar a venda a domicílio
+    3.2 Informações necessárias para a venda
   </li>
   <li>
-    <strong>Bloqueio de Pagamento para Cliente Bloqueado</strong><br>
-    4.1 O que mudou no caixa<br>
-    4.2 Cuidados ao atender um cliente bloqueado
+    <strong>Cliente Bloqueado no Caixa</strong><br>
+    4.1 Aviso apresentado no PDV<br>
+    4.2 Como resolver o bloqueio
   </li>
   <li>
-    <strong>Questionamento de Modo Orçamento Antes do Envio</strong><br>
-    5.1 O que mudou na ordem da pergunta<br>
-    5.2 Como funciona com dinheiro e TEF<br>
-    5.3 O que isso muda na finalização
+    <strong>Modo Orçamento na Finalização da Venda</strong><br>
+    5.1 Quando o sistema faz a pergunta<br>
+    5.2 Funcionamento em dinheiro<br>
+    5.3 Funcionamento com TEF
   </li>
 </ol>
 
@@ -41,29 +41,29 @@
 
 <h3>1.1 Onde configurar a promoção</h3>
 
-<p>Agora, no <strong>Cadastro de Produtos</strong>, é possível definir uma promoção informando o valor promocional e também a data e hora de início e fim.</p>
+<p>No Cadastro de Produtos, a área de promoção recebeu campos para informar o valor promocional, a data e a hora em que a promoção deve começar e terminar.</p>
 
-<p>Essa opção fica na aba <strong>Preços</strong>, dentro da área <strong>Promoção</strong>.</p>
+<p>Com isso, a loja consegue programar uma promoção para um período específico, sem depender apenas de uma data aberta ou de controle manual.</p>
 
 <p><img src="../Imagens/PROMOCAO DATA HORA INICIO E FIM.png" alt="Cadastro de produtos com campos de promoção, data e hora de início e fim"></p>
 
-<h3>1.2 Como a data e hora funcionam</h3>
+<h3>1.2 Como funciona o período da promoção</h3>
 
-<p>Com essa melhoria, a loja consegue programar promoções com mais precisão, definindo exatamente quando a condição promocional deve começar e quando deve terminar.</p>
+<p>O valor promocional passa a valer dentro do intervalo informado. Por exemplo: a promoção pode começar em um dia e horário definidos e terminar automaticamente no dia e horário configurados.</p>
 
-<p>O produto pode ter um valor de promoção e um período definido para que esse valor seja aplicado.</p>
+<p>Essa melhoria ajuda em campanhas com horário definido, ofertas programadas e ações comerciais que precisam iniciar e encerrar no momento correto.</p>
 
-<h3>1.3 Envio de carga para os caixas</h3>
+<h3>1.3 Atenção ao envio de carga</h3>
 
-<p><strong>⚠️ Importante:</strong> para que a promoção seja aplicada nos caixas, é necessário enviar carga para os PDVs após cadastrar ou alterar a promoção.</p>
+<p><strong>⚠️ Importante:</strong> depois de cadastrar ou alterar uma promoção, é necessário enviar carga para que os caixas recebam a informação atualizada.</p>
 
-<p>Depois de ajustar o valor promocional e o período da promoção, é importante garantir que os caixas recebam essa atualização.</p>
+<p>Se a carga não for enviada, o PDV pode continuar trabalhando com as informações antigas.</p>
 
 <p><img src="../Gifs/data promocao 240.gif" alt="Cadastro de produtos com promoção por data e hora de início e fim"></p>
 
-<h3>O que mudou na prática?</h3>
+<h3>O que mudou para a loja?</h3>
 
-<p>A promoção do produto pode ser configurada com data e horário. Isso permite programar, por exemplo, uma promoção para começar em um dia e horário específico e terminar automaticamente no período definido.</p>
+<p>A promoção ficou mais precisa. Agora é possível definir valor, data e horário de início e fim diretamente no cadastro do produto, facilitando o controle das ofertas nos caixas.</p>
 
 <h2>2. Integração Financeira na Emissão da DANFE</h2>
 
@@ -71,106 +71,98 @@
 
 <h3>2.1 Onde fica a opção Integra Financeiro</h3>
 
-<p>Na emissão de nota fiscal, foi adicionada a opção <strong>Integra Financeiro</strong>.</p>
+<p>Na emissão de nota fiscal, no Passo 2, foi adicionada a opção <strong>Integra Financeiro</strong>.</p>
 
-<p>Essa opção fica no <strong>Passo 2</strong>, junto às faturas da nota fiscal.</p>
+<p>Ela serve para definir se a nota fiscal emitida também deve gerar um lançamento no Contas a Receber.</p>
 
 <p><img src="../Imagens/Flag Integra Financeiro.png" alt="Flag Integra Financeiro na emissão de NF-e"></p>
 
 <h3>2.2 Quando a opção estiver marcada</h3>
 
-<p>Quando a opção <strong>Integra Financeiro</strong> estiver marcada, o sistema cria o <strong>Contas a Receber</strong> referente à nota fiscal emitida.</p>
+<p>Ao marcar <strong>Integra Financeiro</strong>, a nota fiscal será emitida e o sistema criará o Contas a Receber correspondente.</p>
 
-<h3>2.3 Quando a opção não estiver marcada</h3>
+<p>Use essa opção quando a nota precisar gerar cobrança ou controle financeiro para recebimento.</p>
 
-<p>Quando a opção não estiver marcada, o sistema emite a nota fiscal, mas não cria o lançamento no Contas a Receber.</p>
+<h3>2.3 Quando a opção estiver desmarcada</h3>
 
-<p>Antes dessa alteração, o sistema não possuía essa opção e o Contas a Receber da nota fiscal não era criado automaticamente.</p>
+<p>Ao deixar a opção desmarcada, a nota fiscal será emitida sem criar Contas a Receber.</p>
 
-<p><strong>⚠️ Importante:</strong> antes de emitir a nota, confira se a opção <strong>Integra Financeiro</strong> deve ou não ser marcada, conforme a rotina financeira da empresa.</p>
+<p>Antes dessa versão, essa escolha não existia nessa tela e a nota não criava o financeiro automaticamente.</p>
+
+<p><strong>⚠️ Importante:</strong> antes de emitir a nota, confira se ela deve ou não gerar financeiro, conforme a rotina da empresa.</p>
 
 <p><img src="../Gifs/Integra Financeiro 240.gif" alt="Opção Integra Financeiro na emissão de nota fiscal"></p>
 
-<h3>O que mudou na prática?</h3>
+<h3>O que mudou para a loja?</h3>
 
-<p>Agora, ao emitir uma nota fiscal, o sistema permite escolher se essa nota deve gerar um lançamento no Contas a Receber.</p>
-
-<p>Se a opção <strong>Integra Financeiro</strong> estiver marcada, o financeiro será gerado automaticamente. Se ela estiver desmarcada, a nota será emitida sem criar o Contas a Receber.</p>
+<p>A emissão da nota ficou mais flexível. A empresa escolhe, na própria emissão, se a nota deve alimentar o financeiro ou se será emitida sem gerar Contas a Receber.</p>
 
 <h2>3. Venda a Domicílio no PDV</h2>
 
-<p><strong>Onde fica:</strong> PDV &gt; formulário F8, com acesso pela opção F6.</p>
+<p><strong>Onde fica:</strong> PDV &gt; formulário F8, acessando a opção pelo F6.</p>
 
 <h3>3.1 Nova opção no formulário F8</h3>
 
-<p>No PDV, foi adicionada uma opção para indicar venda a domicílio no formulário <strong>F8</strong>.</p>
+<p>O PDV recebeu uma opção para indicar que a venda é a domicílio.</p>
 
-<p>O acesso é feito usando <strong>F6</strong> e marcando o checkbox correspondente à venda a domicílio.</p>
+<p>Quando a venda possuir entrega, o operador poderá marcar essa informação no formulário F8, usando o acesso pelo F6.</p>
 
 <p><img src="../Gifs/venda domicilio 240p.gif" alt="PDV com opção de venda a domicílio"></p>
 
-<p><strong>⚠️ Importante:</strong> para realizar a venda a domicílio, é necessário informar os dados do cliente e também os dados da transportadora.</p>
+<h3>3.2 Informações necessárias para a venda</h3>
 
-<p>Se essas informações não forem preenchidas corretamente, o cupom poderá ficar rejeitado.</p>
+<p>Para realizar a venda a domicílio, é necessário informar os dados do cliente e também os dados da transportadora.</p>
 
-<h3>3.2 Como identificar a venda a domicílio</h3>
+<p><strong>⚠️ Importante:</strong> se essas informações não forem preenchidas corretamente, o cupom poderá ficar rejeitado.</p>
 
-<p>Essa opção ajuda a identificar corretamente vendas que possuem entrega ou atendimento fora da venda comum de balcão.</p>
+<h3>O que mudou para a loja?</h3>
 
-<h3>O que mudou na prática?</h3>
+<p>A venda com entrega passa a ser identificada diretamente no PDV, ajudando a loja a separar esse tipo de venda e evitar rejeições por falta de dados obrigatórios.</p>
 
-<p>Quando a venda for a domicílio, o operador poderá marcar essa informação diretamente no PDV, deixando a venda melhor identificada no processo.</p>
+<h2>4. Cliente Bloqueado no Caixa</h2>
 
-<h2>4. Bloqueio de Pagamento para Cliente Bloqueado</h2>
+<p><strong>Onde fica:</strong> PDV, no momento da finalização/pagamento da venda.</p>
 
-<p><strong>Onde fica:</strong> PDV, no momento do pagamento da venda.</p>
+<h3>4.1 Aviso apresentado no PDV</h3>
 
-<h3>4.1 O que mudou no caixa</h3>
-
-<p>Agora, quando o cliente estiver bloqueado, o sistema impede que ele realize pagamento no caixa.</p>
-
-<p>Essa alteração reforça o controle da loja sobre clientes que não devem finalizar compras enquanto o bloqueio estiver ativo.</p>
+<p>Quando o cartão ou o cadastro do cliente estiver bloqueado, o PDV apresenta um aviso informando que a próxima venda não será efetuada e que é necessário verificar com o gerente.</p>
 
 <p><img src="../Gifs/Cliente bloqueado 240.gif" alt="PDV bloqueando pagamento para cliente bloqueado"></p>
 
-<p>Quando aparecer o aviso de <strong>cartão ou cadastro do cliente bloqueado</strong>, a próxima venda não será efetuada.</p>
+<h3>4.2 Como resolver o bloqueio</h3>
 
 <p>Mesmo que o cliente realize o pagamento do Contas a Receber, o cadastro ou o cartão não será desbloqueado automaticamente.</p>
 
-<p><strong>⚠️ Importante:</strong> é necessário verificar com a gerência para desbloquear o cadastro ou o cartão do cliente.</p>
+<p><strong>⚠️ Importante:</strong> é necessário verificar com a gerência para desbloquear o cadastro ou o cartão do cliente antes de tentar finalizar uma nova venda.</p>
 
-<h3>4.2 Cuidados ao atender um cliente bloqueado</h3>
+<h3>O que mudou para a loja?</h3>
 
-<p><strong>⚠️ Importante:</strong> se o cliente estiver bloqueado, é necessário revisar o cadastro ou a regra interna da loja antes de liberar a venda.</p>
+<p>O caixa passa a impedir a continuidade da venda quando o cliente estiver bloqueado. Isso evita que uma venda seja finalizada sem a liberação correta do cadastro ou do cartão.</p>
 
-<h3>O que mudou na prática?</h3>
+<h2>5. Modo Orçamento na Finalização da Venda</h2>
 
-<p>O caixa passa a respeitar o bloqueio do cliente no momento do pagamento. Com isso, a loja evita finalizar vendas para clientes que estão com restrição no cadastro.</p>
+<p><strong>Onde fica:</strong> PDV, durante a finalização da venda.</p>
 
-<h2>5. Questionamento de Modo Orçamento Antes do Envio</h2>
+<h3>5.1 Quando o sistema faz a pergunta</h3>
 
-<p><strong>Onde fica:</strong> PDV, durante o fluxo de finalização/envio da venda.</p>
+<p>Com a nova atualização, quando o modo orçamento estiver habilitado, o sistema fará o questionamento apenas no momento de finalizar a venda.</p>
 
-<h3>5.1 O que mudou na ordem da pergunta</h3>
-
-<p>Foi alterada a ordem em que o sistema apresenta o questionamento de <strong>modo orçamento</strong> no PDV.</p>
-
-<p>Com a mudança, a pergunta aparece antes do envio, ajudando o operador a confirmar a intenção da venda no momento correto.</p>
+<p>Isso deixa a pergunta mais próxima da etapa em que o operador realmente decide como a venda será concluída.</p>
 
 <p><img src="../Gifs/modo orcamento mudou de ordem 240p.gif" alt="PDV exibindo o questionamento de modo orçamento ao finalizar a venda"></p>
 
-<h3>5.2 Como funciona com dinheiro e TEF</h3>
+<h3>5.2 Funcionamento em dinheiro</h3>
 
-<p>Quando o <strong>modo orçamento</strong> estiver habilitado, o questionamento será apresentado ao finalizar a venda.</p>
+<p>Quando a configuração de venda PDO com TEF estiver desativada, o modo orçamento funciona apenas para vendas em dinheiro.</p>
 
-<p>Se a configuração que permite vender PDO com TEF estiver desativada, o modo orçamento será aplicado apenas para vendas em <strong>dinheiro</strong>.</p>
+<p>Nesse cenário, ao finalizar uma venda em dinheiro, o sistema pergunta se a venda deve seguir em modo orçamento.</p>
 
-<p>Nesse caso, sempre que a venda for finalizada em dinheiro, o sistema perguntará se deseja utilizar o modo orçamento.</p>
+<h3>5.3 Funcionamento com TEF</h3>
 
-<p>Se a venda for finalizada com <strong>TEF</strong>, mesmo com o modo orçamento habilitado no PDV, o sistema emitirá a venda diretamente como <strong>NFC-e</strong>.</p>
+<p>Se o operador tentar finalizar a venda com TEF, mesmo com o modo orçamento habilitado no PDV, o sistema seguirá o fluxo fiscal e emitirá a venda como NFC-e.</p>
 
-<p><strong>⚠️ Importante:</strong> nessa configuração, o modo orçamento funciona apenas para vendas em dinheiro.</p>
+<p><strong>⚠️ Importante:</strong> nessa configuração, o modo orçamento não será aplicado em vendas com TEF.</p>
 
-<h3>5.3 O que isso muda na finalização</h3>
+<h3>O que mudou para a loja?</h3>
 
-<p>O operador passa a receber a pergunta sobre modo orçamento em uma etapa mais adequada do fluxo, reduzindo dúvidas durante a finalização.</p>
+<p>A pergunta do modo orçamento passou a aparecer no final da venda. Para vendas em dinheiro, o operador poderá confirmar o modo orçamento. Para TEF, a venda seguirá como NFC-e quando a configuração de PDO com TEF estiver desativada.</p>
