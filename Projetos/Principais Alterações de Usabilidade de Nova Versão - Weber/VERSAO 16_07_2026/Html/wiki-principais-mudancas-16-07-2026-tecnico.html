@@ -30,7 +30,8 @@
   <li>
     <strong>Questionamento de Modo Orçamento Antes do Envio</strong><br>
     5.1 O que mudou<br>
-    5.2 Roteiro de atendimento
+    5.2 Regra de funcionamento com dinheiro e TEF<br>
+    5.3 Roteiro de atendimento
   </li>
 </ol>
 
@@ -52,7 +53,7 @@
 
 <p>Antes de finalizar o atendimento, valide com o cliente se o valor promocional, a data de início, a hora de início, a data de fim e a hora de fim foram preenchidos corretamente.</p>
 
-<p>(INSERIR AQUI O GIF DO RETAGUARDA MOSTRANDO O CAMINHO CADASTROS &gt; CADASTRO DE PRODUTOS &gt; ABA PREÇOS &gt; PROMOÇÃO)</p>
+<p><img src="../Gifs/Promocao Data e Hora Inicial e Final.gif" alt="Cadastro de produtos com promoção por data e hora de início e fim"></p>
 
 <h3>1.3 Roteiro de atendimento</h3>
 
@@ -82,7 +83,7 @@
 
 <p>Se o cliente esperava que a nota gerasse cobrança, a flag precisa estar marcada. Se a nota não deve gerar Contas a Receber, a flag deve permanecer desmarcada.</p>
 
-<p>(INSERIR AQUI O GIF DO RETAGUARDA MOSTRANDO FATURAMENTO &gt; NOTA FISCAL - EMISSÃO &gt; PASSO 2 &gt; INTEGRA FINANCEIRO)</p>
+<p><img src="../Gifs/Integra Financeiro Nota Fiscal Emissão.gif" alt="Opção Integra Financeiro na emissão de nota fiscal"></p>
 
 <h3>2.3 Roteiro de atendimento</h3>
 
@@ -120,7 +121,7 @@
 
 <p><strong>⚠️ Importante:</strong> antes de tratar como erro de PDV, confira se o cliente está bloqueado no cadastro e se o bloqueio realmente deve permanecer.</p>
 
-<p>(INSERIR AQUI O GIF DO PDV MOSTRANDO A TENTATIVA DE PAGAMENTO COM CLIENTE BLOQUEADO)</p>
+<p><img src="../Gifs/Gif Cliente Bloqueado.gif" alt="PDV bloqueando pagamento para cliente bloqueado"></p>
 
 <h3>4.2 Roteiro de atendimento</h3>
 
@@ -138,10 +139,24 @@
 
 <p>Com a mudança, a pergunta aparece antes do envio, ajudando o operador a confirmar a intenção da venda no momento correto.</p>
 
-<p>(INSERIR AQUI O GIF DO PDV MOSTRANDO A NOVA ORDEM DO QUESTIONAMENTO DE MODO ORÇAMENTO)</p>
+<p><img src="../Gifs/Modo Orçamento mudou de Ordem.gif" alt="PDV exibindo o questionamento de modo orçamento ao finalizar a venda"></p>
 
-<h3>5.2 Roteiro de atendimento</h3>
+<h3>5.2 Regra de funcionamento com dinheiro e TEF</h3>
+
+<p>Com o <strong>modo orçamento</strong> habilitado, o questionamento passa a aparecer apenas ao finalizar a venda.</p>
+
+<p>Quando a configuração <strong>permite vender PDO com TEF</strong> estiver como <strong>FALSE</strong>, o modo orçamento funcionará apenas para vendas em <strong>dinheiro</strong>.</p>
+
+<p>Nessa configuração, sempre que o operador finalizar uma venda em dinheiro, o sistema perguntará se deseja utilizar o modo orçamento.</p>
+
+<p>Se o operador tentar finalizar a venda com <strong>TEF</strong>, mesmo com o modo orçamento ativado no PDV, o sistema seguirá o fluxo fiscal e imprimirá a venda diretamente como <strong>NFC-e</strong>.</p>
+
+<p><strong>⚠️ Importante:</strong> antes de orientar o cliente, valide a configuração <strong>permite vender PDO com TEF</strong>. Se estiver como <strong>FALSE</strong>, explique que o modo orçamento não será aplicado em vendas com TEF.</p>
+
+<h3>5.3 Roteiro de atendimento</h3>
 
 <p>Explique que a mudança é de ordem no fluxo. O objetivo é fazer a confirmação aparecer antes do envio, reduzindo dúvida na finalização.</p>
 
 <p>Durante a filmagem do PDV, grave o fluxo completo e depois separe o trecho em que a pergunta aparece na nova posição.</p>
+
+<p>Se o cliente questionar por que o modo orçamento não apareceu em uma venda com TEF, explique que, com a configuração de PDO com TEF desativada, o modo orçamento funciona somente para dinheiro. No TEF, a venda segue direto como NFC-e.</p>
