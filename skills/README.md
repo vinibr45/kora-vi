@@ -61,7 +61,7 @@ In v0.4, these are structured skill contracts, not executable automations.
 - `analyze-marketing-performance.md`: analyze authorized marketing channel data from Google Analytics, Google Ads, Instagram, and future connectors.
 - `create-commercial-proposal.md`: create a buyer-friendly commercial proposal from sales, offer, scope, timeline, and next-step context.
 - `create-client-onboarding-wiki-package.md`: create a client-facing onboarding package with one video and one wiki article per screen or workflow.
-- `create-version-change-wiki.md`: create client-facing or technician-led wiki articles for version changes, with indexes, HTML output, image placement, and support-oriented wording.
+- `create-version-change-wiki.md`: create client-facing or technician-led version-change wikis, including change triage, indexes, HTML output, image/GIF embed planning, and support-oriented wording.
 - `diagnose-business-workflow.md`: diagnose recurring business workflows and identify bottlenecks, ownership gaps, and automation readiness.
 - `select-ai-use-case.md`: decide whether a business task is a good candidate for AI assistance, skill creation, tooling, automation, or agent support.
 - `create-sales-follow-up.md`: draft respectful, clear sales follow-up messages for leads, proposals, objections, and stalled opportunities.

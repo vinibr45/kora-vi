@@ -2,6 +2,25 @@
 
 All meaningful KORA Core version changes are recorded here.
 
+## 1.10.0 - 2026-09-24
+
+Impact: minor
+
+## Changed
+
+- Expanded `skills/create-version-change-wiki.md` to include change-selection/levantamento criteria, audience-specific public and technical article guidance, reusable output patterns, and GIF/embed handling.
+- Updated `skills/README.md` and `CAPACIDADES.md` so the version-change wiki capability is discoverable as a workflow for selecting, explaining, and publishing main version changes.
+
+## Why It Matters
+
+KORA can now reuse the full release-wiki workflow in other projects: identify which changes matter, separate customer-facing and technician-led explanations, justify the selection of main changes, and handle public GIF embed links when wiki platforms cannot paste media directly.
+
+## Related Decisions
+
+```text
+None.
+```
+
 ## 1.9.0 - 2026-09-17
 
 Impact: minor

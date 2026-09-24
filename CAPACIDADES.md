@@ -295,5 +295,5 @@ Se instalou KORA em um repo -> register-installed-kora-project.
 Se quer gerar imagem e so aceitar quando passar na avaliacao -> generate-reviewed-image-asset.
 Se quer analisar Analytics, Ads, Instagram ou canais de marketing -> analyze-marketing-performance.
 Se quer criar wiki, tutorial ou videos por tela para onboarding de clientes -> create-client-onboarding-wiki-package.
-Se quer criar wiki de principais mudancas de versao para cliente ou tecnico -> create-version-change-wiki.
+Se quer levantar, selecionar e criar wiki de principais mudancas de versao para cliente ou tecnico, incluindo HTML e GIFs embutidos -> create-version-change-wiki.
 ```

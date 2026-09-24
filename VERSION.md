@@ -1,16 +1,16 @@
 # KORA Version
 
-Current Version: 1.9.0
+Current Version: 1.10.0
 
-Date: 2026-09-17
+Date: 2026-09-24
 
 Status: active
 
-Stage: Version Change Wiki Documentation
+Stage: Version Change Wiki Workflow Expansion
 
 ## Summary
 
-KORA Core now includes a reusable skill for creating client-facing and technician-led version-change wikis with consistent indexes, HTML outputs, image placement, prompts, and support-oriented language.
+KORA Core now includes an expanded reusable workflow for creating version-change wikis, including change triage, client and technician article variants, HTML outputs, image/GIF embed handling, and demand summaries that explain how main changes were selected.
 
 ## Versioning Policy
 
