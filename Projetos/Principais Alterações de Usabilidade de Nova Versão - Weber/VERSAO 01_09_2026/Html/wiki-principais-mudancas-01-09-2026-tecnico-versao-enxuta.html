@@ -1,0 +1,160 @@
+<h2><span style="color:hsl(210, 75%, 60%);">Principais Mudanças - Versão 01.09.2026</span></h2>
+
+<p>Material interno para o técnico conduzir a explicação em linha com o cliente. Use este artigo como apoio para explicar o que mudou, validar os pontos necessários e orientar o cliente sem transformar a conversa em um passo a passo longo.</p>
+
+<h2>ÍNDICE</h2>
+
+<ol>
+  <li>
+    <strong>Alterações no Cadastro de Produtos - Weber Tributário</strong><br>
+    1.1 Módulo e comportamento<br>
+    1.2 Como liberar a edição dos campos<br>
+    1.3 Pontos de validação<br>
+    1.4 Orientação em linha
+  </li>
+  <li>
+    <strong>Entrada de Notas Recebe Fácil</strong><br>
+    2.1 Opção em testes no menu Estoque
+  </li>
+  <li>
+    <strong>Novas Notificações no Retaguarda</strong><br>
+    3.1 Módulo e comportamento<br>
+    3.2 Produtos sem Ajuste Tributário<br>
+    3.3 Produtos Rejeitados pelo Ajuste Weber Tributário<br>
+    3.4 Carga PDV Desatualizada<br>
+    3.5 Configuração e leitura das notificações<br>
+    3.6 Orientação em linha
+  </li>
+</ol>
+
+<h2>1. Alterações no Cadastro de Produtos - Weber Tributário</h2>
+
+<p><strong>Módulo:</strong> Retaguarda / Cadastro de Produtos.</p>
+
+<h3>1.1 Módulo e comportamento</h3>
+
+<p>Nesta versão, houve alteração no comportamento dos campos tributários e da descrição no <strong>Cadastro de Produtos</strong>.</p>
+
+<p>Quando o produto estiver com a flag <strong>"Habilita Weber Tributário"</strong> ativa, alguns campos permanecerão bloqueados para edição manual e serão destacados em verde.</p>
+
+<p>Os campos afetados são:</p>
+
+<ul>
+  <li><strong>Descrição do produto</strong>;</li>
+  <li><strong>NCM</strong>;</li>
+  <li><strong>CEST</strong>;</li>
+  <li><strong>Aba ICMS</strong>;</li>
+  <li><strong>Aba PIS/COFINS</strong>.</li>
+</ul>
+
+<p>O objetivo é manter os dados fiscais do produto vinculados ao processo de saneamento fiscal.</p>
+
+<p><img src="https://raw.githubusercontent.com/vinibr45/kora-vi/master/wiki-assets/weber/versao-01-09-2026/imagens/weber-tributario-1.png" alt="Campos protegidos com Weber Tributário habilitado"></p>
+
+<h3>1.2 Como liberar a edição dos campos</h3>
+
+<p>Caso seja necessário alterar a descrição do produto ou alguma informação fiscal, é preciso desabilitar a sincronização do produto com o Weber Tributário.</p>
+
+<p>Conduza o cliente no <strong>Cadastro de Produtos</strong>, localize a flag <strong>"Habilita Weber Tributário"</strong> e desmarque a opção.</p>
+
+<p><img src="https://raw.githubusercontent.com/vinibr45/kora-vi/master/wiki-assets/weber/versao-01-09-2026/imagens/weber-tributario-2.png" alt="Flag Habilita Weber Tributário no Cadastro de Produtos"></p>
+
+<p>Ao desmarcar, o sistema apresentará uma mensagem de confirmação informando que o produto deixará de receber sincronização dos ajustes fiscais.</p>
+
+<p><img src="https://raw.githubusercontent.com/vinibr45/kora-vi/master/wiki-assets/weber/versao-01-09-2026/imagens/weber-tributario-3.png" alt="Mensagem de confirmação ao desabilitar Weber Tributário"></p>
+
+<p>Depois da confirmação, os campos anteriormente bloqueados ficarão disponíveis para edição.</p>
+
+<p><img src="https://raw.githubusercontent.com/vinibr45/kora-vi/master/wiki-assets/weber/versao-01-09-2026/imagens/weber-tributario-4.png" alt="Campos liberados para edição manual"></p>
+
+<h3>1.3 ⚠️ Pontos de validação</h3>
+
+<p>Se o cliente desabilitar o Weber Tributário e realizar alterações manuais, não deve habilitar novamente a flag se a intenção for manter essas alterações.</p>
+
+<p>Ao habilitar novamente:</p>
+
+<ul>
+  <li>os campos voltarão a ficar bloqueados para edição;</li>
+  <li>o produto voltará a participar da sincronização dos ajustes fiscais;</li>
+  <li>em um próximo ciclo, o sistema poderá atualizar as informações tributárias conforme os dados disponibilizados pela iMendes.</li>
+</ul>
+
+<p>Valide com o cliente se a alteração manual realmente deve ser mantida e se existe responsável fiscal ciente da mudança.</p>
+
+<h3>1.4 Orientação em linha</h3>
+
+<p>Explique que o bloqueio dos campos não é erro do sistema. Ele existe para proteger informações vinculadas ao saneamento fiscal.</p>
+
+<p>Se o cliente precisar alterar manualmente descrição, NCM, CEST, ICMS ou PIS/COFINS, oriente que primeiro será necessário desabilitar a flag <strong>"Habilita Weber Tributário"</strong>.</p>
+
+<p>Use uma explicação simples sobre a descrição: quando um produto sem GTIN é enviado para análise fiscal, o código interno passa a ficar associado à descrição original. Se esse mesmo cadastro for reaproveitado para outro item, a identificação fiscal pode ficar divergente.</p>
+
+<p>Exemplo para a ligação: "Se o código 179 foi enviado como Maçã Argentina, ele passa a representar esse produto. Se a descrição for trocada depois para Milho Verde, o código pode continuar vinculado à análise anterior."</p>
+
+<p>Oriente que, quando for outro produto, o mais seguro é criar um novo cadastro em vez de reaproveitar um código já sincronizado.</p>
+
+<h2>2. Entrada de Notas Recebe Fácil</h2>
+
+<p><strong>Módulo:</strong> Retaguarda / Estoque.</p>
+
+<h3>2.1 Opção em testes no menu Estoque</h3>
+
+<p>Depois da atualização, o menu <strong>Estoque</strong> recebeu a opção <strong>Entrada de Notas Recebe Fácil</strong>.</p>
+
+<p><strong>⚠️ Importante:</strong> a ferramenta ainda está em testes. Não aprofunde a explicação no atendimento comum. Caso o cliente tenha dúvidas sobre utilização, liberação ou funcionamento, oriente contato com o suporte.</p>
+
+<p><img src="https://raw.githubusercontent.com/vinibr45/kora-vi/master/wiki-assets/weber/versao-01-09-2026/gifs/menu-entrada-notas-recebe-facil.gif" alt="Menu Estoque com a opção Entrada de Notas Recebe Fácil"></p>
+
+<h2>3. Novas Notificações no Retaguarda</h2>
+
+<p><strong>Módulo:</strong> Retaguarda / Notificações.</p>
+
+<h3>3.1 Módulo e comportamento</h3>
+
+<p>Nesta versão, o Retaguarda recebeu novas notificações para avisar o usuário quando existirem informações que precisam de atenção.</p>
+
+<p>Quando uma dessas situações for identificada, a notificação será exibida no Retaguarda e o sistema também emitirá um som de aviso.</p>
+
+<h3>3.2 Produtos sem Ajuste Tributário</h3>
+
+<p>Essa notificação indica que existem produtos que ainda não foram sincronizados com o Weber Tributário.</p>
+
+<p>Quando aparecer, oriente que existem produtos pendentes de sincronização fiscal.</p>
+
+<h3>3.3 Produtos Rejeitados pelo Ajuste Weber Tributário</h3>
+
+<p>Essa notificação indica que alguns produtos foram rejeitados durante o processo de ajuste tributário.</p>
+
+<p>Isso pode ocorrer quando a descrição do produto não está clara o suficiente para identificar corretamente o item e buscar os dados fiscais na iMendes.</p>
+
+<p>Nessa situação, conduza a revisão dos produtos indicados, principalmente em relação à descrição cadastrada.</p>
+
+<h3>3.4 Carga PDV Desatualizada</h3>
+
+<p>Essa notificação indica que foi realizada alguma alteração no Retaguarda, como em <strong>produto</strong>, <strong>promoção</strong> ou <strong>cliente</strong>, e que ainda não foi executado o <strong>Comunica PDV</strong> após essa alteração.</p>
+
+<p>Ela lembra que essas informações precisam ser enviadas para os caixas, para que os PDVs recebam as atualizações feitas no Retaguarda.</p>
+
+<h3>3.5 ⚙️ Configuração e leitura das notificações</h3>
+
+<p>As notificações podem ser conferidas e configuradas no Retaguarda, na área de notificações.</p>
+
+<p>Essa configuração define quais avisos serão apresentados ao usuário quando houver informações pendentes para exibição.</p>
+
+<p><img src="https://raw.githubusercontent.com/vinibr45/kora-vi/master/wiki-assets/weber/versao-01-09-2026/gifs/configuracao-notificacao-retaguarda.gif" alt="Configuração das notificações no Retaguarda"></p>
+
+<p><strong>⚠️ Importante:</strong> antes de tratar a notificação como erro, verifique se a configuração está correta para apresentar esses dados.</p>
+
+<p>Executar a tarefa mencionada na notificação não faz a notificação desaparecer automaticamente. Para removê-la da tela, é preciso clicar na notificação e marcá-la como lida.</p>
+
+<h3>3.6 Orientação em linha</h3>
+
+<p>Explique que as notificações são avisos automáticos do Retaguarda para chamar atenção sobre pontos que precisam de análise.</p>
+
+<p>Se aparecer <strong>Produtos sem Ajuste Tributário</strong>, existem produtos que ainda precisam passar pela sincronização fiscal.</p>
+
+<p>Se aparecer <strong>Produtos Rejeitados pelo Ajuste Weber Tributário</strong>, alguns produtos precisam de revisão, principalmente na descrição, para que possam ser identificados corretamente no processo de ajuste fiscal.</p>
+
+<p>Se aparecer <strong>Carga PDV Desatualizada</strong>, houve alteração em produto, promoção ou cliente, e ainda não foi executado o Comunica PDV depois dessa alteração.</p>
+
+<p>Reforce que a notificação não significa, necessariamente, erro no sistema. Ela indica uma situação pendente ou uma configuração que precisa ser conferida.</p>
