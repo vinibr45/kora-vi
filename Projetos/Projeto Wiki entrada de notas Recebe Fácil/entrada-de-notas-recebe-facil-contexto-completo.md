@@ -36,19 +36,19 @@ Quando a base está bem configurada, o sistema consegue reconhecer os itens da n
 
 ## Requisitos obrigatórios
 
-Para utilizar a Entrada de Notas Recebe Fácil, o cliente precisa atender a dois requisitos obrigatórios:
+Para utilizar a Entrada de Notas Recebe Fácil na Wiki atual, o cliente deve considerar a seguinte base operacional:
 
-- estar com o **Financeiro Novo**, também chamado de **Gestão Financeira**, ativo;
-- estar com o **Estoque Novo** habilitado, com a flag de Estoque Novo ativa no **Portal Gerencial**.
+- usar o **Financeiro Novo**, também chamado de **Gestão Financeira**, como base financeira do material;
+- o fluxo já funciona com o **Estoque Antigo**, sem necessidade de habilitar o **Estoque Novo** no **Portal Gerencial**.
 
-Caso o cliente não atenda a esses requisitos, ele não deve seguir com a utilização do fluxo baseado no Estoque Novo.
+Portanto, os materiais novos não devem tratar a habilitação do Estoque Novo no Portal Gerencial como requisito obrigatório.
 
 ## Configurações importantes antes do uso
 
 Antes de iniciar a operação, algumas configurações precisam estar corretas:
 
-- Financeiro Novo/Gestão Financeira ativo;
-- Estoque Novo habilitado no Portal Gerencial;
+- Financeiro Novo/Gestão Financeira ativo e usado como base da Wiki;
+- operação compatível com Estoque Antigo;
 - parametrização do módulo;
 - permissões de entrada de notas e análises;
 - configurações financeiras da empresa;
@@ -291,18 +291,21 @@ O cronograma inicial da Wiki contempla os seguintes tópicos:
 
 Caso sejam identificados novos tópicos durante a execução, eles devem ser adicionados ao cronograma e tratados como tarefas separadas.
 
-## Etapa atual da documentação
+## Etapas trabalhadas da documentação
 
-A etapa trabalhada até agora é:
+As etapas trabalhadas até agora são:
 
 ```text
 01 - Preparação do ambiente
+02 - Configurações prévias
+05 - Combinações CFOP + CST
+08 - Dashboard da Entrada de Notas
 ```
 
-O tutorial dessa etapa aborda:
+O tutorial de **01 - Preparação do ambiente** aborda:
 
 - acesso a `Ferramentas > Empresa`;
-- habilitação do Estoque Novo;
+- validação do cenário de estoque utilizado, considerando compatibilidade com Estoque Antigo;
 - avisos de configuração financeira pendente;
 - plano financeiro sugerido pendente;
 - usuário master não configurado;
@@ -317,9 +320,52 @@ O tutorial dessa etapa aborda:
 - parâmetros de desmontagem de produtos;
 - gravação da parametrização.
 
+O tutorial de **02 - Configurações prévias** aborda:
+
+- avisos iniciais de configuração financeira pendente;
+- aviso de plano financeiro sugerido pendente;
+- aviso de usuário master não configurado;
+- acesso a `Configurações > Configurações Financeiras > Plano Financeiro padrão da empresa`;
+- seleção da conta financeira;
+- seleção do centro de custo;
+- definição do percentual de distribuição;
+- inclusão e salvamento da sugestão para a operação `ENTRADA_NOTAS`;
+- acesso a `Configurações > Configurações Financeiras > Configurações financeiras da empresa`;
+- configuração da espécie de documento padrão;
+- configuração do meio de pagamento padrão;
+- acesso a `Configurações > Parametrização do módulo`;
+- revisão dos parâmetros de liberação prévia e atualização de custos;
+- acesso a `Configurações > Permissões`;
+- configuração de usuário master e módulos de análise.
+
+O tutorial de **05 - Combinações CFOP + CST** aborda:
+
+- acesso a `Configurações > Combinações CFOP + CST`;
+- leitura da listagem de combinações cadastradas;
+- diferença entre regras de CFOP + CST de saída e de entrada;
+- identificação visual dos indicadores de crédito de impostos;
+- abertura da edição de uma combinação existente;
+- seleção do CFOP convertido;
+- seleção do CST convertido;
+- definição do comportamento de crédito de ICMS;
+- definição do comportamento de crédito de ICMS ST;
+- revisão dos campos automáticos de PIS e IPI;
+- criação de uma nova combinação CFOP + CST.
+
+O tutorial de **08 - Dashboard da Entrada de Notas** aborda:
+
+- visão geral do Dashboard no Controle das entradas;
+- filtros de período por data de início e fim;
+- atalhos de período como 7 dias, 30 dias e mês atual;
+- cards de notas pendentes, produtos pendentes, fornecedores pendentes e valor pendente;
+- cards de NFes lançadas, valor de NFes lançadas, itens/produtos distintos e auditoria fiscal;
+- gráfico de valor de NFes lançadas por dia;
+- gráficos de top fornecedores e top grupos/produtos;
+- tabela de últimas entradas no período.
+
 ## Textos de aviso já transcritos
 
-Durante a preparação do ambiente, alguns avisos foram transcritos para a Wiki.
+Durante a preparação do ambiente e as configurações prévias, alguns avisos foram transcritos para a Wiki.
 
 ### Configuração financeira pendente
 
@@ -380,4 +426,4 @@ Durante o fluxo, o usuário pode cadastrar fornecedor, produto, associação de 
 
 O módulo também se integra ao Weber Mobile para liberação prévia de notas, quando essa regra estiver habilitada. Depois da entrada, permite auditar notas, produtos e fornecedores, além de acompanhar dashboards com pendências e indicadores importantes.
 
-Para utilizar o Recebe Fácil, o cliente precisa estar com o **Financeiro Novo/Gestão Financeira** ativo e com o **Estoque Novo** habilitado no **Portal Gerencial**.
+Para utilizar o Recebe Fácil conforme a Wiki atual, o cliente deve trabalhar com o **Financeiro Novo/Gestão Financeira** como base financeira. O fluxo já está funcionando com o **Estoque Antigo**, sem exigir habilitação do **Estoque Novo** no **Portal Gerencial**.

@@ -1,0 +1,267 @@
+1
+00:00:00,500 --> 00:00:05,000
+Neste vídeo, vamos revisar a configuração de combinações CFOP + CST
+da Entrada de Notas Recebe Fácil.
+
+2
+00:00:05,000 --> 00:00:10,800
+Essas combinações ajudam o sistema a interpretar o CFOP e o CST
+recebidos no XML da nota.
+
+3
+00:00:10,800 --> 00:00:15,800
+E também ajudam a converter essas informações
+para a entrada da nota.
+
+4
+00:00:15,800 --> 00:00:21,600
+Também vamos ver como revisar créditos fiscais
+e como criar uma nova combinação quando necessário.
+
+5
+00:00:22,500 --> 00:00:27,000
+No painel do Controle das entradas,
+acesse o menu Configurações.
+
+6
+00:00:27,000 --> 00:00:31,000
+Em seguida, clique em Combinações CFOP + CST.
+
+7
+00:00:31,000 --> 00:00:36,500
+Esse caminho abre o cadastro usado para revisar
+e configurar as conversões fiscais da entrada de notas.
+
+8
+00:00:37,500 --> 00:00:43,500
+Nesta tela, o sistema apresenta a listagem de combinações
+já cadastradas para a loja selecionada.
+
+9
+00:00:43,500 --> 00:00:50,500
+As principais colunas são CFOP, CST, CFOP convertido,
+CST convertido, crédito de ICMS,
+
+10
+00:00:50,500 --> 00:00:55,500
+crédito de ICMS ST, CST PIS e status.
+
+11
+00:00:55,500 --> 00:01:00,500
+Use o campo Filtrar quando precisar localizar
+uma combinação específica.
+
+12
+00:01:01,500 --> 00:01:06,000
+As colunas CFOP e CST representam os códigos de origem.
+
+13
+00:01:06,000 --> 00:01:10,500
+Na prática, são as informações fiscais
+que vêm no XML da nota.
+
+14
+00:01:10,500 --> 00:01:15,500
+Esses campos ajudam a identificar
+qual situação fiscal foi enviada pelo fornecedor.
+
+15
+00:01:16,500 --> 00:01:22,500
+Já as colunas Conv. CFOP e Conv. CST indicam
+como o sistema converterá os códigos recebidos.
+
+16
+00:01:22,500 --> 00:01:27,000
+Essa conversão será usada para a entrada da nota.
+
+17
+00:01:27,000 --> 00:01:32,000
+Essa conversão deve respeitar a regra fiscal
+definida para a operação.
+
+18
+00:01:32,000 --> 00:01:38,000
+Por isso, antes de alterar esses campos,
+valide a orientação fiscal ou contábil da empresa.
+
+19
+00:01:39,000 --> 00:01:44,500
+Além da conversão de CFOP e CST,
+a listagem também mostra campos de crédito fiscal.
+
+20
+00:01:44,500 --> 00:01:50,500
+Aqui é possível conferir se a combinação credita ICMS,
+se credita ICMS ST,
+
+21
+00:01:50,500 --> 00:01:54,500
+e qual CST PIS está configurado.
+
+22
+00:01:54,500 --> 00:02:00,000
+Essas informações impactam o comportamento fiscal
+da entrada da nota.
+
+23
+00:02:01,000 --> 00:02:06,500
+Ao abrir uma combinação, o sistema exibe a tela
+Configurar Combinação CFOP + CST.
+
+24
+00:02:06,500 --> 00:02:12,000
+Na parte superior, aparecem a loja
+e os dados de origem do XML.
+
+25
+00:02:12,000 --> 00:02:16,000
+Entre esses dados estão o CFOP XML e o CST XML.
+
+26
+00:02:16,000 --> 00:02:22,000
+Logo abaixo, ficam os campos convertidos para entrada
+e os campos de créditos fiscais.
+
+27
+00:02:22,000 --> 00:02:27,000
+Depois de revisar ou alterar os dados,
+a configuração deve ser salva.
+
+28
+00:02:28,000 --> 00:02:34,000
+Para selecionar o CFOP convertido,
+clique no botão de pesquisa ao lado do campo Conv. CFOP.
+
+29
+00:02:34,000 --> 00:02:39,000
+O sistema abre uma janela
+com códigos e descrições disponíveis.
+
+30
+00:02:39,000 --> 00:02:45,000
+Você pode pesquisar por código ou descrição
+e selecionar o CFOP correto para a entrada.
+
+31
+00:02:46,000 --> 00:02:50,000
+O mesmo processo vale para o CST convertido.
+
+32
+00:02:50,000 --> 00:02:55,000
+Clique no botão de pesquisa ao lado do campo Conv. CST.
+
+33
+00:02:55,000 --> 00:03:00,500
+Na janela de seleção, localize o CST correto
+e confirme a escolha.
+
+34
+00:03:01,500 --> 00:03:06,500
+No campo Cred. ICMS,
+selecione a regra de crédito aplicável.
+
+35
+00:03:06,500 --> 00:03:12,500
+As opções apresentadas são Sim,
+quando a operação credita;
+
+36
+00:03:12,500 --> 00:03:17,500
+Não, quando não credita;
+e Manual, quando o tratamento deve ser definido manualmente.
+
+37
+00:03:17,500 --> 00:03:22,500
+Escolha a opção conforme a regra fiscal validada.
+
+38
+00:03:23,500 --> 00:03:29,500
+No campo Cred. ICMS ST,
+defina se a combinação credita ICMS ST,
+
+39
+00:03:29,500 --> 00:03:34,000
+não credita ou será tratada manualmente.
+
+40
+00:03:34,000 --> 00:03:39,000
+Essa configuração também deve seguir
+a regra fiscal da empresa.
+
+41
+00:03:39,000 --> 00:03:44,000
+Depois de revisar, mantenha a opção adequada
+para a combinação.
+
+42
+00:03:45,000 --> 00:03:50,500
+Quando aplicável, informe o CST PIS
+para crédito no campo CST PIS Cred.
+
+43
+00:03:50,500 --> 00:03:56,500
+A tela também apresenta uma observação importante:
+PIS e IPI são definidos como manual automaticamente.
+
+44
+00:03:56,500 --> 00:04:02,500
+E o CST convertido preserva
+o dígito de origem do XML.
+
+45
+00:04:02,500 --> 00:04:08,000
+Depois de conferir todos os campos,
+clique em Salvar Configuração.
+
+46
+00:04:09,000 --> 00:04:14,500
+Quando a combinação necessária ainda não existir,
+clique em Nova combinação.
+
+47
+00:04:14,500 --> 00:04:20,500
+Nessa tela, informe o CFOP e o CST de origem.
+
+48
+00:04:20,500 --> 00:04:25,500
+Depois, informe o CFOP e o CST convertidos
+para entrada.
+
+49
+00:04:25,500 --> 00:04:29,500
+Também revise os campos de crédito fiscal.
+
+50
+00:04:29,500 --> 00:04:35,500
+Depois de preencher as informações conforme a regra validada,
+clique em Salvar.
+
+51
+00:04:36,500 --> 00:04:42,500
+Pronto. Neste tutorial, acessamos a tela
+de combinações CFOP + CST.
+
+52
+00:04:42,500 --> 00:04:48,500
+Revisamos a listagem de combinações configuradas
+e identificamos os campos de origem e conversão.
+
+53
+00:04:48,500 --> 00:04:54,500
+Editamos uma combinação existente
+e selecionamos CFOP e CST convertidos.
+
+54
+00:04:54,500 --> 00:05:00,500
+Também revisamos os créditos fiscais
+e vimos como criar uma nova combinação quando necessário.
+
+55
+00:05:00,500 --> 00:05:07,000
+Com essas informações revisadas, o sistema passa a ter
+uma base mais consistente para converter os dados fiscais.
+
+56
+00:05:07,000 --> 00:05:12,500
+Esses dados são recebidos no XML
+durante a entrada das notas.

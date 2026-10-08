@@ -16,7 +16,7 @@ A **Entrada de Notas Recebe Fácil** é uma ferramenta da Weber criada para faci
 
 A função principal dela é permitir que a entrada de notas seja realizada de forma automática quando os produtos da nota já estiverem associados aos produtos cadastrados no sistema.
 
-Para utilizar a ferramenta, o cliente precisa atender a dois requisitos obrigatórios: estar com o **Financeiro Novo/Gestão Financeira** ativo e estar com o **Estoque Novo** habilitado por meio da flag de Estoque Novo no **Portal Gerencial**. Caso esses requisitos não estejam atendidos, o cliente não deve seguir com o uso do fluxo baseado no Estoque Novo.
+Para a Wiki atual, a ferramenta deve ser documentada com base no **Financeiro Novo/Gestão Financeira**. O fluxo já está funcionando com o **Estoque Antigo**, então não é mais necessário orientar a habilitação do **Estoque Novo** por meio da flag no **Portal Gerencial** como requisito obrigatório.
 
 Outro ponto importante é que a ferramenta utiliza o **Robô XML** para baixar as notas fiscais vinculadas ao CNPJ do cliente. Essas notas ficam disponíveis no Recebe Fácil, e o usuário consegue trabalhar nelas dentro do próprio fluxo.
 
@@ -132,12 +132,15 @@ Estes são os tópicos planejados para o projeto:
 
 Caso surjam novos tópicos durante a execução, eles devem ser adicionados ao cronograma e tratados como tarefas separadas.
 
-## Etapa atual
+## Etapas atuais
 
-Estamos trabalhando no tópico:
+As etapas trabalhadas até agora são:
 
 ```text
 01 - Preparação do ambiente para gravação dos vídeos
+02 - Configurações prévias: o que precisa estar configurado antes de iniciar as entradas de nota
+05 - Combinações CFOP + CST
+08 - Dashboard da Entrada de Notas
 ```
 
 Dentro desse tópico, o primeiro tutorial criado é:
@@ -150,7 +153,7 @@ Esse tutorial mostra:
 
 ```text
 como acessar Ferramentas > Empresa;
-como habilitar o Estoque Novo;
+como validar o uso do fluxo com Estoque Antigo;
 como validar mensagens exibidas no primeiro acesso;
 como iniciar as configurações financeiras da empresa;
 como configurar plano financeiro padrão;
@@ -162,12 +165,12 @@ como acessar Configurações > Parametrização do Módulo;
 como preencher e gravar os parâmetros obrigatórios.
 ```
 
-## Arquivos da etapa atual
+## Arquivos das etapas atuais
 
-Os arquivos estão organizados nesta pasta:
+Os arquivos da primeira etapa estão organizados nesta pasta:
 
 ```text
-C:\Kora\kora-vi\Projetos\Projeto Wiki entrada de notas em Y\01-preparacao-de-ambiente
+C:\Kora\kora-vi\Projetos\Projeto Wiki entrada de notas Recebe Fácil\01-preparacao-de-ambiente
 ```
 
 Principais arquivos:
@@ -195,6 +198,66 @@ revisado/roteiro-video-preparacao-de-ambiente.md
 ```
 
 Contém um roteiro curto para gravação do vídeo.
+
+Os arquivos da segunda etapa estão organizados nesta pasta:
+
+```text
+C:\Kora\kora-vi\Projetos\Projeto Wiki entrada de notas Recebe Fácil\02-configuracoes-previas
+```
+
+Principais arquivos:
+
+```text
+revisado/wiki-configuracoes-previas-entrada-notas-recebe-facil.md
+revisado/roteiro-video-configuracoes-previas-entrada-notas-recebe-facil.md
+revisado/narracoes-video-configuracoes-previas-entrada-notas-recebe-facil.md
+```
+
+O tutorial de configurações prévias usa os prints organizados em:
+
+```text
+C:\Kora\kora-vi\Projetos\Projeto Wiki entrada de notas Recebe Fácil\Imagens\Configurações prévias da Entrada de Notas
+```
+
+Os arquivos da etapa de Combinações CFOP + CST estão organizados nesta pasta:
+
+```text
+C:\Kora\kora-vi\Projetos\Projeto Wiki entrada de notas Recebe Fácil\05-combinacoes-cfop-cst
+```
+
+Principais arquivos:
+
+```text
+revisado/wiki-combinacoes-cfop-cst-entrada-notas-recebe-facil.html
+revisado/roteiro-video-combinacoes-cfop-cst-entrada-notas-recebe-facil.md
+revisado/narracoes-video-combinacoes-cfop-cst-entrada-notas-recebe-facil.md
+```
+
+O tutorial de Combinações CFOP + CST usa os prints organizados em:
+
+```text
+C:\Kora\kora-vi\Projetos\Projeto Wiki entrada de notas Recebe Fácil\Imagens\Combinações CFOP + CST
+```
+
+Os arquivos da etapa de Dashboard da Entrada de Notas estão organizados nesta pasta:
+
+```text
+C:\Kora\kora-vi\Projetos\Projeto Wiki entrada de notas Recebe Fácil\08-dashboard-entrada-notas
+```
+
+Principais arquivos:
+
+```text
+revisado/wiki-dashboard-entrada-notas-recebe-facil.html
+revisado/roteiro-video-dashboard-entrada-notas-recebe-facil.md
+revisado/narracoes-video-dashboard-entrada-notas-recebe-facil.md
+```
+
+O tutorial de Dashboard usa os prints organizados em:
+
+```text
+C:\Kora\kora-vi\Projetos\Projeto Wiki entrada de notas Recebe Fácil\Imagens\Dashboard Entrada de Notas Recebe Fácil
+```
 
 ```text
 prompt-para-gerar-wiki-com-outra-ia.md
@@ -232,7 +295,8 @@ o usuário sabe o que conferir antes de salvar/gravar;
 há resultado esperado;
 há checklist final;
 há seção de possíveis dúvidas;
-o próximo passo da Wiki está indicado;
+não há seção "Próximo passo";
+quando houver vídeo, ele aparece como um único link do vídeo completo;
 não existem dados sensíveis expostos sem necessidade.
 ```
 

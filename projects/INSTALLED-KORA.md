@@ -91,6 +91,23 @@ Core Registry: projects/retail-data-platform/README.md
 Update Notes: upgraded to installed-KORA usage pattern and registered in the central installed-project registry
 ```
 
+### WEBER Sistemas - Gestao de Conhecimento
+
+```text
+Project: WEBER Sistemas - Gestao de Conhecimento
+Repository Path: C:\Kora\kora-vi\Projetos\Gestão de Conhecimento Weber Sistemas
+Local Binding: C:\Kora\kora-vi\Projetos\Principais Alterações de Usabilidade de Nova Versão - Weber\.kora\binding.md
+Local KORA README: C:\Kora\kora-vi\Projetos\Principais Alterações de Usabilidade de Nova Versão - Weber\.kora\README.md
+Local AGENTS.md: not created yet
+KORA Core Path: C:\Kora\kora-vi
+Installed KORA Version: local binding only
+Installation Status: context consolidation active
+Context Completeness: level-4
+Last Checked: 2026-09-30
+Core Registry: projects/weber-sistemas-gestao-conhecimento/README.md
+Update Notes: official knowledge-management folder created with Weber Tributário IMENDES/Reforma Tributária as the first structured content area; KORA context remains centralized in the original WEBER .kora folder
+```
+
 ## Update Workflow
 
 When KORA Core changes:

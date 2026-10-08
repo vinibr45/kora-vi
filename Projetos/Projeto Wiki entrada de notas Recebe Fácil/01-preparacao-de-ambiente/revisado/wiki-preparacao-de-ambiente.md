@@ -10,12 +10,13 @@ Antes de utilizar a Entrada de Notas Recebe Fácil, é necessário validar algum
 
 Essas configurações evitam bloqueios no primeiro acesso e garantem que o sistema saiba como tratar informações importantes da nota, como financeiro, plano financeiro padrão, centro de custo e parâmetros operacionais do módulo.
 
-Além disso, existem dois requisitos obrigatórios para utilização do fluxo:
+Além disso, para esta Wiki, a preparação deve considerar a base operacional atual:
 
-- o cliente precisa estar com o **Financeiro Novo**, também chamado de **Gestão Financeira**, ativo;
-- o cliente precisa estar com o **Estoque Novo** habilitado, com a flag de Estoque Novo ativa no **Portal Gerencial**.
+- o material será baseado no **Financeiro Novo**, também chamado de **Gestão Financeira**;
+- o fluxo já funciona com o **Estoque Antigo**;
+- não é mais necessário habilitar o **Estoque Novo** no **Portal Gerencial** como requisito para este fluxo.
 
-Caso esses requisitos não estejam atendidos, o cliente não deve seguir com a utilização do fluxo baseado no Estoque Novo.
+Com isso, os materiais novos devem priorizar a configuração da Gestão Financeira, as parametrizações do módulo e as validações operacionais necessárias para a entrada das notas.
 
 ## Objetivo e pré-requisitos
 
@@ -26,8 +27,7 @@ Antes de começar, confirme se:
 - o usuário possui permissão para acessar as configurações da empresa;
 - o ambiente utilizado é uma base de treinamento, homologação ou base preparada para demonstração;
 - o cliente já utiliza o Financeiro Novo/Gestão Financeira;
-- a flag de Estoque Novo está habilitada no Portal Gerencial;
-- o Estoque Novo pode ser habilitado para a empresa;
+- o fluxo será demonstrado considerando compatibilidade com Estoque Antigo;
 - existe conta financeira cadastrada para uso no plano financeiro padrão;
 - existe centro de custo cadastrado para vincular à configuração financeira;
 - as regras financeiras foram validadas com o responsável administrativo, financeiro ou contábil;
@@ -40,7 +40,7 @@ Antes de começar, confirme se:
 - Acesso ao menu `Ferramentas > Empresa`.
 - Permissão para alterar configurações da empresa.
 - Financeiro Novo/Gestão Financeira ativo para o cliente.
-- Flag de Estoque Novo habilitada no Portal Gerencial.
+- Confirmação de que o fluxo será utilizado com Estoque Antigo.
 - Conta financeira previamente cadastrada.
 - Centro de custo previamente cadastrado.
 - Definição do percentual de distribuição financeira.
@@ -63,15 +63,15 @@ Essa tela concentra configurações importantes da empresa e deve ser acessada a
 
 **Legenda:** acesso ao cadastro da empresa pelo menu `Ferramentas > Empresa`.
 
-### 02. Habilite o Estoque Novo
+### 02. Valide o cenário de estoque utilizado
 
-Na tela de configurações da empresa, localize a opção relacionada ao **Estoque Novo** e habilite esse recurso.
+Na tela de configurações da empresa, valide o cenário de estoque utilizado no ambiente.
 
-Essa configuração é necessária para que o fluxo da Entrada de Notas Recebe Fácil funcione corretamente, pois o módulo depende das rotinas vinculadas ao novo modelo de estoque.
+Para a Wiki atual, o fluxo da Entrada de Notas Recebe Fácil já está funcionando com o **Estoque Antigo**. Portanto, não é necessário habilitar o **Estoque Novo** no **Portal Gerencial** como requisito obrigatório.
 
 [imagem-02]
 
-**Legenda:** habilitação da opção **Estoque Novo** nas configurações da empresa.
+**Legenda:** validação do cenário de estoque utilizado no ambiente.
 
 ### 03. Abra o módulo e valide o primeiro aviso
 
@@ -302,7 +302,7 @@ A partir desse ponto, o usuário poderá seguir para os próximos tutoriais, com
 
 Antes de considerar esta etapa concluída, confirme se:
 
-- o Estoque Novo foi habilitado;
+- o cenário de estoque utilizado no ambiente foi validado;
 - os avisos iniciais foram lidos e tratados;
 - o plano financeiro padrão foi configurado;
 - a conta financeira foi selecionada;

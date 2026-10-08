@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Preparacao de Ambiente - Entrada de Notas Recebe Facil</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.55; color: #202124; max-width: 980px; margin: 32px auto; padding: 0 24px; }
+    h1, h2, h3 { color: #1f2933; line-height: 1.25; }
+    h1 { font-size: 30px; margin-bottom: 8px; }
+    h2 { font-size: 22px; margin-top: 32px; border-bottom: 1px solid #d9dee3; padding-bottom: 6px; }
+    h3 { font-size: 18px; margin-top: 26px; }
+    img { max-width: 100%; height: auto; border: 1px solid #d9dee3; margin: 10px 0 4px; }
+    .subtitle { color: #4b5563; font-size: 16px; }
+    .warning { background: #fff8e6; border-left: 4px solid #d99a00; padding: 12px 14px; margin: 16px 0; }
+    .note { background: #eef6ff; border-left: 4px solid #2f80ed; padding: 12px 14px; margin: 16px 0; }
+    .caption { color: #4b5563; font-size: 14px; margin: 0 0 14px; }
+    pre { background: #f6f8fa; border: 1px solid #d9dee3; padding: 12px; white-space: pre-wrap; }
+    code { background: #f6f8fa; padding: 1px 4px; }
+  </style>
+</head>
+<body>
+  <h1>Preparacao de Ambiente para Utilizacao da Entrada de Notas Recebe Facil</h1>
+  <p class="subtitle">Configuracoes iniciais necessarias para liberar o uso da Entrada de Notas Recebe Facil no ambiente do cliente.</p>
+
+  <div class="warning">
+    <strong>Atencao:</strong> para esta Wiki, considere o Financeiro Novo/Gestao Financeira como base financeira do material. O fluxo ja funciona com Estoque Antigo, sem exigir habilitacao do Estoque Novo pela flag do Portal Gerencial.
+  </div>
+
+  <h2>Objetivo</h2>
+  <p>Este procedimento orienta a preparacao inicial do ambiente antes de iniciar a entrada das notas. A sequencia acompanha os prints do tutorial e destaca os pontos de configuracao, validacao e conferencia que precisam estar corretos para evitar bloqueios no primeiro uso.</p>
+
+  <h2>Informacoes Necessarias</h2>
+  <ul>
+    <li>Acesso ao menu <code>Ferramentas &gt; Empresa</code>.</li>
+    <li>Permissao para alterar configuracoes da empresa.</li>
+    <li>Financeiro Novo/Gestao Financeira ativo.</li>
+    <li>Confirmacao de que o fluxo sera utilizado com Estoque Antigo.</li>
+    <li>Conta financeira e centro de custo cadastrados.</li>
+    <li>Definicao do percentual de distribuicao financeira.</li>
+    <li>Acesso ao menu <code>Configuracoes &gt; Parametrizacao do Modulo</code>.</li>
+  </ul>
+
+  <h2>Procedimento Operacional</h2>
+
+  <h3>1. Acesse as configuracoes da empresa</h3>
+  <p>No menu principal do sistema, acesse <code>Ferramentas &gt; Empresa</code>. Essa tela concentra configuracoes importantes da empresa e deve ser revisada antes de iniciar a preparacao do modulo.</p>
+  <img src="../Imagens/imagem-01.png" alt="Acesso ao menu Ferramentas > Empresa">
+  <p class="caption">Imagem 1 - Acesso ao cadastro da empresa pelo menu Ferramentas &gt; Empresa.</p>
+
+  <h3>2. Valide o cenario de estoque utilizado</h3>
+  <p>Na tela de configuracoes da empresa, valide o cenario de estoque utilizado no ambiente. Para a Wiki atual, o fluxo da Entrada de Notas Recebe Facil ja esta funcionando com Estoque Antigo, sem exigir habilitacao do Estoque Novo no Portal Gerencial.</p>
+  <img src="../Imagens/imagem-02.png" alt="Validacao do cenario de estoque utilizado">
+  <p class="caption">Imagem 2 - Validacao do cenario de estoque utilizado no ambiente.</p>
+
+  <h3>3. Abra o modulo e valide o primeiro aviso</h3>
+  <p>Ao acessar a Entrada de Notas Recebe Facil pela primeira vez, o sistema pode exibir avisos de configuracao pendente. Leia a mensagem e utilize o proprio aviso como orientacao para concluir o ajuste necessario.</p>
+  <img src="../Imagens/imagem-03.png" alt="Aviso de configuracao financeira pendente">
+  <p class="caption">Imagem 3 - Aviso de configuracao financeira pendente.</p>
+  <pre>Para utilizar a entrada de nota, selecione ou configure o meio de pagamento e a especie de documento que serao usados no financeiro das notas de entrada.
+
+No Controle de Entradas, acesse:
+Fornecedor: Configuracoes &gt; Configuracoes Financeiras &gt; Plano Financeiro padrao e outras configuracoes por fornecedor.
+Loja: Configuracoes &gt; Configuracoes Financeiras &gt; Configuracoes financeiras da empresa.</pre>
+
+  <h3>4. Valide o aviso de plano financeiro sugerido</h3>
+  <p>O sistema tambem pode informar que o plano financeiro sugerido ainda nao foi configurado. Esse plano sera usado para classificar financeiramente a operacao de entrada de notas.</p>
+  <img src="../Imagens/imagem-04.png" alt="Aviso de plano financeiro sugerido pendente">
+  <p class="caption">Imagem 4 - Aviso de plano financeiro sugerido pendente.</p>
+  <pre>Para utilizar a entrada de nota, configure o plano financeiro sugerido para a operacao ENTRADA_NOTAS.
+
+No Controle de Entradas, acesse:
+Configuracoes &gt; Configuracoes Financeiras &gt; Plano Financeiro padrao da empresa.</pre>
+
+  <h3>5. Valide o aviso de usuario master</h3>
+  <p>Outro aviso possivel e a ausencia de um usuario master configurado para a loja logada. Essa permissao e importante para liberar a administracao completa das permissoes.</p>
+  <img src="../Imagens/imagem-05.png" alt="Aviso de usuario master nao configurado">
+  <p class="caption">Imagem 5 - Aviso informando que nenhum usuario master foi configurado para a loja.</p>
+  <pre>Nenhum Usuario Master foi configurado para a loja logada.
+
+Configure ao menos um usuario com a permissao 'Usuario Master' para liberar a administracao completa das permissoes.
+
+Para liberar o Usuario Master, no Dashboard Inicial acesse Configuracoes &gt; Permissoes.</pre>
+
+  <h3>6. Acesse as configuracoes financeiras</h3>
+  <p>Depois de validar os avisos iniciais, acesse as configuracoes financeiras da empresa. Essa etapa deve ser feita antes de lancar notas, pois a entrada pode gerar reflexos financeiros e gerenciais.</p>
+  <img src="../Imagens/imagem-06.png" alt="Acesso as configuracoes financeiras da empresa">
+  <p class="caption">Imagem 6 - Acesso a area de configuracoes financeiras da empresa.</p>
+  <img src="../Imagens/imagem-07.png" alt="Campos financeiros que devem ser configurados">
+  <p class="caption">Imagem 7 - Campos financeiros que devem ser configurados antes de iniciar o uso do modulo.</p>
+
+  <h3>7. Informe a configuracao financeira da empresa</h3>
+  <p>Preencha as configuracoes financeiras conforme a regra definida para o cliente. Em ambiente real, os dados devem seguir a orientacao da empresa, da contabilidade ou do responsavel financeiro.</p>
+  <img src="../Imagens/imagem-08.png" alt="Exemplo de configuracao financeira utilizada">
+  <p class="caption">Imagem 8 - Exemplo de configuracao financeira utilizada na base de treinamento.</p>
+
+  <h3>8. Configure o plano financeiro padrao</h3>
+  <p>Configure o plano financeiro padrao da empresa. Ele define como os valores relacionados as notas serao classificados no financeiro e ajuda a manter os lancamentos organizados.</p>
+  <img src="../Imagens/imagem-09.png" alt="Configuracao do plano financeiro padrao">
+  <p class="caption">Imagem 9 - Configuracao do plano financeiro padrao para a operacao de entrada de notas.</p>
+
+  <h3>9. Selecione a conta financeira</h3>
+  <p>Selecione uma conta financeira previamente cadastrada. Caso a conta ainda nao exista, sera necessario cadastra-la antes de concluir esta etapa.</p>
+  <img src="../Imagens/imagem-10.png" alt="Selecao da conta financeira">
+  <p class="caption">Imagem 10 - Selecao da conta financeira que sera utilizada no plano financeiro padrao.</p>
+  <img src="../Imagens/imagem-11.png" alt="Conta financeira selecionada">
+  <p class="caption">Imagem 11 - Conta financeira selecionada na configuracao.</p>
+
+  <h3>10. Selecione o centro de custo</h3>
+  <p>Depois de selecionar a conta financeira, escolha o centro de custo que sera utilizado. Essa informacao permite classificar gerencialmente os valores movimentados pela entrada das notas.</p>
+  <img src="../Imagens/imagem-12.png" alt="Selecao do centro de custo">
+  <p class="caption">Imagem 12 - Selecao do centro de custo utilizado na configuracao financeira.</p>
+
+  <h3>11. Informe o percentual de distribuicao</h3>
+  <p>Informe o percentual aplicado a combinacao de conta financeira e centro de custo. No exemplo, foi informado 100%, direcionando todo o valor para uma unica configuracao.</p>
+  <img src="../Imagens/imagem-13.png" alt="Percentual de distribuicao financeira">
+  <p class="caption">Imagem 13 - Percentual de distribuicao financeira informado para compor o total da configuracao.</p>
+  <div class="note"><strong>Observacao tecnica:</strong> se a empresa usar mais de uma conta ou centro de custo, a soma dos percentuais deve fechar exatamente 100%.</div>
+
+  <h3>12. Salve as configuracoes financeiras</h3>
+  <p>Revise a conta financeira, o centro de custo e o percentual. Se estiver tudo correto, clique em <code>Salvar Configuracoes</code>.</p>
+  <img src="../Imagens/imagem-14.png" alt="Salvamento das configuracoes financeiras">
+  <p class="caption">Imagem 14 - Salvamento das configuracoes financeiras da empresa.</p>
+
+  <h3>13. Acesse a parametrizacao do modulo</h3>
+  <p>Com as configuracoes financeiras definidas, acesse a parametrizacao especifica da Entrada de Notas Recebe Facil em <code>Configuracoes &gt; Parametrizacao do Modulo</code>.</p>
+  <img src="../Imagens/imagem-15.png" alt="Acesso as configuracoes do modulo">
+  <p class="caption">Imagem 15 - Acesso as configuracoes do modulo.</p>
+  <img src="../Imagens/imagem-16.png" alt="Menu Configuracoes > Parametrizacao do Modulo">
+  <p class="caption">Imagem 16 - Caminho para abrir a tela de parametrizacao do modulo.</p>
+
+  <h3>14. Revise os parametros de custo e desmontagem</h3>
+  <p>Na tela de parametrizacao, revise as opcoes apresentadas. Esses parametros definem comportamentos importantes durante a entrada da nota, como atualizacao de custo dos produtos associados e tratamento de desmontagem automatica.</p>
+  <img src="../Imagens/imagem-17.png" alt="Parametros de custo dos produtos associados e desmontagem">
+  <p class="caption">Imagem 17 - Parametros de custo dos produtos associados e desmontagem de produtos.</p>
+  <pre>Custo dos produtos associados
+
+Atualizar o custo dos produtos associados a entrada
+
+Quando configurado como 'Sim', o custo da loja da entrada sera atualizado para os produto com codigo preco igual ao codigo do produto que esta sendo movimentado, alteracao reflete para todas tabelas de preco.
+
+Situacao selecionada: Nao (configuracao ainda nao salva)
+
+Desmontagem de produtos
+
+Ignorar desmontagem automatica na entrada
+
+Quando configurado como 'Sim', a entrada nao realiza desmontagem automatica, mesmo que o produto possua formula ativa. Use esta opcao quando a desmontagem for realizada manualmente em outro momento.
+
+Situacao selecionada: Nao</pre>
+
+  <h3>15. Grave a parametrizacao</h3>
+  <p>Depois de selecionar as opcoes adequadas para a empresa, clique em <code>Gravar</code>. Na base de treinamento, utilize a configuracao demonstrada no exemplo.</p>
+  <img src="../Imagens/imagem-18.png" alt="Exemplo de parametrizacao final antes da gravacao">
+  <p class="caption">Imagem 18 - Exemplo de parametrizacao final antes da gravacao.</p>
+
+  <h2>Resultado Esperado</h2>
+  <p>Ao concluir o procedimento, o ambiente estara preparado com as configuracoes iniciais necessarias para utilizacao da Entrada de Notas Recebe Facil. A partir desse ponto, o usuario podera seguir para configuracoes previas, permissoes, notas disponiveis, entrada assistida, associacao de produtos, cadastro por GTIN, conferencia e auditoria das notas lancadas.</p>
+
+  <h2>Checklist de Conferencia</h2>
+  <ul>
+    <li>Cenario de estoque utilizado no ambiente validado.</li>
+    <li>Financeiro Novo/Gestao Financeira ativo.</li>
+    <li>Avisos iniciais lidos e tratados.</li>
+    <li>Plano financeiro padrao configurado.</li>
+    <li>Conta financeira selecionada.</li>
+    <li>Centro de custo informado.</li>
+    <li>Percentual de distribuicao financeira totalizando 100%.</li>
+    <li>Configuracoes financeiras salvas.</li>
+    <li>Parametrizacao do modulo revisada e gravada.</li>
+    <li>Usuario master configurado quando o sistema exigir essa permissao.</li>
+  </ul>
+
+  <h2>Proximo Passo</h2>
+  <p>Depois de preparar o ambiente, siga para o tutorial de configuracoes previas da Entrada de Notas Recebe Facil, detalhando os ajustes necessarios antes de iniciar efetivamente a entrada das notas.</p>
+</body>
+</html>

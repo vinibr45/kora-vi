@@ -33,7 +33,7 @@ Use o arquivo **Impressão de artigo.pdf** apenas como referência de estilo, es
 
 A **Entrada de Notas Recebe Fácil** é uma ferramenta da Weber que automatiza e simplifica o processo de entrada de notas fiscais.
 
-A utilização da ferramenta depende de requisitos obrigatórios: o cliente precisa estar com o **Financeiro Novo/Gestão Financeira** ativo e com o **Estoque Novo** habilitado pela flag de Estoque Novo no **Portal Gerencial**. Caso esses requisitos não estejam atendidos, o cliente não deve seguir com o fluxo baseado no Estoque Novo.
+A Wiki atual da ferramenta deve ser produzida com base no **Financeiro Novo/Gestão Financeira**. O fluxo já está funcionando com o **Estoque Antigo**, portanto não é mais necessário orientar a habilitação do **Estoque Novo** pela flag no **Portal Gerencial** como requisito obrigatório.
 
 A ferramenta utiliza o Robô XML para baixar as notas fiscais vinculadas ao CNPJ do cliente. Depois que as notas ficam disponíveis, o usuário consegue acessá-las pelo próprio fluxo do Recebe Fácil e realizar cadastros necessários, como fornecedor, produto, associação de produto e contas a pagar.
 
@@ -123,7 +123,7 @@ Caso contrário, mantenha o marcador `[imagem-01]` para facilitar a inserção m
 
 ```text
 imagem-01.png -> Acesso ao menu Ferramentas > Empresa
-imagem-02.png -> Habilitação da opção Estoque Novo
+imagem-02.png -> Validação do cenário de estoque utilizado
 imagem-03.png -> Aviso de configuração financeira pendente
 imagem-04.png -> Aviso de plano financeiro sugerido pendente
 imagem-05.png -> Aviso de usuário master não configurado
@@ -228,7 +228,7 @@ cada imagem tem legenda;
 os avisos foram transcritos;
 o passo a passo está completo;
 há objetivo e pré-requisitos;
-os requisitos Financeiro Novo/Gestão Financeira e Estoque Novo no Portal Gerencial foram citados;
+a base Financeiro Novo/Gestão Financeira foi citada e a compatibilidade com Estoque Antigo foi respeitada;
 há informações necessárias;
 há resultado esperado;
 há checklist de conferência;

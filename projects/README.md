@@ -43,6 +43,7 @@ projects/marcos-dev/
 projects/c-de-certo/
 projects/marcar-hora/
 projects/retail-data-platform/
+projects/weber-sistemas-gestao-conhecimento/
 ```
 
 ## Templates

@@ -4,12 +4,12 @@
 
 Neste video, vamos preparar o ambiente para utilizacao da Entrada de Notas Recebe Fácil, tambem conhecida como Recebe Fácil.
 
-O objetivo e deixar prontas as configuracoes iniciais para que o usuario consiga iniciar a entrada das notas sem encontrar bloqueios relacionados a estoque, financeiro ou parametrizacao do modulo.
+O objetivo e deixar prontas as configuracoes iniciais para que o usuario consiga iniciar a entrada das notas sem encontrar bloqueios relacionados a financeiro, parametrizacao do modulo ou validacoes operacionais.
 
 ## Sequencia sugerida
 
 1. Acessar `Ferramentas > Empresa`.
-2. Habilitar a opcao de Estoque Novo.
+2. Validar o cenario de estoque utilizado, considerando que o fluxo ja funciona com Estoque Antigo.
 3. Abrir a Entrada de Notas Recebe Fácil pela primeira vez.
 4. Ler e validar as mensagens exibidas pelo sistema.
 5. Acessar as configuracoes financeiras da empresa.

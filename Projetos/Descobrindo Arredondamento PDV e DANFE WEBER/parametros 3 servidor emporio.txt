@@ -1,0 +1,275 @@
+#BALANCA_ROUND=True
+#HAB_COD_BALANCA=True
+#COD_ID_BALANCA=2
+#HAB_CAPTURA_AUTOMATICA_BALANCA=False
+#BALANCA_LEITURA_POR_PESO=False
+
+#QuantidadeCasas=03
+#SEPARADOR_DECIMAL=,
+
+#CHAVE_PONTOE=Cracha
+#HAB_MULTIPLICACAO=True
+#TELA=tela.cfg  
+
+#CENTRO_CUSTO=9
+#MEIO_PGTO=3
+
+#APRAZO_VIAS=2
+#RECEBIMENTO_VIAS=2
+
+#HAB_LOG=True
+#HAB_LOG_MVTO=True
+#HAB_CPF_CUPOM=True
+#QUESTIONA_PROMOCAO=False
+
+#HAB_PRECO_AVULSO=True
+#HAB_PRECO_SUGERE=False
+#GRUPO_BEB_GELADA=False
+
+#HAB_DIGITA_DATA=True
+#CONSULTA_CLIENTE=1
+#MOSTRA_LIMITE=False
+#MOSTRA_SALDO=False
+#POSICAO_ID_CLIENTE=2
+
+#CHEQ_DIAS_TOLERA=1
+#CHEQ_QTD_LIB=1
+#CHEQ_LIMITE=300
+#CHEQ_DIAS_MIN_CONTA=360
+#CHEQ_CAD_CLIE=False
+#CHEQ_CAD_CPF=False
+#CHEQ_CAD_CONTA=False
+
+#CHEQUE_ACEITA_CPF_NAO_CADASTRADO=False
+#CHEQUE_ACEITA_CPF_BLOQUEADO=False
+#CHEQUE_ACEITA_LIMITE_ULTRAPASSADO_VALOR=False
+#CHEQUE_ACEITA_LIMITE_ULTRAPASSADO_QTD_CHEQUES=False
+
+#HAB_SOM_TECLADO=False
+#HAB_SOM_WAV=False
+#Touchscreen=False
+
+#TIPO_DEP_ABERTO=1
+#TIPO_VASILHAME=1
+#APRAZO_MODELO=1
+#F7_TIPO=1
+
+#DiasAteVcto=10
+#HAB_TROCO_CONVENIO=False
+#ACEITA_LCTOS_VENCIDOS=True
+#ACEITA_LIMITE_ULTRAPASSADO=True
+#F7_LIBERA_CLIENTE_BLOQUEADO=True
+#CARTAO_FIDELIDADE_PASSWORD_CHAR=True
+#CARTAO_FIDELIDADE_TIPO_SENHA=0
+#AJUDA_CLIENTES_NUMERO_MAX_REGISTROS=500
+
+#CARTAO_FIDELIDADE_PORTA=COM3
+--->0=NaoUsado 1=Pin12Serial 2=Biometrico 3=Teclado 4=Pinpad
+--->Voce precisa da PIN32.DLL
+
+#Cab=     MERCADO EMPORIO 262
+#Cab= C U P O M   N A O   F I S C A L    
+
+#Rod=
+#Rod=
+#Rod=
+#Rod=
+#Rod=
+#Rod=
+#Rod=
+
+#EntregaRancho=False
+#EntregaRanchoValor=0
+#RANCHO_IMPR_ENDERECO_CLIENTE=False
+
+#EntregaRanchoCab= - - - - - - - - - - - - - - - - - - - -
+#EntregaRanchoCab=
+#EntregaRanchoCab=      CONTROLE DE ENTREGA DE RANCHO    
+#EntregaRanchoCab=
+
+#EntregaRanchoRod= Qtd de Caixas:_______                  
+#EntregaRanchoRod=
+#EntregaRanchoRod= Caixa Numero.:_______                  
+#EntregaRanchoRod=
+#EntregaRanchoRod= Qtd Garrafas.:_______                  
+#EntregaRanchoRod=
+#EntregaRanchoRod= Devolucao....:_______                  
+#EntregaRanchoRod=
+#EntregaRanchoRod= Carne........:_______                  
+#EntregaRanchoRod=
+#EntregaRanchoRod=Observacao.:
+#EntregaRanchoRod=
+#EntregaRanchoRod= - - - - - - - - - - - - - - - - - - - -
+
+#AprazoCab= - - - - - - - - - - - - - - - - - - - -
+#AprazoCab=
+#AprazoCab= Reconheco e Pagarei a Divida aqui      
+#AprazoCab=         Representada.                  
+
+#AprazoRod=
+#AprazoRod=           ______________________      
+#AprazoRod=                 Assinatura            
+
+#MensagemRod=False
+#MensagemRod=False
+
+#VendaCartaoPrePagoIND=03
+#VendaCartaoPrePagoFORMA=Dinheiro
+
+#TEF_DTEF_PATH_RESP=C:\Direcao\DPOS3x25\Cupons\
+#TECBAN_REQ=C:\TEF_DISC\REQ
+#TECBAN_RESP=C:\TEF_DISC\RESP
+#VISA_REQ=C:\TEF_DIAL\REQ
+#VISA_RESP=C:\TEF_DIAL\RESP
+#HIPERCARD_REQ=C:\HiperTEF\REQ
+#HIPERCARD_RESP=C:\HiperTEF\RESP
+#DTEF_PATH=C:\Direcao\DPOS3x25\Cupons\
+
+#DTEF_TERMINAL=001
+#TEF_DISCADO_VIAS=1
+
+#VIAS_SANGRIA=2
+#SANGRIA_VALOR_MAXIMO=950
+#AVISA_LIMITE_VALOR_SANGRIA=0
+
+#VIAS_REFORCO=2
+#REFORCO_VALOR_MAXIMO=950
+
+#HAB_DESC_GERAL=True
+#DESC_MAX_ITEM=10
+#DESC_MAX_SUBTOTAL=10
+#DESCONTO_NO_ITEM_F9=V
+#HAB_DESC_ITEM_PROMOCAO=False
+#HAB_DESC_ITEM_PROMOCAO_AUTOMATICO=False
+#HAB_DESCONTO_ITEM_SEM_GERENTE_PERC=0
+
+#TAXA_BEB_GELADA_PV=I
+#TAXA_BEB_GELADA=0,20
+
+#PROPAGANDA=False
+#PROPAGANDA_PATH=C:\WEBER\PDV\IMAGENS
+
+#PRN_MODELO=Bematech
+#PRN_PORTA=COM1
+
+#URANO_TIMEOUT=20
+#URANO_BAUD=9600
+*----------=115200, 9600, 4800, 2400, 1200.
+
+#MVTO_LOCAL_ULT_DIAS=1
+#VASILHAME_FECHA_COM_GERENTE=False
+
+#RECARGA_CELULAR_FIN=07
+#RECARGA_CELULAR_CNF=07
+
+#NomeCompleto=False
+#IDENTIFICA_CLIENTE_EM_TODAS_FINALIZADORAS=False
+
+#ATUALIZA_SERVIDOR_SAIDA=False
+#HAB_CADASTRO_DO_PRECO=False
+#HAB_CADASTRO_CLIENTE_ABERTO_PECUARIA=False
+
+#HAB_TROCO_BEMATECH=False
+#HAB_TROCO_SOLIDARIO=False
+#DOACAO_CNF=05
+
+---so-funciona-para-lpt1---
+#PDO_REPLICA_VIAS=1
+#PDO_VELOCIDADE=9600
+
+#SINC_PDV_TEMPO=60
+#SINC_PDV_CARGA_IP=False
+#HAB_SINCRONIZA_PDV=False
+#COMUNICA_PDV_TCP_IP=False
+
+#COMISSAO_GARCOM=False
+#COMISSAO_GARCOM_COD=9997
+#COMISSAO_GARCOM_PERC=10
+
+#HAB_LEITURA_X_COMPLEMENTAR=False
+#HAB_RECUPERA_ULTIMO_Z_AUTOMATICO=True
+
+#HAB_NOME_PADRAO_MAQUINA=True
+#PATH_PACPDV=\\Servidor
+
+#DARUMA_=2
+#TIPO_CONTRA_VALE=1
+1=Soma na Leitura  2=So gerencial
+#CONTRA_VALE_VIAS=2
+#CONTRA_VALE_VALIDADE=30
+#CONTRA_VALE_CAB============================
+#CONTRA_VALE_CAB=    SISTEMA DE CONTRA-VALES        
+#CONTRA_VALE_ROD=                                    
+#CONTRA_VALE_ROD=                                    
+#CONTRA_VALE_ROD=                                    
+#CONTRA_VALE_ROD=   ------------------------        
+#CONTRA_VALE_ROD=            assinatura              
+#CONTRA_VALE_ROD=             carimbo                
+#CONTRA_VALE_ROD=       Valido Somente com          
+#CONTRA_VALE_ROD=       Carimbo e Assinatura  
+
+#NFCE_AMBIENTE=Homologacao
+#NFCE_DANFE_MOSTRAR_TELA=False
+#NFCE_DANFE_SALTO_RODAPE=0
+
+#HAB_SOCIO_TORCEDOR=False
+#HAB_DESCONTO_ITEM_SEM_GERENTE_PERC=0
+#HAB_CADASTRO_CLIENTE_ABERTO_PECUARIA=False
+#PERMITE_TRANSACAO_TEF_PDO=True
+#HABILITA_CRM=False
+#LOGIN_INICIAL_EXIGE_GERENTE_QUANDO_ERRO=False
+#BALANCA_TRATA_UNM_INTEIRO=False
+--> Obs:Se for True e Item for Inteiro e Vindo de Etiqueta Balanca, Coloca Fixo a Quantidade = 1
+#HAB_DESC_GERAL_DURANTE_VENDA=False
+#APRAZO_IMPRIME_LIMITE=True
+#HAB_SUBTRAIR_TROCO_DO_DINHEIRO=False
+#HAB_OPCAO_NFCE_SIMPLIFICADA=True
+#DESCREVE_CUPOM_BEB_GELADA=True
+#HAB_MULTIPLICACAO_GERENTE_NIVEL=9
+
+#CUPOM_SORTEIO_VALOR_MINIMO=999999
+#CUPOM_SORTEIO_L001=   TREINAMENTO  W.WEBER Informatica Ltda.
+#CUPOM_SORTEIO_L002=      C U P O M   P A R A  S O R T E I O 
+#CUPOM_SORTEIO_L003=                                         
+#CUPOM_SORTEIO_L004=  Deposite na Urna e Concorra a um Rancho
+#CUPOM_SORTEIO_L005=  Sorteio sera realizado dia 30/07/2021  
+#CUPOM_SORTEIO_L006=                                         
+#CUPOM_SORTEIO_L007= Nome:___________________________________
+#CUPOM_SORTEIO_L008=                                         
+#CUPOM_SORTEIO_L009= Fone:_____________________              
+#CUPOM_SORTEIO_L010=                                         
+#CUPOM_SORTEIO_L011= Cpf:____________________________        
+#CUPOM_SORTEIO_L012=                                         
+#CUPOM_SORTEIO_L013=                                         
+#CUPOM_SORTEIO_L014=                                         
+
+#HAB_VENDA_COM_PRECO_ZERO=False
+#HABILITAR_TABELA_PRECOS=False
+#HAB_IDENTIFICA_CLIENTE_FONE=False
+#CAPTA_CHAVE=XXX
+#CAPTA_MODO_OPERACAO=OPERADOR
+#FECHAMENTO_CAIXA_CEGO=False
+#MOSTRA_MENSAGEM_ANIVERSARIO=True
+#CONSULTA_ESTOQUE_NA_VENDA_QUANDO_ONLINE=False
+#OBRIGATORIO_CPF_COM_VALOR_ACIMA_DE=0
+#COD_FINALIZADORA_PADRAO=1
+#CRM_CAB_L01=====================================
+#CRM_CAB_L02========CLUBE=DE=VANTAGENS===========
+#CRM_CAB_L03=====================================
+#CRM_ROD_L01=OBS:Podem ter pontos ainda nao processados
+#CRM_ROD_L02=Confira seus pontos no Link abaixo
+#CRM_ROD_L03=https://www.webersistemas.com.br
+#CRM_IMPRIME_SALDO=False
+#CRM_HABILITADO=False
+#RESOLUCAO_DE_TELA=Padrao
+=======Exemplos de resolucao de Tela:  Padrao, 800_600
+#HABILITAR_IMPRESSAO_DESCONTO_CUPOM=True
+#HABILITAR_IMPRESSAO_ACRESCIMO_CUPOM=True
+#DESCARTA_PROMOCAO_EM_BEBIDA_GELADA=False
+--> Obs:Quando True, Descarta promocoes em bebida gelada(19.03.2025)
+#MOTIVO_DE_CANCELAMENTO_CUPOM=0
+--> Obs:Quando for Diferente de Zero,coloca este motivo de forma automatico,sem questionar(11.01.2026)
+#MOTIVO_DE_CANCELAMENTO_ITEM=0
+--> Obs:Quando for Diferente de Zero,coloca este motivo de forma automatico,sem questionar(11.01.2026)
+#HAB_IMPRESSAO_TEF_RESUMIDA=False
+--> Obs:Quando for True Imprime Comprovante TEF Resumida.(05.02.2026)

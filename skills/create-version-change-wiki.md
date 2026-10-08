@@ -3,7 +3,7 @@ name: "create-version-change-wiki"
 type: creation
 scope: global
 status: draft
-version: "0.2"
+version: "0.3"
 owner: ""
 domains:
   - documentation
@@ -18,7 +18,7 @@ required_tools:
   - filesystem
 evals: []
 created_at: 2026-09-17
-updated_at: 2026-09-24
+updated_at: 2026-09-25
 ---
 
 # create-version-change-wiki
@@ -125,18 +125,31 @@ It also helps decide what belongs in a "main changes" wiki by filtering raw rele
    - place screenshots near the fields or configuration being discussed;
    - use `(INSERIR AQUI...)` placeholders only when the actual asset is not available;
    - use `<img src="...">` tags when filenames are known.
-16. When the wiki platform cannot paste GIFs reliably:
-   - copy GIFs to a clean asset folder with lowercase, hyphenated, accent-free filenames;
-   - prefer stable public raw/embed URLs when the user requests embed links;
-   - validate each public GIF URL before reporting it;
-   - avoid overwriting an existing public GIF link unless the user explicitly wants replacement.
-17. Use emojis sparingly and consistently:
+16. At the beginning of every new wiki project, create this standard folder structure inside the project folder:
+   - `Html/` for final wiki articles and HTML exports;
+   - `Imagens/` for screenshots and image assets;
+   - `Gifs/` for animated demonstrations;
+   - `Videos/` for recordings and video files.
+   Keep these folders even when one of the media types is not available yet, unless the user requests a different organization.
+17. When the project contains images or GIFs, publish those assets to the user's public Git repository when the user has established that repository as the wiki asset destination. Organize public assets using a stable path such as `wiki-assets/<product>/<version>/imagens/` and `wiki-assets/<product>/<version>/gifs/`.
+   - use public raw URLs for the published assets;
+   - validate that each URL is accessible before reporting it;
+   - do not publish videos unless the user explicitly requests it;
+   - do not replace existing assets or links unless the user explicitly requests replacement.
+18. When delivering an image or GIF link for this user's wiki, always provide the complete embed tag in this exact format, preserving the Markdown link inside `src`:
+
+   ```xml
+   <img src="[https://raw.githubusercontent.com/vinibr45/kora-vi/master/wiki-assets/weber/versao-01-09-2026/imagens/weber-tributario-1.png](https://raw.githubusercontent.com/vinibr45/kora-vi/master/wiki-assets/weber/versao-01-09-2026/imagens/weber-tributario-1.png)">
+   ```
+
+   Do not return only the URL, only `src="..."`, or a normal `<img src="https://...">` unless the user asks for a different format. Provide one complete `<img>` tag per asset, using the actual public URL for both occurrences.
+19. Use emojis sparingly and consistently:
    - `⚠️` for important warnings;
    - `⚙️` for configuration;
    - `✅` only for clear confirmation/benefit when useful.
-18. When writing prompts for another AI, always state the expected output as an HTML file:
+20. When writing prompts for another AI, always state the expected output as an HTML file:
    - `Saida esperada: Entregar um arquivo HTML...`
-19. If the user wants durable files, save:
+21. If the user wants durable files, save:
    - final wiki HTML in an `Html/` folder;
    - prompts in a `Prompts/` folder;
    - supporting images/GIFs in appropriate folders when organizing a project.

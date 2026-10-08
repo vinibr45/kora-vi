@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Configuração de Combinações CFOP + CST - Entrada de Notas Recebe Fácil</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; color: #222; line-height: 1.55; max-width: 980px; margin: 32px auto; padding: 0 24px; }
+    h1, h2, h3 { color: #1f4e79; line-height: 1.25; }
+    h1 { font-size: 30px; margin-bottom: 8px; }
+    h2 { font-size: 22px; margin-top: 34px; border-bottom: 1px solid #d9e2f3; padding-bottom: 6px; }
+    h3 { font-size: 18px; margin-top: 26px; }
+    .subtitle { color: #4b5563; font-size: 16px; margin-top: 0; }
+    .box { background: #f6f9ff; border: 1px solid #d9e2f3; border-left: 4px solid #1f4e79; padding: 14px 16px; margin: 18px 0; }
+    .attention { background: #fff8dc; border: 1px solid #f1c232; border-left: 4px solid #d99a00; padding: 14px 16px; margin: 18px 0; }
+    .media { background: #f8fbff; border: 1px dashed #8faadc; padding: 14px 16px; margin: 16px 0; }
+    .media strong { color: #1f4e79; }
+    .caption { color: #4b5563; font-size: 14px; margin-top: 8px; }
+    pre { background: #f6f8fa; border: 1px solid #d9dee3; padding: 12px; white-space: pre-wrap; overflow-x: auto; }
+    code { background: #f2f4f7; padding: 2px 4px; border-radius: 3px; }
+    table { border-collapse: collapse; width: 100%; margin: 14px 0; }
+    th, td { border: 1px solid #d9dee3; padding: 8px 10px; vertical-align: top; }
+    th { background: #eef3f8; color: #1f4e79; text-align: left; }
+  </style>
+</head>
+<body>
+  <h1>Configuração de Combinações CFOP + CST - Entrada de Notas Recebe Fácil</h1>
+  <p class="subtitle">Tutorial guiado para revisar, editar e criar combinações fiscais usadas na entrada de notas.</p>
+
+  <div class="box">
+    <p><strong>Resumo:</strong> neste tutorial, vamos acessar a tela de combinações CFOP + CST, revisar a listagem de combinações configuradas, identificar os campos de origem e conversão, editar uma combinação existente, selecionar CFOP e CST convertidos, revisar créditos fiscais e criar uma nova combinação quando necessário.</p>
+  </div>
+
+  <h2>Índice</h2>
+  <ol>
+    <li>Objetivo</li>
+    <li>Vídeo completo</li>
+    <li>Antes de começar</li>
+    <li>Informações necessárias</li>
+    <li>Fluxo geral do tutorial</li>
+    <li>Procedimento operacional</li>
+    <li>Resultado esperado</li>
+    <li>Checklist de conferência</li>
+    <li>Possíveis dúvidas</li>
+  </ol>
+
+  <h2>Objetivo</h2>
+  <p>O objetivo deste material é orientar a configuração das combinações CFOP + CST utilizadas pela <strong>Entrada de Notas Recebe Fácil</strong>.</p>
+  <p>Essas combinações ajudam o sistema a interpretar o CFOP e o CST recebidos no XML da nota e converter essas informações para os códigos fiscais que serão usados na entrada.</p>
+
+  <h2>Vídeo completo</h2>
+  <div class="media">
+    <p><strong>[link do vídeo completo]</strong></p>
+    <p class="caption"><strong>O que o vídeo demonstra:</strong> apresenta o tutorial completo de combinações CFOP + CST, desde o acesso pelo menu até a revisão, edição e criação de uma nova combinação. Duração do vídeo final: aproximadamente 4 minutos e 10 segundos.</p>
+  </div>
+
+  <h2>Antes de começar</h2>
+  <p>Antes de alterar ou criar uma combinação, confirme se:</p>
+  <ul>
+    <li>o usuário possui acesso ao módulo <strong>Controle das entradas</strong>;</li>
+    <li>o usuário possui permissão para acessar <strong>Configurações &gt; Combinações CFOP + CST</strong>;</li>
+    <li>a loja correta está selecionada;</li>
+    <li>a regra fiscal foi validada com o responsável fiscal, contábil ou técnico;</li>
+    <li>há segurança sobre quais CFOP e CST devem ser convertidos para entrada.</li>
+  </ul>
+
+  <div class="attention">
+    <p><strong>Atenção:</strong> combinações CFOP + CST impactam o comportamento fiscal da entrada de notas. Revise as alterações com cuidado antes de salvar.</p>
+  </div>
+
+  <h2>Informações necessárias</h2>
+  <ul>
+    <li>CFOP e CST de origem, vindos no XML da nota.</li>
+    <li>CFOP e CST convertidos para entrada.</li>
+    <li>Regra de crédito de ICMS.</li>
+    <li>Regra de crédito de ICMS ST.</li>
+    <li>CST PIS para crédito, quando aplicável.</li>
+    <li>Loja em que a combinação será aplicada.</li>
+  </ul>
+
+  <h2>Fluxo geral do tutorial</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Etapa</th>
+        <th>O que será feito</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>Acessar a tela de combinações CFOP + CST.</td></tr>
+      <tr><td>2</td><td>Revisar a listagem de combinações cadastradas.</td></tr>
+      <tr><td>3</td><td>Identificar CFOP/CST de origem e CFOP/CST convertidos.</td></tr>
+      <tr><td>4</td><td>Revisar campos de crédito fiscal.</td></tr>
+      <tr><td>5</td><td>Editar uma combinação existente.</td></tr>
+      <tr><td>6</td><td>Selecionar CFOP e CST convertidos.</td></tr>
+      <tr><td>7</td><td>Criar uma nova combinação, quando necessário.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Procedimento operacional</h2>
+
+  <h3>01. Acesse Combinações CFOP + CST</h3>
+  <p>No painel do <strong>Controle das entradas</strong>, acesse:</p>
+  <pre>Configurações &gt; Combinações CFOP + CST</pre>
+  <div class="media">
+    <p><strong>[imagem 1]</strong></p>
+    <p class="caption"><strong>O que a imagem está fazendo:</strong> mostra o menu <strong>Configurações</strong> aberto e destaca a opção <strong>Combinações CFOP + CST</strong>, que deve ser acessada para abrir o cadastro das conversões fiscais.</p>
+  </div>
+
+  <h3>02. Revise a listagem de combinações</h3>
+  <p>A tela <strong>Cadastro de Combinações CFOP + CST</strong> exibe as combinações já cadastradas para a loja selecionada.</p>
+  <div class="media">
+    <p><strong>[imagem 2]</strong></p>
+    <p class="caption"><strong>O que a imagem está fazendo:</strong> apresenta a listagem de combinações cadastradas, com colunas como CFOP, CST, Conv. CFOP, Conv. CST, Cred. ICMS, Cred. ICMS ST, CST PIS e Status.</p>
+  </div>
+  <p>Use o campo <strong>Filtrar</strong> quando precisar localizar uma combinação específica.</p>
+
+  <h3>03. Identifique CFOP e CST de origem</h3>
+  <p>As colunas <strong>CFOP</strong> e <strong>CST</strong> representam os códigos de origem.</p>
+  <p>Na prática, são as informações fiscais que vêm no XML da nota e ajudam a identificar qual situação fiscal foi enviada pelo fornecedor.</p>
+  <div class="media">
+    <p><strong>[imagem 3]</strong></p>
+    <p class="caption"><strong>O que a imagem está fazendo:</strong> destaca, na listagem, os campos de CFOP e CST de origem recebidos no XML.</p>
+  </div>
+
+  <h3>04. Identifique CFOP e CST convertidos</h3>
+  <p>As colunas <strong>Conv. CFOP</strong> e <strong>Conv. CST</strong> indicam como o sistema converterá os códigos recebidos para a entrada da nota.</p>
+  <p>Essa conversão deve respeitar a regra fiscal definida para a operação.</p>
+  <div class="media">
+    <p><strong>[imagem 4]</strong></p>
+    <p class="caption"><strong>O que a imagem está fazendo:</strong> destaca os campos de CFOP e CST convertidos, ou seja, os códigos que serão usados pelo sistema na entrada.</p>
+  </div>
+
+  <h3>05. Revise os campos de crédito fiscal</h3>
+  <p>Além da conversão de CFOP e CST, a listagem também mostra campos relacionados aos créditos fiscais.</p>
+  <div class="media">
+    <p><strong>[imagem 5]</strong></p>
+    <p class="caption"><strong>O que a imagem está fazendo:</strong> destaca os campos <strong>Cred. ICMS</strong>, <strong>Cred. ICMS ST</strong> e <strong>CST PIS</strong>, usados para conferir o comportamento fiscal da combinação.</p>
+  </div>
+  <p>Essas informações impactam a forma como a entrada da nota será tratada pelo sistema.</p>
+
+  <h3>06. Edite uma combinação existente</h3>
+  <p>Para ajustar uma combinação já cadastrada, abra a linha desejada na listagem.</p>
+  <div class="media">
+    <p><strong>[imagem 6]</strong></p>
+    <p class="caption"><strong>O que a imagem está fazendo:</strong> mostra a janela <strong>Configurar Combinação CFOP + CST</strong>, com os dados de origem do XML, os campos convertidos para entrada e os campos de crédito fiscal.</p>
+  </div>
+  <p>Depois de revisar ou alterar os dados, a configuração deve ser salva.</p>
+
+  <h3>07. Selecione o CFOP convertido</h3>
+  <p>No campo <strong>Conv. CFOP</strong>, clique no botão de pesquisa para localizar o CFOP convertido.</p>
+  <div class="media">
+    <p><strong>[imagem 7]</strong></p>
+    <p class="caption"><strong>O que a imagem está fazendo:</strong> mostra a janela de seleção do CFOP convertido, com lista de códigos e descrições disponíveis.</p>
+  </div>
+  <p>Pesquise por código ou descrição e selecione o CFOP correto para a entrada.</p>
+
+  <h3>08. Selecione o CST convertido</h3>
+  <p>O mesmo processo deve ser feito para o campo <strong>Conv. CST</strong>.</p>
+  <div class="media">
+    <p><strong>[imagem 8]</strong></p>
+    <p class="caption"><strong>O que a imagem está fazendo:</strong> mostra a janela de seleção do CST convertido, com códigos e descrições disponíveis para escolha.</p>
+  </div>
+  <p>Localize o CST correto e confirme a seleção.</p>
+
+  <h3>09. Configure o crédito de ICMS</h3>
+  <p>No campo <strong>Cred. ICMS</strong>, selecione a regra de crédito aplicável.</p>
+  <div class="media">
+    <p><strong>[imagem 9]</strong></p>
+    <p class="caption"><strong>O que a imagem está fazendo:</strong> mostra as opções do campo <strong>Cred. ICMS</strong>: <strong>S - Sim (credita)</strong>, <strong>N - Não (não credita)</strong> e <strong>M - Manual</strong>.</p>
+  </div>
+  <p>Escolha a opção conforme a regra fiscal validada.</p>
+
+  <h3>10. Configure o crédito de ICMS ST</h3>
+  <p>No campo <strong>Cred. ICMS ST</strong>, defina se a combinação credita ICMS ST, não credita ou será tratada manualmente.</p>
+  <div class="media">
+    <p><strong>[imagem 10]</strong></p>
+    <p class="caption"><strong>O que a imagem está fazendo:</strong> mostra as opções do campo <strong>Cred. ICMS ST</strong>, permitindo selecionar entre crédito, não crédito ou tratamento manual.</p>
+  </div>
+  <p>Essa configuração também deve seguir a regra fiscal da empresa.</p>
+
+  <h3>11. Informe o CST PIS para crédito</h3>
+  <p>Quando aplicável, informe o CST PIS para crédito no campo <strong>CST PIS Cred.</strong>.</p>
+  <div class="media">
+    <p><strong>[imagem 11]</strong></p>
+    <p class="caption"><strong>O que a imagem está fazendo:</strong> destaca o campo <strong>CST PIS Cred.</strong> e a observação da tela informando que PIS e IPI são definidos como manual automaticamente, e que o CST convertido preserva o dígito de origem do XML.</p>
+  </div>
+  <p>Depois de conferir todos os campos, clique em <strong>Salvar Configuração</strong>.</p>
+
+  <h3>12. Crie uma nova combinação</h3>
+  <p>Quando a combinação necessária ainda não existir, clique em <strong>Nova combinação</strong>.</p>
+  <div class="media">
+    <p><strong>[imagem 12]</strong></p>
+    <p class="caption"><strong>O que a imagem está fazendo:</strong> mostra a tela <strong>Nova Combinação CFOP + CST</strong>, com campos para informar CFOP e CST de origem, CFOP e CST convertidos para entrada e regras de crédito fiscal.</p>
+  </div>
+  <p>Preencha as informações conforme a regra validada e clique em <strong>Salvar</strong>.</p>
+
+  <h3>13. Confira o checklist do tutorial</h3>
+  <p>Ao final do vídeo, o checklist resume os principais pontos executados.</p>
+  <div class="media">
+    <p><strong>[imagem 13]</strong></p>
+    <p class="caption"><strong>O que a imagem está fazendo:</strong> apresenta o checklist final com os pontos concluídos: tela CFOP + CST acessada, listagem revisada, campos de origem e conversão identificados, combinação existente editada, CFOP e CST convertidos selecionados, créditos fiscais revisados e nova combinação criada quando necessário.</p>
+  </div>
+
+  <h2>Resultado esperado</h2>
+  <p>Ao concluir este procedimento, as combinações CFOP + CST estarão revisadas ou configuradas para apoiar a entrada correta das notas fiscais.</p>
+  <p>O sistema deve estar com:</p>
+  <ul>
+    <li>combinação localizada ou criada;</li>
+    <li>CFOP e CST de origem conferidos;</li>
+    <li>CFOP e CST convertidos definidos;</li>
+    <li>regras de crédito de ICMS e ICMS ST revisadas;</li>
+    <li>CST PIS para crédito preenchido quando aplicável;</li>
+    <li>configuração salva após validação fiscal.</li>
+  </ul>
+
+  <h2>Checklist de conferência</h2>
+  <ul>
+    <li>O acesso a <strong>Configurações &gt; Combinações CFOP + CST</strong> foi realizado.</li>
+    <li>A loja correta foi selecionada.</li>
+    <li>A combinação desejada foi localizada na listagem.</li>
+    <li>O CFOP e o CST de origem foram conferidos.</li>
+    <li>O CFOP convertido foi validado.</li>
+    <li>O CST convertido foi validado.</li>
+    <li>O crédito de ICMS foi revisado.</li>
+    <li>O crédito de ICMS ST foi revisado.</li>
+    <li>O CST PIS para crédito foi informado quando necessário.</li>
+    <li>A combinação foi salva após conferência.</li>
+  </ul>
+
+  <h2>Possíveis dúvidas</h2>
+
+  <h3>O que são CFOP e CST de origem?</h3>
+  <p>São os códigos lidos a partir do XML da nota. Eles representam a informação fiscal recebida do fornecedor.</p>
+
+  <h3>O que são CFOP e CST convertidos?</h3>
+  <p>São os códigos que o sistema usará na entrada da nota, de acordo com a regra fiscal definida para a operação.</p>
+
+  <h3>Posso alterar qualquer combinação?</h3>
+  <p>Não é recomendado alterar uma combinação sem validação fiscal. Essa configuração impacta a forma como a entrada da nota será interpretada pelo sistema.</p>
+
+  <h3>Quando devo criar uma nova combinação?</h3>
+  <p>Quando a combinação necessária para o CFOP e CST de origem ainda não existir na listagem.</p>
+</body>
+</html>

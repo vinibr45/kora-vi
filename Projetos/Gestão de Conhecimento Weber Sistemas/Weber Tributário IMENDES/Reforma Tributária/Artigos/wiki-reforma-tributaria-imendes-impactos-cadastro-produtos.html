@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reforma Tributária - Impactos no Cadastro de Produtos</title>
+  <style>
+    :root {
+      --bg: #f7f5ef;
+      --paper: #ffffff;
+      --ink: #27283a;
+      --muted: #656b7b;
+      --line: #ded8ca;
+      --gold: #d5a01f;
+      --navy: #30324a;
+      --green: #dbead0;
+      --red: #ffe5df;
+      --blue: #dce8f8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.55;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 24px 56px;
+    }
+
+    header {
+      border-bottom: 4px solid var(--gold);
+      padding: 30px 0 26px;
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      font-size: 14px;
+    }
+
+    h1 {
+      margin: 8px 0 12px;
+      font-size: 36px;
+      line-height: 1.12;
+    }
+
+    h2 {
+      margin: 34px 0 12px;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 18px;
+    }
+
+    p { margin: 8px 0 14px; }
+
+    ul, ol { padding-left: 22px; }
+
+    li { margin: 5px 0; }
+
+    .lead {
+      max-width: 900px;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .notice {
+      background: var(--navy);
+      color: #fff;
+      padding: 18px 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .notice strong { color: #ffd158; }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid.cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid.cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .card h3 { margin-top: 0; }
+
+    .tag {
+      display: inline-block;
+      background: #f1e6c4;
+      color: #6b4d00;
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      margin: 14px 0 22px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 11px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--navy);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 18px 0 8px;
+    }
+
+    .step {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      min-height: 150px;
+      position: relative;
+    }
+
+    .num {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .impact {
+      border-left: 5px solid var(--gold);
+      background: #fffaf0;
+      padding: 14px 16px;
+      border-radius: 4px;
+      margin: 16px 0;
+    }
+
+    .ok { background: var(--green); }
+    .warn { background: var(--red); }
+    .info { background: var(--blue); }
+
+    .screen-map {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      margin: 18px 0;
+    }
+
+    .screen-row {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      border-bottom: 1px solid var(--line);
+      min-height: 44px;
+    }
+
+    .screen-row:last-child { border-bottom: 0; }
+
+    .screen-label {
+      background: #f4f1e8;
+      padding: 11px 12px;
+      font-weight: 700;
+    }
+
+    .screen-value {
+      padding: 11px 12px;
+    }
+
+    .footer-note {
+      margin-top: 34px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 820px) {
+      main { padding: 24px 16px 40px; }
+      h1 { font-size: 30px; }
+      .grid.cols-3, .grid.cols-2, .flow { grid-template-columns: 1fr; }
+      .screen-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="eyebrow">Weber Tributário IMENDES · Reforma Tributária</div>
+      <h1>Impactos da Reforma Tributária no cadastro de produtos</h1>
+      <p class="lead">Resumo operacional baseado na cartilha enviada pela IMENDES e nos prints do cadastro fiscal de produtos da WEBER. O foco é entender onde as mudanças afetam NCM, CST-IBS/CBS, cClassTrib, alíquotas, reduções e a tela de Reforma Tributária.</p>
+    </header>
+
+    <section>
+      <h2>Resumo rápido</h2>
+      <div class="notice">
+        A Reforma Tributária troca gradualmente <strong>PIS, COFINS, ICMS, ISS e IPI</strong> por <strong>CBS, IBS e Imposto Seletivo</strong>. Para a WEBER, o impacto mais sensível no cadastro de produtos é a classificação por item: <strong>CST-IBS/CBS</strong> e <strong>cClassTrib</strong>.
+      </div>
+      <div class="grid cols-3">
+        <div class="card">
+          <span class="tag">2026</span>
+          <h3>Ano de teste</h3>
+          <p>CBS de 0,9% e IBS de 0,1% destacados na nota. A cartilha trata 03/08/2026 como início da obrigatoriedade de destaque na NF-e.</p>
+        </div>
+        <div class="card">
+          <span class="tag">2027</span>
+          <h3>CBS entra para valer</h3>
+          <p>PIS e COFINS são extintos. O Imposto Seletivo começa a produzir efeitos e a CBS passa a ter arrecadação efetiva.</p>
+        </div>
+        <div class="card">
+          <span class="tag">2033</span>
+          <h3>Sistema pleno</h3>
+          <p>ICMS e ISS são extintos. O modelo passa a operar com CBS, IBS e IS, mantendo exceções e regimes específicos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>O que muda no cadastro do produto</h2>
+      <div class="flow">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Identificar o item</h3>
+          <p>O NCM e a descrição do produto passam a ser a base para escolher o enquadramento correto.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Enquadrar na lei</h3>
+          <p>Verificar se o produto é padrão, alíquota zero, redução de 60%, redução de 30% ou regime específico.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Definir o CST</h3>
+          <p>O CST-IBS/CBS indica a categoria geral da tributação da operação.</p>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <h3>Escolher o cClassTrib</h3>
+          <p>O cClassTrib detalha a regra exata ligada ao dispositivo legal e pode indicar campos obrigatórios e reduções.</p>
+        </div>
+      </div>
+      <div class="impact">
+        <strong>Regra prática:</strong> CST e cClassTrib são usados em par e por item. Não é uma classificação única para a nota inteira.
+      </div>
+    </section>
+
+    <section>
+      <h2>Mapa para os campos da WEBER</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Informação da cartilha</th>
+            <th>Campo/tela WEBER relacionada</th>
+            <th>Impacto prático</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>NCM do produto</td>
+            <td>Campo <code>NCM</code> no cadastro de produtos</td>
+            <td>Base inicial para classificar o produto. NCM incorreto pode levar a CST/cClassTrib incorretos.</td>
+          </tr>
+          <tr>
+            <td>CST-IBS/CBS</td>
+            <td><code>Descrição CST</code> na tela de Configurações Fiscais por Produto</td>
+            <td>Indica a categoria geral de tributação: integral, reduzida, alíquota zero, isenção, diferimento etc.</td>
+          </tr>
+          <tr>
+            <td>cClassTrib</td>
+            <td><code>Classificação Tributária CBS/IBS</code></td>
+            <td>Detalha a regra legal aplicada ao item. Deve ser compatível com o CST e com a tabela oficial vigente.</td>
+          </tr>
+          <tr>
+            <td>CBS</td>
+            <td><code>Alíquota CBS</code> e opção de alíquota personalizada</td>
+            <td>Em 2026, a cartilha cita 0,9% como alíquota de teste. Nos próximos anos, valores podem depender de definição oficial.</td>
+          </tr>
+          <tr>
+            <td>IBS estadual</td>
+            <td><code>Alíquota IBS UF</code></td>
+            <td>Em 2026, a cartilha cita 0,1% estadual. Depois cresce gradualmente até o sistema pleno.</td>
+          </tr>
+          <tr>
+            <td>IBS municipal</td>
+            <td><code>Alíquota IBS Municipal</code></td>
+            <td>Na fase inicial, pode aparecer zerado, mas será relevante no modelo pleno.</td>
+          </tr>
+          <tr>
+            <td>Reduções e alíquota zero</td>
+            <td><code>% Redução Aliq IBS</code> e <code>% Redução Aliq CBS</code></td>
+            <td>Produtos com tratamento diferenciado precisam refletir corretamente a redução ou alíquota zero.</td>
+          </tr>
+          <tr>
+            <td>Tributos antigos na transição</td>
+            <td>Abas <code>ICMs</code> e <code>PisCofins</code></td>
+            <td>Continuam necessárias durante a transição. A tela de Reforma Tributária complementa, não substitui tudo de uma vez.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Como ler as telas atuais</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Aba ICMS</h3>
+          <p>Continua registrando a tributação tradicional: CST/CSOSN, ICMS, PBC, FCP, MVA, IPI e benefício fiscal.</p>
+          <p class="info card">Durante 2029 a 2032, a cartilha indica redução gradual de ICMS/ISS e crescimento do IBS. Benefícios fiscais de ICMS exigirão acompanhamento.</p>
+        </div>
+        <div class="card">
+          <h3>Aba PIS/COFINS</h3>
+          <p>Continua importante em 2026, com CST de entrada, CST de saída, alíquotas e natureza da receita.</p>
+          <p class="info card">A partir de 2027, PIS/COFINS dão lugar à CBS, então esta área tende a mudar de peso operacional.</p>
+        </div>
+      </div>
+      <div class="screen-map">
+        <h3>Tela Configurações Fiscais por Produto - CBS/IBS</h3>
+        <div class="screen-row">
+          <div class="screen-label">Classificação CBS/IBS</div>
+          <div class="screen-value">Provável ponto do cClassTrib. Precisa estar alinhado às tabelas oficiais e à IMENDES.</div>
+        </div>
+        <div class="screen-row">
+          <div class="screen-label">Descrição CST</div>
+          <div class="screen-value">Categoria geral da tributação. Exemplo do print: CST 000 - Tributação integral.</div>
+        </div>
+        <div class="screen-row">
+          <div class="screen-label">Alíquotas CBS/IBS</div>
+          <div class="screen-value">Campos de CBS, IBS UF e IBS Municipal. Usados para destaque e cálculo conforme ano/regra aplicável.</div>
+        </div>
+        <div class="screen-row">
+          <div class="screen-label">Reduções</div>
+          <div class="screen-value">Campos para redução de alíquota de IBS e CBS quando o enquadramento legal permitir.</div>
+        </div>
+        <div class="screen-row">
+          <div class="screen-label">Alíquota personalizada</div>
+          <div class="screen-value">Deve ser usada com critério. A regra exata precisa ser validada internamente antes de orientar suporte ou cliente.</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Riscos de cadastro</h2>
+      <div class="grid cols-2">
+        <div class="card warn">
+          <h3>Erros que podem rejeitar nota</h3>
+          <ul>
+            <li>CST e cClassTrib incompatíveis.</li>
+            <li>cClassTrib inexistente na versão vigente da tabela.</li>
+            <li>Campos exigidos pelo indicador do código não preenchidos.</li>
+            <li>Benefício aplicado sem base legal para o item.</li>
+          </ul>
+        </div>
+        <div class="card ok">
+          <h3>Boas práticas</h3>
+          <ul>
+            <li>Revisar NCM antes de classificar CBS/IBS.</li>
+            <li>Consultar tabelas oficiais e atualizações IMENDES.</li>
+            <li>Tratar 2026 como preparação e teste.</li>
+            <li>Registrar dúvidas fiscais antes de publicar orientação para cliente.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Orientação para suporte</h2>
+      <div class="impact">
+        Quando o cliente perguntar sobre Reforma Tributária no cadastro de produto, explique que a WEBER passa a controlar novas informações de CBS/IBS por item. A IMENDES apoia a classificação fiscal, mas a informação precisa estar correta no cadastro, principalmente NCM, CST-IBS/CBS e cClassTrib.
+      </div>
+      <p>Evite afirmar alíquotas futuras como definitivas. A própria cartilha destaca que valores de anos futuros são referências e podem depender de resolução e validações oficiais.</p>
+    </section>
+
+    <section>
+      <h2>Pontos que precisam de validação</h2>
+      <ul>
+        <li>Confirmar se <code>Classificação Tributária CBS/IBS</code> é exatamente o cClassTrib.</li>
+        <li>Confirmar se <code>Descrição CST</code> é preenchida automaticamente a partir da classificação.</li>
+        <li>Confirmar quais campos são enviados pela IMENDES e quais são calculados pela WEBER.</li>
+        <li>Confirmar quando marcar alíquotas personalizadas.</li>
+        <li>Confirmar se a tela CBS/IBS será por operação, por produto ou por produto + operação.</li>
+      </ul>
+    </section>
+
+    <p class="footer-note">
+      Fonte: Cartilha Reforma Tributária IMENDES, edição 2026, conteúdo revisado em agosto de 2026. Este material é um rascunho para wiki interna e não substitui validação fiscal, jurídica ou contábil.
+    </p>
+  </main>
+</body>
+</html>

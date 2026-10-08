@@ -2,6 +2,26 @@
 
 All meaningful KORA Core version changes are recorded here.
 
+## 1.11.0 - 2026-09-25
+
+Impact: minor
+
+## Changed
+
+- Updated `skills/create-version-change-wiki.md` with the standard `Html/`, `Imagens/`, `Gifs/`, and `Videos/` project folders.
+- Added the established public GitHub asset workflow for images and GIFs, including URL validation and the exact `<img src="[URL](URL)">` embed format requested for the user's wiki platform.
+- Updated `skills/README.md` to make the media and embed workflow discoverable.
+
+## Why It Matters
+
+New wiki projects now begin with a predictable structure, and published images and GIFs are delivered in the format the wiki editor accepts.
+
+## Related Decisions
+
+```text
+None.
+```
+
 ## 1.10.0 - 2026-09-24
 
 Impact: minor

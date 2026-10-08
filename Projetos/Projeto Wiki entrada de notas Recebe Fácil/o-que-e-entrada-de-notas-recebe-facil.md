@@ -100,14 +100,15 @@ Com a Entrada de Notas Recebe Fácil, o cliente ganha:
 
 Ao explicar a ferramenta na Wiki, deixe claro que a automação não depende apenas da nota fiscal. Ela depende também de uma base bem preparada.
 
-Antes de esperar uma entrada automática, o cliente precisa entender que existem requisitos obrigatórios para utilização do Recebe Fácil.
+Antes de esperar uma entrada automática, o cliente precisa entender que existem configurações importantes para utilização do Recebe Fácil.
 
-Para utilizar a **Entrada de Notas Recebe Fácil**, o cliente precisa estar com:
+Para a Wiki atual da **Entrada de Notas Recebe Fácil**, o material deve considerar que:
 
-- **Financeiro Novo**, também chamado de **Gestão Financeira**, ativo;
-- **Estoque Novo** habilitado, com a flag de Estoque Novo ativa no **Portal Gerencial**.
+- o **Financeiro Novo**, também chamado de **Gestão Financeira**, será usado como base financeira;
+- o fluxo já funciona com o **Estoque Antigo**;
+- não é mais necessário orientar a habilitação do **Estoque Novo** no **Portal Gerencial** como requisito obrigatório.
 
-Caso o cliente não atenda a esses requisitos, ele não deve seguir com a utilização do fluxo baseado no Estoque Novo.
+Com isso, os materiais novos devem focar na configuração da Gestão Financeira e nas demais parametrizações necessárias para a entrada das notas.
 
 Além desses requisitos, algumas configurações devem estar corretas, como:
 
